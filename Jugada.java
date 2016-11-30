@@ -7,8 +7,42 @@ package ludoteca;
 
 /**
  *
- * @author alumno
+ * @authors Jose Ignacio Diaz, Cristian Posada y Jorge Prieto.
  */
-public class Jugada {
+public abstract class Jugada 
+{
+    private Baraja baraja;
+    private Jugador ganador;
+    private double apuesta;
     
+    
+    public Baraja getBaraja()
+    {
+        return baraja;
+    }
+    public void setBaraja(Baraja b)
+    {
+        baraja=b;
+    }
+    
+    public Jugador getJugador()
+    {
+        return ganador;
+    }
+    public void setJugador(Jugador j)
+    {
+        ganador=j;
+    }
+    
+    public double getApuesta()
+    {
+        return apuesta;
+    }
+    public void setApuesta(double a)
+    {
+        apuesta=a;
+    }
+    
+    public abstract void jugarBanca();
+    public abstract void jugarJugador();
 }

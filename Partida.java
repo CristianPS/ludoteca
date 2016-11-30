@@ -64,8 +64,8 @@ public class Partida
         juego=j;
     }
     
-    
-    public void añadeJugada (Jugada jug)
+
+    public void anadeJugada (Jugada jug)
     {
         arrayListJugada.add(jug);
     }
