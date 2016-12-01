@@ -64,6 +64,11 @@ public class Partida
         juego=j;
     }
     
+    public int getNumJugadas()
+    {
+        return arrayListJugada.size();
+    }
+    
 
     public void anadeJugada (Jugada jug)
     {

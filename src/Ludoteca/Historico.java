@@ -48,19 +48,19 @@ public class Historico
         HistPart.add(P);
     }
     
-    public void listadoPartidas()
+    public void listadoPartidas() //terminada
     {
-        /*Partida P =new Partida();
+        Partida P =new Partida();
         for (int i=0; i<HistPart.size(); i++)
         {
             P = HistPart.get(i);
             P.toString();
-        }*/
+        }
     }
     
-    public void numJugadas(Partida P)
+    public int numJugadas(Partida P) //terminada
     {
-        
+        return P.getNumJugadas();
     }
     
     public void ganadorJugadas(Partida P)
