@@ -70,4 +70,10 @@ public class Partida
         arrayListJugada.add(jug);
     }
     
+    @Override
+    public String toString()
+    {
+        return "Es una partida de "+juego+" el "+fecha;
+    }
+    
 }
