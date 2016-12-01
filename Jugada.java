@@ -25,11 +25,11 @@ public abstract class Jugada
         baraja=b;
     }
     
-    public Jugador getJugador()
+    public Jugador getGanador()
     {
         return ganador;
     }
-    public void setJugador(Jugador j)
+    public void setGanador(Jugador j)
     {
         ganador=j;
     }
