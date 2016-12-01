@@ -1,4 +1,4 @@
-package ludoteca;
+package Ludoteca;
 
 public class Carta
 {
