@@ -15,7 +15,6 @@ public abstract class Baraja
         baraja = b;
     }
     
-    public abstract void mezclar(){
+    public abstract void mezclar();
     
-    }
 }

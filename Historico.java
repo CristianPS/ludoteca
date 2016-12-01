@@ -39,6 +39,19 @@ public class Historico
         
     }
     
+    public void ganadorJugadas(Partida P)
+    {
+        
+    }
     
+    public int fichasApostadasJugada(Partida P)
+    {
+        
+    }
+    
+    public void cartasManos(Partida P)
+    {
+        
+    }
 
 }
