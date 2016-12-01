@@ -15,6 +15,11 @@ public abstract class Jugada
     private Jugador ganador;
     private double apuesta;
     
+    public Jugada()
+    {
+        
+    }
+    
     
     public Baraja getBaraja()
     {
