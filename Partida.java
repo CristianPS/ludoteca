@@ -16,7 +16,7 @@ public class Partida
     private static int partidasTotales;
     private Date fecha = new Date();
     private String juego;
-    private ArrayList arrayListJugada = new ArrayList();
+    private ArrayList <Jugada> arrayListJugada = new ArrayList();
     
     
     public int getNum()

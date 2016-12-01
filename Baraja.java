@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class Baraja
 {
-    protected ArrayList cartas = new ArrayList();
+    protected ArrayList <Cartas> cartas = new ArrayList();
     protected Baraja baraja;
     
     public Baraja getBaraja(){

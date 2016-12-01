@@ -5,8 +5,8 @@ import java.util.ListIterator;
 
 public class Historico
 {
-    private ArrayList HistJug = new ArrayList();
-    private ArrayList HistPart = new ArrayList();
+    private ArrayList <Jugador> HistJug = new ArrayList();
+    private ArrayList <Partida> HistPart = new ArrayList();
     
     
     public void resultados(Jugador J)
