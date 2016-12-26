@@ -12,6 +12,7 @@ package Ludoteca;
 public abstract class Jugada 
 {
     private Baraja baraja;
+    //Si el ganador es la banca el nombre del Jugador sera BANCA (importante en funciones de otras clases)
     private Jugador ganador;
     private double apuesta;
     

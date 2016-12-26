@@ -81,4 +81,56 @@ public class Partida
         return "Es una partida de "+juego+" el "+fecha;
     }
     
+    //Esta funcion la creo para luego en Historico poder acceder a las victorias en la funcion ganadorJugadas(Partida P)
+    public int jugadasGanadas()
+    {
+        Jugador aux;
+        int cont=0;
+        
+        for (Jugada J: arrayListJugada)
+        {
+            aux = J.getGanador();
+            if (aux.getNombre() != "BANCA")
+            {
+                cont++;
+            } 
+        }
+        return cont;
+    }
+    
+    //Hago estas funciones porque las creo necesarias
+    public void nombreJugador(String nom)
+    {
+        for(Jugada J: arrayListJugada)
+        {
+            Jugador aux = new Jugador("BANCA");
+            
+            if (J.getGanador()!=aux)
+            {
+                nom=J.getGanador().getNombre();
+                break;
+            }
+        }
+    }
+    
+    public void sumar1aTotalPartidas()
+    {
+        partidasTotales++;
+    }
+    
+    public Jugada devolverJugada (int i)
+    {
+        return arrayListJugada.get(i);
+    }
+    
+    public int numJugadas()
+    {
+        return arrayListJugada.size();
+    }
+    
+    //Sobrescribo la funcion equals() porque creo que es beneficioso
+    public boolean equals(Partida P)
+    {
+        return P.fecha==this.fecha;
+    }
 }

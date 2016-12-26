@@ -21,21 +21,17 @@ public class Historico
     
     public int buscarJugador(String nombre)
     {
-        /*int tamHist = HistJug.size();
-        ListIterator it = null;
-        it=HistJug.listIterator(0);
-        
-        while (it.hasNext())
+        for(Jugador Jug: HistJug)
         {
-            if(it.Jugador.nombre==nombre)
+            if(nombre==Jug.getNombre())
             {
-                System.out.println(nombre+" se encuentra en el Historico");
+                resultados(Jug);
                 return 0;
             }
         }
-        System.out.println(nombre+" no se encuentra en el Historico");
-        return 0;*/
-        return 0;
+        System.out.println("No se encuentra el jugador");
+        return -1;
+        
     }
     
     public void anadirJugador(Jugador J) //terminada
@@ -65,14 +61,48 @@ public class Historico
     
     public void ganadorJugadas(Partida P)
     {
+        int ganadas = P.jugadasGanadas();
+        String nom="nom";
+        P.nombreJugador(nom);
         
+        System.out.println("El jugador "+nom+" ha ganado "+ganadas+" partidas");
     }
-    
-    public int fichasApostadasJugada(Partida P)
+ 
+//No termino de comprender esta funcion, puede ser que pida el numero de fichas apostada en una jugada concreta
+        //o que quiera en cada jugada las fichas apostadas
+        //o el numero de fichas totales
+    public double fichasApostadasJugada(Partida P, int numJugada)
     {
-        return 0;
+        Jugada aux;
+        aux=P.devolverJugada(numJugada);
+        return aux.getApuesta();
     }
     
+    public void fichasApostadasporJugada(Partida P)
+    {
+        int max=P.numJugadas();
+        double fichasApostadas;
+        for (int i=0; i<=max; i++)
+        {
+            fichasApostadas=fichasApostadasJugada(P, i);
+            System.out.println("En la jugada numero "+i+" se apostaron "+fichasApostadas+" fichas");
+        }
+    }
+    
+    public double fichasApostadasJugadaTotal(Partida P)
+    {
+        int max=P.numJugadas();
+        double fAJugada, fATotal=0.0;
+        for (int i=0; i<=max; i++)
+        {
+            fAJugada=fichasApostadasJugada(P, i);
+            fATotal=+fAJugada;
+        }
+        return fATotal;
+    }
+
+//NO TENGO NI IDEA DE QUE HACE ESTA FUNCION PORQUE LA CLASE MANO NO SE RELACIONA EN EL ESQUEMA
+    //NI CON LA CLASE HISTORICO NI CON PARTIDA.
     public void cartasManos(Partida P)
     {
         
