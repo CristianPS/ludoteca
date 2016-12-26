@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jorge/Documents/GitHub/ludoteca/src/Ludoteca/Historico.java</file>
-            <file>file:/C:/Users/jorge/Documents/GitHub/ludoteca/src/Ludoteca/Jugada.java</file>
-            <file>file:/C:/Users/jorge/Documents/GitHub/ludoteca/src/Ludoteca/Partida.java</file>
+            <file>file:/C:/Users/jorge/Documents/GitHub/ludoteca/src/Ludoteca/BarajaEspanola.java</file>
+            <file>file:/C:/Users/jorge/Documents/GitHub/ludoteca/src/Ludoteca/Baraja.java</file>
+            <file>file:/C:/Users/jorge/Documents/GitHub/ludoteca/src/Ludoteca/BarajaFrancesa.java</file>
+            <file>file:/C:/Users/jorge/Documents/GitHub/ludoteca/src/Ludoteca/Carta.java</file>
+            <file>file:/C:/Users/jorge/Documents/GitHub/ludoteca/src/Ludoteca/Mano.java</file>
         </group>
     </open-files>
 </project-private>
