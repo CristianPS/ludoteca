@@ -1,11 +1,27 @@
 package Ludoteca;
 
-public abstract class Carta
-{
-  protected int valor;
-  
-  public abstract void mostrar();
-  public abstract int getValor();
-  public abstract void setValor();
-  
+public class Carta {
+    
+    protected int valor;
+    
+    public Carta(int v)
+    {
+        valor = v;
+    }
+    
+    public void mostrar()
+    {
+        System.out.println(valor);
+    }
+    
+    public void setValor(int v)
+    {
+        valor = v;
+    }
+    
+    public int getValor()
+    {
+        return valor;
+    }
 }
+
