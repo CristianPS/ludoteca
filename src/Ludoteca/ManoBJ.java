@@ -29,9 +29,11 @@ public class ManoBJ extends Mano
                     break;
                 case 9: aux=9;
                     break;
-                case 10:
+                case 10: aux=10;
+                    break;
                 case 11:
-                case 12: aux=10;
+                case 12:
+                case 13: aux=10;
                     break;
             }
             valorMano=+aux;
