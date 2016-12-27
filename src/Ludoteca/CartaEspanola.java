@@ -1,6 +1,6 @@
 package Ludoteca;
 
-public class CartaEspanola
+public class CartaEspanola extends Carta
 {
   private enum palo{Oros, Bastos, Espadas, Copas};
     
