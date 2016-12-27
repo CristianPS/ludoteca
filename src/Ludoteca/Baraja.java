@@ -7,7 +7,7 @@ import java.util.ArrayList;
     //voy a comentar lo que creo que esta mal para poder hacer mezclar() de BarajaEspañola
 public abstract class Baraja
 {
-    protected ArrayList<Carta> Baraja = new ArrayList();
+    protected ArrayList<Carta> baraja = new ArrayList();
     /*protected Baraja baraja;
     
     public Baraja getBaraja()

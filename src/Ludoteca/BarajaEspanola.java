@@ -1,18 +1,24 @@
 package Ludoteca;
 
-import java.util.ArrayList;
-
 public class BarajaEspanola extends Baraja
 {
     public BarajaEspanola()
     {
-        CartaEspañola c = new CartaEspañola()
+        for(int i=0; i<=12; i++)
+        {
+            for(int j=0; j<=4; i++)
+            {
+                CartaEspanola c = new CartaEspanola(i, j);
+                baraja.add(c);
+            }
+        }
     }
     
     @Override
     public Carta mezclar()
     {
-
-        return null;
+        int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
+        CartaEspañola c = baraja.get(numeroAleatorio);
+        return c;
     }
 }
