@@ -2,7 +2,7 @@ package Ludoteca;
 
 public class BarajaFrancesa extends Baraja
 {
-  public void mezclar()
+  public Carta mezclar()
   {
     return null;
   }
