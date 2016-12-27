@@ -1,6 +1,6 @@
 package Ludoteca;
 
-public class Carta
+public abstract class Carta
 {
   protected int valor;
   
