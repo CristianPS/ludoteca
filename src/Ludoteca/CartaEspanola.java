@@ -2,31 +2,37 @@ package Ludoteca;
 
 public class CartaEspanola extends Carta
 {
-  private enum palo{Oros, Bastos, Espadas, Copas};
+    public enum Palo{Oros, Bastos, Espadas, Copas};
+    private final Palo palo;
     
-  public CartaEspanola(int valor, enum palo)
-  {
-      this.valor = valor;
-      this.palo = palo;
-  }
-  
-  public void setPalo(enum palo)
-  {
-    this.palo = palo;
-  }
-  
-  public enum getPalo()
-  {
-    return palo;
-  }
-  
-  public void setValor(int valor)
-  {
-    this.valor = valor;
-  }
-  
-  public int getValor()
-  {
-    return valor;
-  }
+    public CartaEspanola(int v, Palo palo)
+    {
+        super(v);
+        this.palo = palo;
+    }
+    
+    @Override
+    public void mostrar()
+    {
+        super.mostrar();
+        System.out.println(palo);
+    }
+    
+    public Palo getPalo()
+    {
+        return palo;
+    }
+    
+    @Override
+    public int getValor()
+    {
+        super.getValor();
+        return valor;
+    }
+    
+    @Override
+    public void setValor(int v)
+    {
+        super.setValor(v);
+    }
 }
