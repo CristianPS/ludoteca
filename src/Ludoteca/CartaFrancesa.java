@@ -11,10 +11,25 @@ public class CartaFrancesa extends Carta
       this.valor = valor;
       this.palo = palo;
   }
-    
+  
+  public void setPalo(enum palo)
+  {
+      this.palo = palo;
+  }
+  
+  public enum getPalo()
+  {
+      return palo;
+  }
+  
   public void setValor(int valor)
   {
       this.valor = valor;
+  }
+  
+  public int getValor()
+  {
+    return valor;
   }
     
   public void ocultar();    
