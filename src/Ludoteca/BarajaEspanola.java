@@ -23,4 +23,16 @@ public class BarajaEspanola extends Baraja
         CartaEspanola c = (CartaEspanola) baraja.get(numeroAleatorio);
         return c;
     }
+    
+    @Override
+    public int tamaño()
+    {
+        return baraja.size();
+    }
+    
+    @Override
+    public Carta obtener(int x)
+    {
+        return baraja.get(x);
+    }
 }

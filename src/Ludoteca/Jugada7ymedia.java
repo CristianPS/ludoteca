@@ -1,14 +1,18 @@
 package Ludoteca;
 
+import java.util.Scanner;
+
 public abstract class Jugada7ymedia extends Jugada
 {
     private Baraja baraja;
     private Jugador jugador;
     
-    public void jugarBanca(){
+    public void jugarBanca()
+    {
         
     }
-    public void jugarJugador(){
+    public void jugarJugador()
+    {
         //Al inicio se apuesta una cantidad mayor o igual que 25
         apostar();        
         //Luego el jugador va pidiendo cartas hasta que no quiera mas
@@ -22,28 +26,36 @@ public abstract class Jugada7ymedia extends Jugada
             if(resp.equals("N")) break;
         }
     }
-    public void añadirMano(m){
+    public void añadirMano(Mano m)
+    {
     
     }
     
-    public Carta pedirCarta(){
-        int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
+    public Carta pedirCarta()
+    {
+        /*int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
         CartaEspanola c = (CartaEspanola) baraja.get(numeroAleatorio);
+        return c;*/
+        
+        int numeroAleatorio = (int) (Math.random()*baraja.tamaño()+0);
+        CartaEspanola c = (CartaEspanola) baraja.obtener(numeroAleatorio);
         return c;
     }
     
-    public void apostar()
+    public int apostar()
     {
         System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 25 fichas");
         Scanner kbd = new Scanner(System.in);
-        int num = kbd.nextLine();
+        int num = kbd.nextInt();
         System.out.println("Su apuesta es: " +num);
         do{
            System.out.println("Lo sentimos, la apuesta no es correcta");
            System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 25 fichas"); 
-           Scanner kbd = new Scanner(System.in);
-           int num = kbd.nextLine();
+           //Scanner kbd = new Scanner(System.in);
+           num = kbd.nextInt();
            System.out.println("Su apuesta es: " +num);
-        }while(num<25 || num>jugador.getFichasTotales);
+        }while(num<25 || num>jugador.getFichasTotales());
+        
+        return num;
     }
 }

@@ -8,7 +8,7 @@ public class BarajaFrancesa extends Baraja
         {
             for(int j=0; j<4; i++)
             {
-                Palo p; 
+                //Palo p; 
                 CartaFrancesa c = new CartaFrancesa(i, j);
                 baraja.add(c);
             }
@@ -19,7 +19,19 @@ public class BarajaFrancesa extends Baraja
     public Carta mezclar()
     {
         int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
-        CartaFrancesa c = baraja.get(numeroAleatorio);
+        CartaFrancesa c = (CartaFrancesa) baraja.get(numeroAleatorio);
         return c;
+    }
+           
+    @Override
+    public int tamaño()
+    {
+        return baraja.size();
+    }
+    
+    @Override
+    public Carta obtener(int x)
+    {
+        return baraja.get(x);
     }
 }

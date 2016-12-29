@@ -23,5 +23,7 @@ public abstract class Baraja
     }*/
     
     public abstract Carta mezclar();
+    public abstract int tamaño();
+    public abstract Carta obtener(int x);
     
 }
