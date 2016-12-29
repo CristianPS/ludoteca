@@ -11,12 +11,13 @@ public abstract class Jugada7ymedia extends Jugada
     public void jugarJugador(){
         //Al inicio se apuesta una cantidad mayor o igual que 25
         apostar();        
-        //Luego el jugador va pidiento cartas hasta que no quiera mas
+        //Luego el jugador va pidiendo cartas hasta que no quiera mas
         for(int i=0; i<40; i++)
         {
             pedirCarta();
             System.out.println("¿Desea pedir mas cartas? S/N");
-            String resp = datos.nextLine();
+            Scanner kbd = new Scanner(System.in);
+            String resp = kbd.nextLine();
             if(resp == "S") continue;
             if(resp == "N") break;
         }
@@ -31,8 +32,18 @@ public abstract class Jugada7ymedia extends Jugada
         return c;
     }
     
-    public void apostar(jugador.get)
+    public void apostar()
     {
-        
+        System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 25 fichas");
+        Scanner kbd = new Scanner(System.in);
+        int num = kbd.nextLine();
+        System.out.println("Su apuesta es: " +num);
+        do{
+           System.out.println("Lo sentimos, la apuesta no es correcta");
+           System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 25 fichas"); 
+           Scanner kbd = new Scanner(System.in);
+           int num = kbd.nextLine();
+           System.out.println("Su apuesta es: " +num);
+        }while(num<25 || num>jugador.getFichasTotales);
     }
 }
