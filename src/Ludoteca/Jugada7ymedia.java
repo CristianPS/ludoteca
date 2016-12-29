@@ -3,6 +3,7 @@ package Ludoteca;
 public abstract class Jugada7ymedia extends Jugada
 {
     private Baraja baraja;
+    private Jugador jugador;
     
     public void jugarBanca(){
         
@@ -30,7 +31,7 @@ public abstract class Jugada7ymedia extends Jugada
         return c;
     }
     
-    public void apostar()
+    public void apostar(jugador.get)
     {
         
     }
