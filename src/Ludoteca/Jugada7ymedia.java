@@ -7,10 +7,12 @@ public abstract class Jugada7ymedia extends Jugada
     private Baraja baraja;
     private Jugador jugador;
     
+    @Override
     public void jugarBanca()
     {
         
     }
+    @Override
     public void jugarJugador()
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25

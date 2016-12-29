@@ -22,7 +22,7 @@ public class Historico
     {
         for(Jugador Jug: HistJug)
         {
-            if(nombre==Jug.getNombre())
+            if(nombre.equals(Jug.getNombre()))
             {
                 resultados(Jug);
                 return 0;

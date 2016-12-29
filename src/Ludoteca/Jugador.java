@@ -88,4 +88,9 @@ public class Jugador
     {
         jugadasEmpatadas=JE;
     }
+    
+    public boolean equals(Jugador Jug)
+    {
+        return(this.nombre.equals(Jug.nombre));            
+    }
 }
