@@ -18,8 +18,8 @@ public abstract class Jugada7ymedia extends Jugada
             System.out.println("¿Desea pedir mas cartas? S/N");
             Scanner kbd = new Scanner(System.in);
             String resp = kbd.nextLine();
-            if(resp == "S") continue;
-            if(resp == "N") break;
+            if(resp.equals("S")) continue;
+            if(resp.equals("N")) break;
         }
     }
     public void añadirMano(m){
