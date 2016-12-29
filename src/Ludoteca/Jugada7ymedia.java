@@ -1,11 +1,13 @@
 package Ludoteca;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Jugada7ymedia extends Jugada
 {
     private Baraja baraja;
     private Jugador jugador;
+    private ArrayList<Integer> cartasSacadas = new ArrayList();
     
     @Override
     public void jugarBanca()
@@ -37,9 +39,16 @@ public abstract class Jugada7ymedia extends Jugada
     {
         /*int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
         CartaEspanola c = (CartaEspanola) baraja.get(numeroAleatorio);
-        return c;*/
-        
-        int numeroAleatorio = (int) (Math.random()*baraja.tamaño()+0);
+        return c;*/       
+        int cs = 0;
+        int numeroAleatorio;
+        do
+        {
+            numeroAleatorio = (int) (Math.random()*baraja.tamaño()+0);
+            cartasSacadas.add(cs, numeroAleatorio);
+        }
+        while(cs != 0);
+        cartasSacadas.add(numeroAleatorio);
         CartaEspanola c = (CartaEspanola) baraja.obtener(numeroAleatorio);
         return c;
     }
