@@ -17,12 +17,12 @@ public class JugadaBJ
     @Override
     public void jugarJugador()
     {
-        //Al inicio se apuesta una cantidad mayor o igual que 25
+        //Al inicio se apuesta una cantidad mayor o igual que 10
         apostar();        
         //Luego el jugador va pidiendo cartas hasta que no quiera mas
         for(int i=0; i<40; i++)
         {
-            pedirCarta();
+            mano.pedirCarta(baraja);
             System.out.println("¿Desea pedir mas cartas? S/N");
             Scanner kbd = new Scanner(System.in);
             String resp = kbd.nextLine();
@@ -35,11 +35,11 @@ public class JugadaBJ
     
     }
     
-    public Carta pedirCarta()
+    /*public Carta pedirCarta()
     {
-        /*int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
+        int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
         CartaEspanola c = (CartaEspanola) baraja.get(numeroAleatorio);
-        return c;*/       
+        return c;     
         int cs = 0;
         int numeroAleatorio;
         do
@@ -52,7 +52,7 @@ public class JugadaBJ
         CartaFrancesa c = (CartaFrancesa) baraja.obtener(numeroAleatorio);
         return c;
     }
-    
+    */
     public int apostar()
     {
         System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 10 fichas");
