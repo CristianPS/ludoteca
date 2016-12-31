@@ -1,6 +1,5 @@
 package Ludoteca;
-
-<<<<<<< HEAD
+/*
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -40,7 +39,7 @@ public class JugadaBJ
     {
         /*int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
         CartaEspanola c = (CartaEspanola) baraja.get(numeroAleatorio);
-        return c;*/       
+        return c;       
         int cs = 0;
         int numeroAleatorio;
         do
@@ -71,11 +70,11 @@ public class JugadaBJ
         return num;
     }
 =======
+
+        
+>>>>>>> refs/remotes/origin/Cambios-revisar */
 import java.util.ArrayList;
 import java.util.Scanner;
-        
->>>>>>> refs/remotes/origin/Cambios-revisar
-
 public abstract class JugadaBJ extends Jugada
 {
     private Baraja baraja;

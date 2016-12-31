@@ -23,7 +23,17 @@ public class Mano
     
     public int CalcularValor()
     {
-        return 0;                
+        int suma;
+        int i = mano.size();
+        while (i>=0)
+        {
+            switch (mano)
+            {
+                case 11: case 12: case 13: case 24: case 25: case 26
+            }
+            mano.get(i);
+            
+        }
     }
     
     public void sePasa()
