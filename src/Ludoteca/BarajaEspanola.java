@@ -5,9 +5,11 @@ public class BarajaEspanola extends Baraja
     public BarajaEspanola()
     {
         //He cambiado esto porque en las siete y media no tiene que haber 8, 9 y 10. De momento lo he separado en dos bucles, seguro que hya una forma mejor de hacerlo pero de momento lo dejo asi.
-        for(int i=0; i<=7; i++)
+        
+        //He puesto que los bucles empiecen con i y j igual a 1, asi no tenemos carta con valor 0, y tambien si se empieza desde 0 se tendria una carta mas cada vez.
+        for(int i=1; i<=7; i++)
         {
-            for(int j=0; j<=4; i++)
+            for(int j=1; j<=4; i++)
             {
                 
                 CartaEspanola c = new CartaEspanola(i, j);
@@ -15,11 +17,10 @@ public class BarajaEspanola extends Baraja
             }
         }
         
-        for(int i=10; i<=13; i++)
+        for(int i=11; i<=13; i++)
         {
-            for(int j=0; j<=4; i++)
-            {
-                
+            for(int j=1; j<=4; i++)
+            {               
                 CartaEspanola c = new CartaEspanola(i, j);
                 baraja.add(c);
             }
