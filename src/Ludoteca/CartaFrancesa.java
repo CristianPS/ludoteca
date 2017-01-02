@@ -28,11 +28,12 @@ public class CartaFrancesa extends Carta
         super.mostrar();
         //System.out.println(palo);
     }
+}
     
     /*public Palo getPalo()
     {
         return palo;
-    }*/
+    }
     
     @Override
     public int getValor()
@@ -49,3 +50,5 @@ public class CartaFrancesa extends Carta
 }
 
 //Cristian: Añadir setPalo y GetPalo, heredados de Clase carta. Lo hago después.
+    //Lo mismo que en cartaespañola, creo que no es necesario sobreescribir las funciones set y get.
+*/
