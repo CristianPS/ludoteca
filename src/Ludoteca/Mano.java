@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Mano
 {
     protected ArrayList<Carta> mano = new ArrayList();
-    protected int valorMano=0;
+    protected float valorMano=0;
             
     public Carta pedirCarta(Baraja b)
     {
@@ -21,19 +21,24 @@ public class Mano
         return c;
     }
     
-    public int CalcularValor()
-    {
-        int suma;
+    public float CalcularValor()
+    {       
         int i = mano.size();
         while (i>=0)
         {
-            switch (mano)
+            switch (mano.get(i).getValor())
             {
-                case 11: case 12: case 13: case 24: case 25: case 26
-            }
-            mano.get(i);
-            
+                case 11: case 12: case 13:
+                    valorMano += 0.5;
+                    i--;
+                    break;
+                default:
+                    valorMano += mano.get(i).getValor();
+                    i--;
+                    break;
+            }                       
         }
+        return valorMano;
     }
     
     public void sePasa()

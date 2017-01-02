@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ManoBJ extends Mano
 {
     @Override
-    public int CalcularValor()
+    public float CalcularValor()
     {
         int aux=0, numAs=0;
         for(Carta c: mano)
@@ -58,7 +58,7 @@ public class ManoBJ extends Mano
     
     
     //imagino que esta funcion será para rectificar la eleccion de valor de un as
-    public int reduceValor()
+    public float reduceValor()//Esta función no esta haciedno lo mismo que la otra? Hace lo mismo que hayUnAs().
     {
         int numAs=0;
         for(Carta c: mano)
@@ -72,8 +72,8 @@ public class ManoBJ extends Mano
         Scanner kbd= new Scanner(System.in);
         do
         {
-        System.out.println("En la mano tienes "+numAs+" ases. ¿Cuantos de esos ases quieres cambiar de valor?");
-        numAscambio = kbd.nextInt();
+            System.out.println("En la mano tienes "+numAs+" ases. ¿Cuantos de esos ases quieres cambiar de valor?");
+            numAscambio = kbd.nextInt();
         }
         while (numAscambio<=numAs);
         

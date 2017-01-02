@@ -79,13 +79,14 @@ public abstract class JugadaBJ extends Jugada
 {
     private Baraja baraja;
     private Jugador jugador;
-    ArrayList<Integer> cartasSacadas = new ArrayList();
+    private ManoBJ mano;
+    //ArrayList<Integer> cartasSacadas = new ArrayList();
     
     
     @Override
     public void jugarBanca()
     {
-    
+        
     }
     
     public void jugarJugador()
@@ -95,7 +96,8 @@ public abstract class JugadaBJ extends Jugada
         //Luego el jugador va pidiendo cartas hasta que no quiera mas
         for(int i=0; i<40; i++)
         {
-            pedirCarta(cartasSacadas);
+            //pedirCarta(cartasSacadas);
+            mano.pedirCarta(baraja);
             System.out.println("¿Desea pedir mas cartas? S/N");
             Scanner kbd = new Scanner(System.in);
             String resp = kbd.nextLine();
@@ -104,16 +106,16 @@ public abstract class JugadaBJ extends Jugada
         }
     }
     
-    public void añadirMano(Mano m)
+    public void añadirManoBlackJack(Mano m)
     {
     
     }
     
-    public Carta pedirCarta(ArrayList cartasSacadas) //He hecho que le llegue como argumento el arrayList de las cartas sacadas, porque si no el array con las cartas sacadas se resetea cada vez que se pida una carta.
+    /*public Carta pedirCarta(ArrayList cartasSacadas) //He hecho que le llegue como argumento el arrayList de las cartas sacadas, porque si no el array con las cartas sacadas se resetea cada vez que se pida una carta.
     {
         /*int numeroAleatorio = (int) (Math.random()*baraja.size()+0);
         CartaEspanola c = (CartaEspanola) baraja.get(numeroAleatorio);
-        return c;*/
+        return c;
         
         int cs = 0;
         int numeroAleatorio;
@@ -126,7 +128,7 @@ public abstract class JugadaBJ extends Jugada
         cartasSacadas.add(numeroAleatorio);
         CartaEspanola c = (CartaEspanola) baraja.obtener(numeroAleatorio);
         return c;
-    }
+    }*/
     
     @Override
     public int apostar()
