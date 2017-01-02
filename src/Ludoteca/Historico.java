@@ -1,6 +1,8 @@
 package Ludoteca;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Historico
 {
@@ -13,9 +15,21 @@ public class Historico
         System.out.println(J.getNombre()+" ha obtenido un total de "+J.getJugadasGanadasBJ()+" al BlackJack y ha perdido "+J.getJugadasPerdidasBJ()+".\nEn las 7 y 1/2 sus resultados son de "+J.getJugadasGanadas7()+"ganadas y de "+J.getJugadasPerdidas7()+"perdidas.\nEl total de partidas empatadas es de "+J.getJugadasEmpatadas());
     }
     
+    //No estoy seguro de si funciona de esta forma o habria que editar algo
     public void clasificacion()
     {
-         
+        Collections.sort(HistJug, new Comparator<Jugador>() {
+            @Override
+            public int compare(Jugador1, Jugador j2) {
+                return new Integer(j2.getEdad()).compareTo(j1.getEdad());
+            }
+        });
+        
+        for(int i=0; i<HistJug.size(); i++)
+        {
+            System.out.println("Jugador: " +HistJug.get(i).getNombre);
+            System.out.println("Fichas totales: " +HistJug.get(i).getNumFichasTotales);
+        }
     }
     
     public int buscarJugador(String nombre)
