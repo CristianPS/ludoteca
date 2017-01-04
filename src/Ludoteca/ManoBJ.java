@@ -50,7 +50,38 @@ public class ManoBJ extends Mano
         }
         else 
         {
-            //Aqui hago mi mierda.
+            int Aux = hayUnAs();
+            if (hayUnAs() == 1)
+            {
+                if (valorMano+11<=21)
+                {
+                    valorMano+=11;
+                }
+                else
+                {
+                    valorMano+=1;
+                }
+            }
+            else if (valorMano+Aux>21)
+            {
+                valorMano=+Aux;
+            }
+            else
+            {
+                while (Aux>=1)
+                {
+                    if(valorMano+11>=21 || valorMano+11+Aux-1>21)
+                    {
+                        valorMano+=1;
+                        Aux--;
+                    }
+                    else
+                    {
+                        valorMano+=11;
+                        Aux--;
+                    }
+                }
+            }
         }
         return valorMano;
     }
