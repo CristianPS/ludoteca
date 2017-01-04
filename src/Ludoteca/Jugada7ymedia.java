@@ -10,12 +10,20 @@ public abstract class Jugada7ymedia extends Jugada
     private ArrayList<Integer> cartasSacadas = new ArrayList();
     
     @Override
-    public void jugarBanca()
+    public float jugarBanca()
     {
-        
+        Mano mBanca = new Mano();
+        float aux = 0;
+        while(aux<5)
+        {
+            Carta c = mBanca.pedirCarta(baraja);
+            mBanca.add(c);
+            aux = aux + mBanca.calcularValor();
+        }
+        return aux;
     }
     @Override
-    public void jugarJugador()
+    public float jugarJugador()
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25
         Mano mJugador = new Mano();
