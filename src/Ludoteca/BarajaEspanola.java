@@ -17,7 +17,7 @@ public class BarajaEspanola extends Baraja
             }
         }
         
-        for(int i=11; i<=13; i++)
+        for(int i=10; i<=12; i++)
         {
             for(int j=1; j<=4; i++)
             {               
