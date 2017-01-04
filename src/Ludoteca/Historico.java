@@ -1,7 +1,6 @@
 package Ludoteca;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -18,13 +17,6 @@ public class Historico
     
     //No estoy seguro de si funciona de esta forma o habria que editar algo
 
-    /*public int compare(Jugador j1, Jugador j2)
-    {
-        Double x = j2.getFichasTotales();
-        Double y = j1.getFichasTotales();
-        return x.compareTo(y);
-    }*/
-
         // Método para imprimir el array de Personas
     public void imprimeArrayJugadores() 
     {
@@ -36,20 +28,18 @@ public class Historico
     
     public void clasificacion()
     {
-        /*Collections.sort(HistJug, new Comparator<Jugador>()
-        {
-            for(int j=0; j<=HistJug.size(); j++)
-            {
-                
+        Collections.sort(HistJug, new Comparator<Jugador>() {
+            @Override
+            public int compare(Jugador o1, Jugador o2) {
+                return o1.compareTo(o2);
             }
-        int aux = compare(Jugador j1, Jugador j2); 
         });
         
-        for(int i=0; i<HistJug.size(); i++)
+        for(Jugador hijo : HistJug)
         {
-            System.out.println("Jugador: " +HistJug.get(i).getNombre);
-            System.out.println("Fichas totales: " +HistJug.get(i).getNumFichasTotales);
-        }*/
+            System.out.println(hijo.getNombre());
+        }
+        
     }
     
     public int buscarJugador(String nombre)
