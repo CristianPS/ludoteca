@@ -11,7 +11,7 @@ public class Carta {
         palo = p;
     }
     
-    
+    // ESTA CLAS ESTA MAL, AL HACER LA INTERFAZ GRAFICA TENEMOS QUE MODIFICARLA
     public void mostrar()
     {
         String Palo = null;

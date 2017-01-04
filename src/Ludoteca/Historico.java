@@ -1,10 +1,11 @@
 package Ludoteca;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class Historico
+public class Historico 
 {
     private ArrayList<Jugador> HistJug = new ArrayList();
     private ArrayList<Partida> HistPart = new ArrayList();
@@ -16,20 +17,39 @@ public class Historico
     }
     
     //No estoy seguro de si funciona de esta forma o habria que editar algo
+
+    /*public int compare(Jugador j1, Jugador j2)
+    {
+        Double x = j2.getFichasTotales();
+        Double y = j1.getFichasTotales();
+        return x.compareTo(y);
+    }*/
+
+        // Método para imprimir el array de Personas
+    public void imprimeArrayJugadores() 
+    {
+        for (int i=0; i<=HistJug.size(); i++)
+        {
+            System.out.println((i+1) + ". " + HistJug.get(i).getNombre() + " - FichasTotales: " + HistJug.get(i).getFichasTotales());
+        }
+    }
+    
     public void clasificacion()
     {
-        Collections.sort(HistJug, new Comparator<Jugador>() {
-            @Override
-            public int compare(Jugador1, Jugador j2) {
-                return new Integer(j2.getEdad()).compareTo(j1.getEdad());
+        /*Collections.sort(HistJug, new Comparator<Jugador>()
+        {
+            for(int j=0; j<=HistJug.size(); j++)
+            {
+                
             }
+        int aux = compare(Jugador j1, Jugador j2); 
         });
         
         for(int i=0; i<HistJug.size(); i++)
         {
             System.out.println("Jugador: " +HistJug.get(i).getNombre);
             System.out.println("Fichas totales: " +HistJug.get(i).getNumFichasTotales);
-        }
+        }*/
     }
     
     public int buscarJugador(String nombre)

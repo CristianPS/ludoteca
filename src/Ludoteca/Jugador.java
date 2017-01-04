@@ -9,7 +9,7 @@ package Ludoteca;
  *
  * @authors Jose Ignacio Diaz, Cristian Posada y Jorge Prieto.
  */
-public class Jugador 
+public class Jugador implements Comparable<Jugador>
 {
     private String nombre;
     private double fichasTotales;
@@ -92,5 +92,17 @@ public class Jugador
     public boolean equals(Jugador Jug)
     {
         return(this.nombre.equals(Jug.nombre));            
+    }
+    
+    @Override
+    public int compareTo(Jugador o) {
+        if(this.getFichasTotales() < o.getFichasTotales())
+        {
+            return -1;
+        }
+        if (this.getFichasTotales() > o.getFichasTotales()) {
+            return 1;
+        }
+        return 0;
     }
 }
