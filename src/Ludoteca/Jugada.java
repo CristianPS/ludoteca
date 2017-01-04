@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Ludoteca;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,6 +16,7 @@ public abstract class Jugada
     //Si el ganador es la banca el nombre del Jugador sera BANCA (importante en funciones de otras clases)
     private Jugador ganador;
     private double apuesta;
+    private ArrayList<Mano> ArrayMano = new ArrayList();
     
     
     public Baraja getBaraja()
