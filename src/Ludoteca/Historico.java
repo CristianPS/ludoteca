@@ -35,9 +35,9 @@ public class Historico
             }
         });
         
-        for(Jugador hijo : HistJug)
+        for(Jugador j : HistJug)
         {
-            System.out.println(hijo.getNombre());
+            System.out.println(j.getNombre());
         }
         
     }
