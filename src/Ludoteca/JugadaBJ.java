@@ -80,6 +80,7 @@ public abstract class JugadaBJ extends Jugada
     private Baraja baraja;
     private Jugador jugador;
     private ManoBJ mano;
+    private ArrayList<ManoBJ> ArrayManoBJ = new ArrayList();
     //ArrayList<Integer> cartasSacadas = new ArrayList();
     
     
