@@ -7,42 +7,53 @@ public abstract class Jugada7ymedia extends Jugada
 {
     private Baraja baraja;
     private Jugador jugador;
-    private ArrayList<Integer> cartasSacadas = new ArrayList();
+    private Mano mano, manobanca;
+    private int PuntJug, PuntBan;
+    private ArrayList<Carta> cartasSacadas = new ArrayList();
     
     @Override
-    public float jugarBanca()
+    public void jugarBanca()
     {
         Mano mBanca = new Mano();
+        Carta c;
         float aux = 0;
+        ArrayList<Carta> anadir = new ArrayList();
         while(aux<5)
         {
-            Carta c = mBanca.pedirCarta(baraja);
-            mBanca.add(c);
-            aux = aux + mBanca.calcularValor();
+            c = mBanca.pedirCarta(baraja);
+            anadir.add(c);
+            mBanca.añadirAMano(anadir);
+            aux = aux + mBanca.CalcularValor();
         }
-        return aux;
+        PuntBan = (int)manobanca.CalcularValor();
     }
     @Override
-    public float jugarJugador()
+    public void jugarJugador()
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25
-        Mano mJugador = new Mano();
-        apostar();        
+        Mano mJugador = new Mano();   
+        Carta c;
+        Scanner kbd = new Scanner(System.in);
+        String resp;
         //Luego el jugador va pidiendo cartas hasta que no quiera mas
         for(int i=0; i<40; i++)
         {
-            //pedirCarta(cartasSacadas);
-            mJugador.pedirCarta(baraja);
+            c= mJugador.pedirCarta(baraja);
+            while(cartasSacadas.contains(c))
+            {
+                c= mJugador.pedirCarta(baraja);
+            }
+            cartasSacadas.add(c);
             System.out.println("¿Desea pedir mas cartas? S/N");//Aqui no podriamos hacer un par de funciones para luego implementarlas en la interfaz grafica? Asi como idea loca, que no me acuerdo muy bien de como se hacian los botones en una interfaz gráfica.
-            Scanner kbd = new Scanner(System.in);
-            String resp = kbd.nextLine();
+            resp = kbd.nextLine();
             if(resp.equals("S")) continue; //Aqui en vez de que tenga que escribir una S, un boton que ponga "Si" y lo pulses y continue
             if(resp.equals("N")) break;
         }
+        PuntJug = (int)mano.CalcularValor();
     }
     public void añadirMano(Mano m)
     {
-    
+        ArrayMano.add(m);
     }
     
     /*public Carta pedirCarta(ArrayList cartasSacadas) //He hecho que le llegue como argumento el arrayList de las cartas sacadas, porque si no el array con las cartas sacadas se resetea cada vez que se pida una carta.

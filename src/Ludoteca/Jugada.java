@@ -46,8 +46,8 @@ public abstract class Jugada
         apuesta=a;
     }
     
-    public abstract float jugarBanca();
-    public abstract float jugarJugador();
+    public abstract void jugarBanca();
+    public abstract void jugarJugador();
     
     public abstract int apostar(); //Cristian: La usan las dos clases que heredan de esta, estaria bien ponerla aqui como metodo abstracto no?
     

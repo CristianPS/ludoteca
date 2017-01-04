@@ -82,11 +82,11 @@ public abstract class JugadaBJ extends Jugada
     private ManoBJ mano, manobanca;
     private ArrayList<ManoBJ> ArrayManoBJ = new ArrayList();
     private int PuntJug, PuntBan;
-    //ArrayList<Integer> cartasSacadas = new ArrayList();
+    ArrayList<Integer> cartasSacadas = new ArrayList();
     
     
     @Override
-    public float jugarBanca()
+    public void jugarBanca()
     {
         
         
@@ -96,7 +96,7 @@ public abstract class JugadaBJ extends Jugada
         PuntBan = (int)manobanca.CalcularValor();
     }
     
-    public float jugarJugador()
+    public void jugarJugador()
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25
         apostar();        
