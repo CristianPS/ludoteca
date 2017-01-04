@@ -86,7 +86,7 @@ public abstract class JugadaBJ extends Jugada
     
     
     @Override
-    public void jugarBanca()
+    public float jugarBanca()
     {
         
         
@@ -96,7 +96,7 @@ public abstract class JugadaBJ extends Jugada
         PuntBan = (int)manobanca.CalcularValor();
     }
     
-    public void jugarJugador()
+    public float jugarJugador()
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25
         apostar();        
