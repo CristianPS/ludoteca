@@ -77,7 +77,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public abstract class JugadaBJ extends Jugada
 {
-    private Baraja baraja;
+    private Baraja baraja, barajabanca;
     private Jugador jugador;
     private ManoBJ mano, manobanca;
     private ArrayList<ManoBJ> ArrayManoBJ = new ArrayList();
@@ -88,7 +88,15 @@ public abstract class JugadaBJ extends Jugada
     @Override
     public void jugarBanca()
     {
-        
+        Jugador Banca = new Jugador("Banca");
+        //Se piden dos cartas obligatoriamnte al principio. Habría que añadirlo tambien a jugada jugador.
+        manobanca.pedirCarta(baraja);
+        manobanca.pedirCarta(baraja);
+        while (manobanca.valorMano<17)
+        {
+            manobanca.pedirCarta(baraja);
+            manobanca.CalcularValor(Banca);
+        }
         
         
         
