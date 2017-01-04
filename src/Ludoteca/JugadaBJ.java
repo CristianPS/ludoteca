@@ -79,8 +79,9 @@ public abstract class JugadaBJ extends Jugada
 {
     private Baraja baraja;
     private Jugador jugador;
-    private ManoBJ mano;
+    private ManoBJ mano, manobanca;
     private ArrayList<ManoBJ> ArrayManoBJ = new ArrayList();
+    private int PuntJug, PuntBan;
     //ArrayList<Integer> cartasSacadas = new ArrayList();
     
     
@@ -88,6 +89,11 @@ public abstract class JugadaBJ extends Jugada
     public void jugarBanca()
     {
         
+        
+        
+        
+        
+        PuntBan = (int)manobanca.CalcularValor();
     }
     
     public void jugarJugador()
@@ -105,6 +111,7 @@ public abstract class JugadaBJ extends Jugada
             if(resp.equals("S")) continue;
             if(resp.equals("N")) break;
         }
+        PuntJug = (int)mano.CalcularValor();
     }
     
     public void añadirManoBlackJack(Mano m)
@@ -148,7 +155,19 @@ public abstract class JugadaBJ extends Jugada
         
         return num;
     }
+    
+    public int getPuntBan()
+    {
+        return PuntBan;
+    }
+    
+    public int getPuntJug()
+    {
+        return PuntJug;
+    }
 }
+
+
     
     
     
