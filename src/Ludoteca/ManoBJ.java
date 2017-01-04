@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class ManoBJ extends Mano
 {
-    @Override
-    public float CalcularValor()
+    public float CalcularValor(Jugador j)
     {
+        Jugador jAux = new Jugador("Banca");
         int aux=0, numAs=0;
         for(Carta c: mano)
         {
@@ -38,11 +38,19 @@ public class ManoBJ extends Mano
             }
             valorMano=+aux;
         }
-        for (int i=0; i<=numAs; i++)
+        
+        if(!j.equals(jAux))
         {
-            System.out.println("En la mano tienes un total de "+numAs+" ases.");
-            aux=hayUnAs();
-            valorMano=+aux;
+        for (int i=0; i<=numAs; i++)
+            {
+                System.out.println("En la mano tienes un total de "+numAs+" ases.");
+                aux=hayUnAs();
+                valorMano=+aux;
+            }
+        }
+        else 
+        {
+            //Aqui hago mi mierda.
         }
         return valorMano;
     }
