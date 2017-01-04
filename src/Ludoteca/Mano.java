@@ -28,7 +28,7 @@ public class Mano
         {
             switch (mano.get(i).getValor())
             {
-                case 11: case 12: case 13:
+                case 10: case 11: case 12:
                     valorMano += 0.5;
                     i--;
                     break;
