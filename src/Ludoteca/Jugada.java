@@ -18,7 +18,10 @@ public abstract class Jugada
     private double apuesta;
     protected ArrayList<Mano> ArrayMano = new ArrayList();
     
-    
+    public Jugada()
+    {
+        
+    }
     public Baraja getBaraja()
     {
         return baraja;

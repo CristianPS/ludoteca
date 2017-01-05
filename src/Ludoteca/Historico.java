@@ -1,5 +1,6 @@
 package Ludoteca;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -8,6 +9,15 @@ public class Historico
 {
     private ArrayList<Jugador> HistJug = new ArrayList();
     private ArrayList<Partida> HistPart = new ArrayList();
+    
+    public Historico()
+    {       
+        File fichero = new File("historico.txt");
+        
+    }
+            
+                
+            
     
     
     public void resultados(Jugador J) //terminada

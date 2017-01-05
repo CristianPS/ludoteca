@@ -43,7 +43,7 @@ public class ManoBJ extends Mano
         {
         for (int i=0; i<=numAs; i++)
             {
-                System.out.println("En la mano tienes un total de "+numAs+" ases.");
+                System.out.println("En la mano tienes un total de "+numAs+" ases.");//Modificar para interfaz gráfica.
                 aux=hayUnAs();
                 valorMano=+aux;
             }
