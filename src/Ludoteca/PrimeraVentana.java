@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ludotec;
+package Ludoteca;
 
 /**
  *
@@ -67,8 +67,6 @@ public class PrimeraVentana extends javax.swing.JFrame {
 
         jRadioButton2.setText("Black Jack");
         getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 90, 20));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\sito\\Desktop\\SITO\\4suits.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 0, 540, 300));
 
         pack();
