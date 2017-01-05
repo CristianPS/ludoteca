@@ -46,7 +46,9 @@ public class PrimeraVentana extends javax.swing.JFrame {
             return 0;
         }
         return -1;
+        
     }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -144,11 +146,18 @@ public class PrimeraVentana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
+        if (jRadioButton1.isSelected())
+            jRadioButton1.setSelected(false);
+        if (!jRadioButton1.isSelected())
+            jRadioButton2.setSelected(true);
+        
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
+        if (jRadioButton2.isSelected())
+            jRadioButton2.setSelected(false);
+        if (!jRadioButton2.isSelected())
+            jRadioButton1.setSelected(true);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
