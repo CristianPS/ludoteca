@@ -17,8 +17,10 @@ public class Ludoteca
      */
     public static void main(String[] args) 
     {
+        Jugador j1 = new Jugador("Pepito");
         PrimeraVentana pV = new PrimeraVentana(); 
         pV.setVisible(true);
+        
 
     }
     

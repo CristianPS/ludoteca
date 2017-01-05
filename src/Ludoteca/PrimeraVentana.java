@@ -17,6 +17,7 @@ public class PrimeraVentana extends javax.swing.JFrame {
      */
     public PrimeraVentana() 
     {
+        setVisible(true);
         initComponents();
     }
     
@@ -164,11 +165,9 @@ public class PrimeraVentana extends javax.swing.JFrame {
             String nombreJugador = jTextField1.getText();
             Jugador j1= new Jugador(nombreJugador);
             System.out.println(j1.getNombre());
-            VentanaJuego vJ= new VentanaJuego(j1);
-<<<<<<< HEAD
-=======
+            int i = posicionBotones();
+            ventanaJuego2 vJ= new ventanaJuego2(j1, i);
             dispose();
->>>>>>> origin/master
             vJ.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -6,7 +6,8 @@ public class Mano
 {
     protected ArrayList<Carta> mano = new ArrayList();
     protected float valorMano=0;
-            
+    
+    
     public Carta pedirCarta(Baraja b)
     {
         Carta c = b.mezclar(); //b.mezclar devuelve la carta siguiente, la que se le da al jugador.
