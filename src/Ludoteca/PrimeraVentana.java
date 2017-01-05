@@ -165,6 +165,10 @@ public class PrimeraVentana extends javax.swing.JFrame {
             Jugador j1= new Jugador(nombreJugador);
             System.out.println(j1.getNombre());
             VentanaJuego vJ= new VentanaJuego(j1);
+<<<<<<< HEAD
+=======
+            dispose();
+>>>>>>> origin/master
             vJ.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
