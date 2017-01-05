@@ -5,6 +5,8 @@
  */
 package Ludoteca;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Cristian
@@ -12,6 +14,7 @@ package Ludoteca;
 public class ventanaJuego2 extends javax.swing.JFrame {
     private Jugador Jug;
     private int botones;
+    private Jugada J;
     /**
      * Creates new form ventanaJuego2
      */
@@ -22,7 +25,18 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         Jug = J;
         botones = i;
         jLabel1.setText(J.getNombre());
+        jButton2.setEnabled(false);        
     }
+    public void recogerJugada(Jugada Jug)
+    {
+        J=Jug;
+    }
+    
+    public void deshabilitarJugar()
+    {
+        jButton2.setEnabled(false);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,6 +54,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +100,13 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton2.setText("Comenzar a jugar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,11 +114,12 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                                     .addComponent(jLabel1)
                                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
@@ -108,6 +131,23 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)))
+=======
+                                    .addComponent(jLabel1))
+                                .addGap(0, 438, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton2)))
+>>>>>>> origin/master
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -116,6 +156,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,6 +167,19 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+>>>>>>> origin/master
                 .addGap(22, 22, 22))
         );
 
@@ -135,13 +189,51 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String texto = jTextField1.getText();
         int numero = Integer.parseInt(texto);
-        if(evt.getSource()==jButton1)
+        
+            if(botones==0)
+            {
+                Jugada7ymedia j = new Jugada7ymedia() {};
+                    if(numero<25)
+                    {
+                        jLabel3.setText("Has apostado " + numero + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
+                    }
+                    else
+                    {
+                        jLabel3.setText("¡Has apostado " + numero + " fichas!");                       
+                    }
+                    j.apostar(numero);
+                    recogerJugada(j); 
+            }
+            if(botones==1)
+            {
+                JugadaBJ j = new JugadaBJ() {};
+                    if(numero<25)
+                    {
+                        jLabel3.setText("Has apostado " + numero + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
+                    }
+                    else
+                    {
+                        jLabel3.setText("¡Has apostado " + numero + " fichas!");                       
+                    }
+                    j.apostar(numero);
+                    recogerJugada(j); 
+            }
+            if(botones==2)
+            {
+                JOptionPane.showMessageDialog(this, "Has seleccionado las 2 opciones");
+            }
+        if(evt.getSource()==jButton1 && (botones!=2) && (botones!=-1))
         {
             jButton1.setEnabled(false);
             jTextField1.setEnabled(false);//A lo mejor no funciona.
             jLabel3.setText("Has apostado " + numero + " fichas.");
         }
+        jButton2.setEnabled(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        J.jugarJugador(this);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +275,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

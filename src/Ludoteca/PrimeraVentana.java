@@ -48,16 +48,6 @@ public class PrimeraVentana extends javax.swing.JFrame {
         return -1;
     }
     
-    public void enviarJugador(Jugador j)
-    {
-        enviarJugador(j);
-    }
-    
-    public Jugador recogerJugador(Jugador j)
-    {
-        return j;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -103,6 +93,7 @@ public class PrimeraVentana extends javax.swing.JFrame {
         });
         getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 290, 20));
 
+        jRadioButton2.setSelected(true);
         jRadioButton2.setText("Jugar a las Siete y media");
         jRadioButton2.setOpaque(false);
         jRadioButton2.addItemListener(new java.awt.event.ItemListener() {
@@ -116,6 +107,7 @@ public class PrimeraVentana extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 290, 20));
+        jRadioButton2.getAccessibleContext().setAccessibleDescription("");
 
         jLabel3.setText("Seleccione a qué desea jugar:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
