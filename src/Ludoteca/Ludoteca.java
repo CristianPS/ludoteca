@@ -16,8 +16,18 @@ public class Ludoteca {
      */
     public static void main(String[] args) 
     {
-        String nombreJugador = null;
+        PrimeraVentana pV = new PrimeraVentana();  
+        pV.setVisible(true);
+        String nombreJugador = pV.recogerNombre();
         Jugador j1 = new Jugador(nombreJugador);
+        int botones = pV.posicionBotones();
+        System.out.println(nombreJugador+"\n"+j1.getNombre()+"\n"+botones);
+        /*
+        switch (botones)
+        {
+            case -1: System.out.println("Se ha producido un error.");//AQUI YO SACARIA UN ERROR POR PANTALLA
+            case 2: 
+        }*/
     }
     
 }

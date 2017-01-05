@@ -5,6 +5,7 @@
  */
 package Ludoteca;
 
+
 /**
  *
  * @author sito
@@ -14,8 +15,36 @@ public class PrimeraVentana extends javax.swing.JFrame {
     /**
      * Creates new form PrimeraVentana
      */
-    public PrimeraVentana() {
+    public PrimeraVentana() 
+    {
         initComponents();
+    }
+    
+    public String recogerNombre()
+    {
+        String nombre;
+        return nombre = jTextField1.getText();        
+    }
+    
+    public int posicionBotones()
+    {
+        if(jRadioButton1.isSelected() && jRadioButton2.isSelected())
+        {
+            //AMBOS BOTONES SELECCIONADOS
+            return 2;
+        }
+        
+        else if(jRadioButton1.isSelected() && !(jRadioButton2.isSelected()))
+        {
+            //EL BOTON DE BJ SELECCIONADO
+            return 1;
+        }
+        else if(jRadioButton2.isSelected() && !(jRadioButton1.isSelected()))
+        {
+            //EL BOTON DE 7Y1/2 SELECCIONADO
+            return 0;
+        }
+        return -1;
     }
 
     /**
@@ -35,6 +64,7 @@ public class PrimeraVentana extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
@@ -51,8 +81,6 @@ public class PrimeraVentana extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setText("Bienvenido a la ludoteca CSJ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 530, -1));
-
-        jTextField1.setText("Introduzca su nombre....");
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 260, -1));
 
         jRadioButton1.setText("Jugar al Black Jack");
@@ -66,6 +94,11 @@ public class PrimeraVentana extends javax.swing.JFrame {
 
         jRadioButton2.setText("Jugar a las Siete y media");
         jRadioButton2.setOpaque(false);
+        jRadioButton2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jRadioButton2ItemStateChanged(evt);
+            }
+        });
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -86,7 +119,10 @@ public class PrimeraVentana extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
+
+        jLabel5.setText("Introduzca su nombre...");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
 
         jMenu1.setText("Accesos");
 
@@ -113,9 +149,12 @@ public class PrimeraVentana extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       VentanaJuego vJ = new VentanaJuego();
-       vJ.setVisible(true);
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jRadioButton2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton2ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -158,6 +197,7 @@ public class PrimeraVentana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
