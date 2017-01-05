@@ -49,19 +49,18 @@ public class ManoBJ extends Mano
             }
         }
         else 
-        {
-            int numAses = hayUnAs();
-            while (numAses>0)
+        {            
+            while (numAs>0)
             {
                 if (valorMano <= 10)
                 {
                     valorMano += 11;
-                    numAses--;
+                    numAs--;
                 }
                 else
                 {
                     valorMano += 1;
-                    numAses--;
+                    numAs--;
                 }
             }
             /*
