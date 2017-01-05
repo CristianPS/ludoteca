@@ -96,9 +96,13 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton2">
       <Properties>
+        <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Jugar a las Siete y media"/>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+      </AccessibilityProperties>
       <Events>
         <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jRadioButton2ItemStateChanged"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton2ActionPerformed"/>

@@ -75,6 +75,9 @@ public class JugadaBJ
 >>>>>>> refs/remotes/origin/Cambios-revisar */
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.QUESTION_MESSAGE;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
 public abstract class JugadaBJ extends Jugada
 {
     private Baraja baraja, barajabanca;
@@ -82,7 +85,7 @@ public abstract class JugadaBJ extends Jugada
     private ManoBJ mano, manobanca;
     private ArrayList<ManoBJ> ArrayManoBJ = new ArrayList();
     private int PuntJug, PuntBan;
-    ArrayList<Integer> cartasSacadas = new ArrayList();
+    ArrayList<Carta> cartasSacadas = new ArrayList();
     
     
     @Override
@@ -104,12 +107,11 @@ public abstract class JugadaBJ extends Jugada
         PuntBan = (int)manobanca.CalcularValor();
     }
     
-    public void jugarJugador()
-    {
-        //Al inicio se apuesta una cantidad mayor o igual que 25
-        //apostar();        
+    @Override
+    public void jugarJugador(ventanaJuego2 vJ2)
+    {    
         //Luego el jugador va pidiendo cartas hasta que no quiera mas
-        for(int i=0; i<40; i++)
+        /*for(int i=0; i<40; i++)
         {
             //pedirCarta(cartasSacadas);
             mano.pedirCarta(baraja);
@@ -119,7 +121,26 @@ public abstract class JugadaBJ extends Jugada
             if(resp.equals("S")) continue;
             if(resp.equals("N")) break;
         }
-        PuntJug = (int)mano.CalcularValor();
+        PuntJug = (int)mano.CalcularValor();*/
+        
+        
+        //0 si es un SI y 1 si es un NO
+        Carta c;
+        int opcion = JOptionPane.showConfirmDialog(vJ2, null,"¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
+        switch (opcion)
+        {
+            case 0:
+                c=mano.pedirCarta(baraja);
+                while(cartasSacadas.contains(c))
+                {
+                    c= mano.pedirCarta(baraja);
+                }
+                cartasSacadas.add(c);
+                
+            case 1:
+                vJ2.deshabilitarJugar();
+        }
+        
     }
     
     public void añadirManoBlackJack(Mano m)
@@ -148,27 +169,16 @@ public abstract class JugadaBJ extends Jugada
     
     @Override
     public void apostar(int apuesta)
-    {
-        /*System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 10 fichas");
-        Scanner kbd = new Scanner(System.in);
-        int num = kbd.nextInt();
-        while(num<10 || num>jugador.getFichasTotales())
-        {
-            System.out.println("Lo sentimos, la apuesta no es correcta");
-            System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 10 fichas, y que esta no podra superar las fichas de las que disponga."); 
-            //Scanner kbd = new Scanner(System.in);
-            num = kbd.nextInt();               
-        }
-        System.out.println("Su apuesta es: " +num);
-        
-        return num;*/
-        
-        if(apuesta<25)
+    {        
+        /*if(apuesta<25)
         {
             apuesta=25;
         }
         int ft = jugador.getFichasTotales();
         jugador.setFichasTotales(ft-apuesta);
+        System.out.println("Llegó al final");*/
+        
+        System.out.println("Hecho");        
     }
     
     public int getPuntBan()
@@ -181,6 +191,20 @@ public abstract class JugadaBJ extends Jugada
         return PuntJug;
     }
 }
+
+/*System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 10 fichas");
+        Scanner kbd = new Scanner(System.in);
+        int num = kbd.nextInt();
+        while(num<10 || num>jugador.getFichasTotales())
+        {
+            System.out.println("Lo sentimos, la apuesta no es correcta");
+            System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 10 fichas, y que esta no podra superar las fichas de las que disponga."); 
+            //Scanner kbd = new Scanner(System.in);
+            num = kbd.nextInt();               
+        }
+        System.out.println("Su apuesta es: " +num);
+        
+        return num;*/
 
 
     

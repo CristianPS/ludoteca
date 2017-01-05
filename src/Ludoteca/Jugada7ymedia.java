@@ -28,7 +28,7 @@ public abstract class Jugada7ymedia extends Jugada
         PuntBan = (int)manobanca.CalcularValor();
     }
     @Override
-    public void jugarJugador()
+    public void jugarJugador(ventanaJuego2 vJ2)
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25
         Mano mJugador = new Mano();   
@@ -78,7 +78,18 @@ public abstract class Jugada7ymedia extends Jugada
     @Override
     @SuppressWarnings("empty-statement")
     public void apostar(int apuesta)
-    {
+    {        
+        /*if(apuesta<25)
+        {
+            apuesta=25;
+        }
+        int ft = jugador.getFichasTotales();
+        jugador.setFichasTotales(ft-apuesta);
+        System.out.println("Llegó al final");*/
+        System.out.println("Hecho");
+    }
+}
+
         /*System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 25 fichas");
         Scanner kbd = new Scanner(System.in);
         int num = kbd.nextInt();
@@ -91,13 +102,3 @@ public abstract class Jugada7ymedia extends Jugada
         }
         System.out.println("Su apuesta es: " +num);
         return num;*/
-        
-        if(apuesta<25)
-        {
-            apuesta=25;
-        }
-        System.out.println(jugador.getFichasTotales());
-        int ft = jugador.getFichasTotales();
-        jugador.setFichasTotales(ft-apuesta);
-    }
-}

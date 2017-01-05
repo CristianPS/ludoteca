@@ -50,7 +50,7 @@ public abstract class Jugada
     }
     
     public abstract void jugarBanca();
-    public abstract void jugarJugador();
+    public abstract void jugarJugador(ventanaJuego2 vJ2);
     
     public abstract void apostar(int apuesta); //Cristian: La usan las dos clases que heredan de esta, estaria bien ponerla aqui como metodo abstracto no?
     
