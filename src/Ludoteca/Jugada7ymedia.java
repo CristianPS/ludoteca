@@ -77,9 +77,9 @@ public abstract class Jugada7ymedia extends Jugada
     
     @Override
     @SuppressWarnings("empty-statement")
-    public int apostar()
+    public void apostar(int apuesta)
     {
-        System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 25 fichas");
+        /*System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 25 fichas");
         Scanner kbd = new Scanner(System.in);
         int num = kbd.nextInt();
         while(num<25 || num>jugador.getFichasTotales())
@@ -90,6 +90,14 @@ public abstract class Jugada7ymedia extends Jugada
             num = kbd.nextInt();               
         }
         System.out.println("Su apuesta es: " +num);
-        return num;
+        return num;*/
+        
+        if(apuesta<25)
+        {
+            apuesta=25;
+        }
+        System.out.println(jugador.getFichasTotales());
+        int ft = jugador.getFichasTotales();
+        jugador.setFichasTotales(ft-apuesta);
     }
 }

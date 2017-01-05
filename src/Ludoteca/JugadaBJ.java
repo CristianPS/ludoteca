@@ -107,7 +107,7 @@ public abstract class JugadaBJ extends Jugada
     public void jugarJugador()
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25
-        apostar();        
+        //apostar();        
         //Luego el jugador va pidiendo cartas hasta que no quiera mas
         for(int i=0; i<40; i++)
         {
@@ -147,9 +147,9 @@ public abstract class JugadaBJ extends Jugada
     }*/
     
     @Override
-    public int apostar()
+    public void apostar(int apuesta)
     {
-        System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 10 fichas");
+        /*System.out.println("Por favor introduzca su apuesta. Le recordamos que la apuesta minima es de 10 fichas");
         Scanner kbd = new Scanner(System.in);
         int num = kbd.nextInt();
         while(num<10 || num>jugador.getFichasTotales())
@@ -161,7 +161,14 @@ public abstract class JugadaBJ extends Jugada
         }
         System.out.println("Su apuesta es: " +num);
         
-        return num;
+        return num;*/
+        
+        if(apuesta<25)
+        {
+            apuesta=25;
+        }
+        int ft = jugador.getFichasTotales();
+        jugador.setFichasTotales(ft-apuesta);
     }
     
     public int getPuntBan()

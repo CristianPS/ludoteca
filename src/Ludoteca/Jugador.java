@@ -12,7 +12,7 @@ package Ludoteca;
 public class Jugador implements Comparable<Jugador>
 {
     private String nombre;
-    private double fichasTotales;
+    private int fichasTotales;
     private int jugadasGanadasBJ, jugadasGanadas7, jugadasPerdidasBJ, jugadasPerdidas7, jugadasEmpatadas;
     
     public Jugador (String n)
@@ -35,11 +35,12 @@ public class Jugador implements Comparable<Jugador>
         nombre=n;
     }
     
-    public double getFichasTotales()
+    public int getFichasTotales()
     {
-        return fichasTotales;
+        //return fichasTotales;
+        return 100;
     }
-    public void setFichasTotales(double ft)
+    public void setFichasTotales(int ft)
     {
         fichasTotales=ft;
     }
