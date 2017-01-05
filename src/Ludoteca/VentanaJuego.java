@@ -17,7 +17,7 @@ public class VentanaJuego extends javax.swing.JPanel {
     public VentanaJuego(Jugador J) {
         Jug=J;
         initComponents();
-        JLabel1.setText("Bienvenido, " +Jug.getNombre() + ".");
+        jLabel1.setText("Bienvenido, " +Jug.getNombre() + ".");
     }
 
     /**
@@ -126,7 +126,7 @@ public class VentanaJuego extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String texto = jTextField1.getText();
-        int numero = Int.parseInt(texto);
+        int numero = Integer.parseInt(texto);
         if(evt.getSource()==jButton1)
         {
             jButton1.setEnabled(false);
