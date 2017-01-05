@@ -126,7 +126,7 @@ public abstract class JugadaBJ extends Jugada
         
         //0 si es un SI y 1 si es un NO
         Carta c;
-        int opcion = JOptionPane.showConfirmDialog(vJ2, null,"¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
+        int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         switch (opcion)
         {
             case 0:
