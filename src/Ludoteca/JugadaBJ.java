@@ -84,7 +84,6 @@ public abstract class JugadaBJ extends Jugada
     private Jugador jugador;
     private ManoBJ mano, manobanca;
     private ArrayList<ManoBJ> ArrayManoBJ = new ArrayList();
-    private int PuntJug, PuntBan;
     ArrayList<Carta> cartasSacadas = new ArrayList();
     
     
@@ -178,11 +177,13 @@ public abstract class JugadaBJ extends Jugada
         System.out.println("Hecho");        
     }
     
+    @Override
     public int getPuntBan()
     {
         return PuntBan;
     }
     
+    @Override
     public int getPuntJug()
     {
         return PuntJug;

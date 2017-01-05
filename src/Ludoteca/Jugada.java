@@ -16,6 +16,7 @@ public abstract class Jugada
     //Si el ganador es la banca el nombre del Jugador sera BANCA (importante en funciones de otras clases)
     private Jugador ganador;
     private double apuesta;
+    protected int PuntJug, PuntBan;
     protected ArrayList<Mano> ArrayMano = new ArrayList();
     
     public Jugada()
@@ -51,6 +52,8 @@ public abstract class Jugada
     
     public abstract void jugarBanca();
     public abstract void jugarJugador(ventanaJuego2 vJ2);
+    public abstract int getPuntBan();
+    public abstract int getPuntJug();
     
     public abstract void apostar(int apuesta); //Cristian: La usan las dos clases que heredan de esta, estaria bien ponerla aqui como metodo abstracto no?
     

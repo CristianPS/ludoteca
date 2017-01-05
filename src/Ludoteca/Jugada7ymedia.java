@@ -108,11 +108,13 @@ public abstract class Jugada7ymedia extends Jugada
         System.out.println("Hecho");
     }
     
+    @Override
     public int getPuntBan()
     {
         return PuntBan;
     }
     
+    @Override
     public int getPuntJug()
     {
         return PuntJug;
