@@ -46,6 +46,16 @@ public class PrimeraVentana extends javax.swing.JFrame {
         }
         return -1;
     }
+    
+    public void enviarJugador(Jugador j)
+    {
+        enviarJugador(j);
+    }
+    
+    public Jugador recogerJugador(Jugador j)
+    {
+        return j;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -153,6 +163,10 @@ public class PrimeraVentana extends javax.swing.JFrame {
         {
             String nombreJugador = jTextField1.getText();
             Jugador j1= new Jugador(nombreJugador);
+            System.out.println(j1.getNombre());
+            VentanaJuego vJ= new VentanaJuego();
+            dispose();
+            vJ.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
