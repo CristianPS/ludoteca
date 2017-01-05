@@ -16,8 +16,10 @@ public class Ludoteca {
      */
     public static void main(String[] args) 
     {
-        PrimeraVentana pV = new PrimeraVentana();  
+        PrimeraVentana pV = new PrimeraVentana(); 
+        PrimeraVentana pV2 = new PrimeraVentana();
         pV.setVisible(true);
+        pV2.setVisible(true);
         String nombreJugador = pV.recogerNombre();
         Jugador j1 = new Jugador(nombreJugador);
         int botones = pV.posicionBotones();
