@@ -100,10 +100,7 @@ public abstract class JugadaBJ extends Jugada
             manobanca.pedirCarta(baraja);
             manobanca.CalcularValor(Banca);
         }
-        
-        
-        
-        
+               
         PuntBan = (int)manobanca.CalcularValor();
     }
     
@@ -140,7 +137,7 @@ public abstract class JugadaBJ extends Jugada
             case 1:
                 vJ2.deshabilitarJugar();
         }
-        
+        PuntJug = (int)mano.CalcularValor();
     }
     
     public void añadirManoBlackJack(Mano m)

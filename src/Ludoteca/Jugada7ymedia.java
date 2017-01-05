@@ -2,6 +2,9 @@ package Ludoteca;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.QUESTION_MESSAGE;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
 
 public abstract class Jugada7ymedia extends Jugada
 {
@@ -31,7 +34,7 @@ public abstract class Jugada7ymedia extends Jugada
     public void jugarJugador(ventanaJuego2 vJ2)
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25
-        Mano mJugador = new Mano();   
+        /*Mano mJugador = new Mano();   
         Carta c;
         Scanner kbd = new Scanner(System.in);
         String resp;
@@ -48,6 +51,22 @@ public abstract class Jugada7ymedia extends Jugada
             resp = kbd.nextLine();
             if(resp.equals("S")) continue; //Aqui en vez de que tenga que escribir una S, un boton que ponga "Si" y lo pulses y continue
             if(resp.equals("N")) break;
+        }
+        PuntJug = (int)mano.CalcularValor();*/
+        Carta c;
+        int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
+        switch (opcion)
+        {
+            case 0:
+                c=mano.pedirCarta(baraja);
+                while(cartasSacadas.contains(c))
+                {
+                    c= mano.pedirCarta(baraja);
+                }
+                cartasSacadas.add(c);
+                
+            case 1:
+                vJ2.deshabilitarJugar();
         }
         PuntJug = (int)mano.CalcularValor();
     }
@@ -87,6 +106,16 @@ public abstract class Jugada7ymedia extends Jugada
         jugador.setFichasTotales(ft-apuesta);
         System.out.println("Llegó al final");*/
         System.out.println("Hecho");
+    }
+    
+    public int getPuntBan()
+    {
+        return PuntBan;
+    }
+    
+    public int getPuntJug()
+    {
+        return PuntJug;
     }
 }
 
