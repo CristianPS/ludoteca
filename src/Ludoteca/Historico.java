@@ -49,7 +49,8 @@ public class Historico
         System.out.println(Pepe.getFichasTotales());
         hist.anadirJugador(Pepe);
         //try {
-            hist.imprimeArrayJugadores();
+       //VentanaHistorico ven = new VentanaHistorico();
+        hist.imprimeArrayJugadores();
         //} //catch (IOException ex) {
             //Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
         //}
@@ -68,7 +69,7 @@ public class Historico
             
     
     
-    public void resultados(Jugador J) throws IOException //terminada
+    public String resultados(Jugador J) throws IOException //terminada
     {
         /*String line;
         while((line=br.readLine())!=null)
@@ -82,55 +83,89 @@ public class Historico
         if (fr!=null)
             fr.close();*/
         String line = J.getNombre()+" ha obtenido un total de "+J.getJugadasGanadasBJ()+" al BlackJack y ha perdido "+J.getJugadasPerdidasBJ()+".\nEn las 7 y 1/2 sus resultados son de "+J.getJugadasGanadas7()+" ganadas y de "+J.getJugadasPerdidas7()+" perdidas.\nEl total de partidas empatadas es de "+J.getJugadasEmpatadas();
-        VentanaHistorico ventanahistorico = new VentanaHistorico(line);
+        //VentanaHistorico ventanahistorico = new VentanaHistorico();
+        return line;
     }
     
     //No estoy seguro de si funciona de esta forma o habria que editar algo
 
         // Método para imprimir el array de Personas
-    public void imprimeArrayJugadores() 
+    public String imprimeArrayJugadores() 
     {
-        for (int i=0; i<=HistJug.size(); i++)
+        String line="";
+        for (Jugador Jug: HistJug)
         {
-            linea+="·" + HistJug.get(i).getNombre() + " - Fichas Totales: " + HistJug.get(i).getFichasTotales()+"\n";
-            VentanaHistorico ventanahistorico = new VentanaHistorico(linea);
+            line+="·" + Jug.getNombre() + " - Fichas Totales: " + Jug.getFichasTotales()+"\n";
         }
+        System.out.println(line);
+        //VentanaHistorico ventanahistorico = new VentanaHistorico(linea);
+        return line;
     }
     
-    public void clasificacion()
+    public String clasificacion()
     {
+        String line="";
         Collections.sort(HistJug, new Comparator<Jugador>() {
             @Override
             public int compare(Jugador o1, Jugador o2) {
                 return o1.compareTo(o2);
             }
         });
-        
+        int i=1;
         for(Jugador j : HistJug)
         {
-            System.out.println(j.getNombre());
+            line+= i+"-"+(j.getNombre())+"\n";
+            i++;
         }
-        
+        return line;
     }
     
-    public int buscarJugador(String nombre)
+    public Jugador buscarJugador(String nombre)
     {
         for(Jugador Jug: HistJug)
         {
             if(nombre.equals(Jug.getNombre()))
             {
-                try {
+                /*try {
+                    resultados(Jug);
+                } catch (IOException ex) {
+                    Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
+                }*/
+                System.out.println("Jugador encontrado.");
+                return Jug;
+            }
+
+        }
+        System.out.println("No se encuentra el jugador");
+        String nula = null;
+        Jugador nulo = new Jugador(nula);
+        return nulo;
+        
+    }
+    
+    /*public Jugador getJugador(Jugador j)
+    {
+        for(Jugador Jug: HistJug)
+        {
+            if(j.getNombre().equals(Jug.getNombre()))
+            {
+                /*try {
                     resultados(Jug);
                 } catch (IOException ex) {
                     Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                return 0;
+                System.out.println("Jugador encontrado.");
+                return j;
             }
+
         }
         System.out.println("No se encuentra el jugador");
-        return -1;
+        String nula = null;
+        Jugador nulo = new Jugador(nula);
+        return nulo;
         
-    }
+    }*/
+    
     
     public void anadirJugador(Jugador J) //terminada
     {

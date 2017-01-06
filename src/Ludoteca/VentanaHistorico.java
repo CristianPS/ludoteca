@@ -5,6 +5,10 @@
  */
 package Ludoteca;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Cristian
@@ -14,12 +18,15 @@ public class VentanaHistorico extends javax.swing.JFrame {
     /**
      * Creates new form VentanaHistorico
      */
+    private String text;
     private Historico hist = new Historico();
-    public VentanaHistorico(String texto) {
-        initComponents();        
+    public VentanaHistorico(Historico h) {
+        initComponents();      
+        hist = h;
         setVisible(true);
-        nombreJug.setVisible(true);
-        jTextArea1.setText(texto);
+        //nombreJug.setVisible(true);
+        //text = texto;
+        //jTextArea1.setText(texto);
         resultadosJug.setEnabled(false);
     }
 
@@ -133,17 +140,16 @@ public class VentanaHistorico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buscarJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarJugActionPerformed
-        if(evt.getSource()==buscarJug)
+        String nombreJugador = nombreJug.getText();
+        if(hist.buscarJugador(nombreJugador).getNombre()!=null)
         {
-            String nombreJugador = nombreJug.getText();
-            if(hist.buscarJugador(nombreJugador)==0)
-            {
-                resultadosJug.setEnabled(true);
-            }
-            else
-            {
-                resultadosJug.setEnabled(false);
-            }
+            jTextArea1.setText("Jugador encontrado.");
+            resultadosJug.setEnabled(true);
+        }
+        else //if(hist.buscarJugador(nombreJugador)==1)
+        {
+            jTextArea1.setText("Jugador no encontrado.");
+            resultadosJug.setEnabled(false);
         }
     }//GEN-LAST:event_buscarJugActionPerformed
 
@@ -152,15 +158,22 @@ public class VentanaHistorico extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreJugActionPerformed
 
     private void mostrarJugsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarJugsActionPerformed
-        // TODO add your handling code here:
+        //String prueba = hist.imprimeArrayJugadores();
+        jTextArea1.setText(hist.imprimeArrayJugadores());
     }//GEN-LAST:event_mostrarJugsActionPerformed
 
     private void resultadosJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadosJugActionPerformed
         resultadosJug.setEnabled(false);
+         
+        try {
+            jTextArea1.setText(hist.resultados(hist.buscarJugador(nombreJug.getText())));
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaHistorico.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_resultadosJugActionPerformed
 
     private void mostrarClasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarClasActionPerformed
-        // TODO add your handling code here:
+        jTextArea1.setText(hist.clasificacion());
     }//GEN-LAST:event_mostrarClasActionPerformed
 
     /**
@@ -193,8 +206,37 @@ public class VentanaHistorico extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                String text=null;
-                new VentanaHistorico(text).setVisible(true);
+                Historico h = new Historico();
+                Historico hist = new Historico();
+        Jugador Jose = new Jugador("Jose");
+        Jose.setJugadasEmpatadas(2);
+        System.out.println(Jose.getJugadasEmpatadas());
+        Jose.setJugadasGanadas7(45);
+        System.out.println(Jose.getJugadasGanadas7());
+        Jose.setJugadasGanadasBJ(62);
+        System.out.println(Jose.getJugadasGanadasBJ());
+        Jose.setJugadasPerdidas7(24);
+        System.out.println(Jose.getJugadasPerdidas7());
+        Jose.setJugadasPerdidasBJ(13);
+        System.out.println(Jose.getJugadasPerdidasBJ());
+        Jose.setFichasTotales(12000);
+        System.out.println(Jose.getFichasTotales());
+        h.anadirJugador(Jose);
+        Jugador Pepe = new Jugador("Pepe");
+        Pepe.setJugadasEmpatadas(2);
+        System.out.println(Pepe.getJugadasEmpatadas());
+        Pepe.setJugadasGanadas7(45);
+        System.out.println(Pepe.getJugadasGanadas7());
+        Pepe.setJugadasGanadasBJ(62);
+        System.out.println(Pepe.getJugadasGanadasBJ());
+        Pepe.setJugadasPerdidas7(24);
+        System.out.println(Pepe.getJugadasPerdidas7());
+        Pepe.setJugadasPerdidasBJ(13);
+        System.out.println(Pepe.getJugadasPerdidasBJ());
+        Pepe.setFichasTotales(12000);
+        System.out.println(Pepe.getFichasTotales());
+        h.anadirJugador(Pepe);
+                new VentanaHistorico(h).setVisible(true);
             }
         });
     }
