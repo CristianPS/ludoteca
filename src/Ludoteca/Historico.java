@@ -4,25 +4,71 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Historico 
 {
     private ArrayList<Jugador> HistJug = new ArrayList();
     private ArrayList<Partida> HistPart = new ArrayList();
+    private final String ruta = "C:\\Users\\Cristian\\Documents\\ludoteca\\src\\Ludoteca\\historico.txt";
+    private final File fichero = new File(ruta);
+    private FileReader fr;
+    private BufferedReader br;
+    private String linea="";
     
+    public static void main(String args[])
+    {
+        Historico hist = new Historico();
+        Jugador Jose = new Jugador("Jose");
+        Jose.setJugadasEmpatadas(2);
+        System.out.println(Jose.getJugadasEmpatadas());
+        Jose.setJugadasGanadas7(45);
+        System.out.println(Jose.getJugadasGanadas7());
+        Jose.setJugadasGanadasBJ(62);
+        System.out.println(Jose.getJugadasGanadasBJ());
+        Jose.setJugadasPerdidas7(24);
+        System.out.println(Jose.getJugadasPerdidas7());
+        Jose.setJugadasPerdidasBJ(13);
+        System.out.println(Jose.getJugadasPerdidasBJ());
+        Jose.setFichasTotales(12000);
+        System.out.println(Jose.getFichasTotales());
+        try {
+            hist.resultados(Jose);
+        } catch (IOException ex) {
+            Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public Historico()
     {       
-        File fichero = new File("historico.txt");
-        
+        try {
+            this.fr = new FileReader(fichero);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.br = new BufferedReader(fr);        
     }
             
                 
             
     
     
-    public void resultados(Jugador J) //terminada
+    public void resultados(Jugador J) throws IOException //terminada
     {
-        System.out.println(J.getNombre()+" ha obtenido un total de "+J.getJugadasGanadasBJ()+" al BlackJack y ha perdido "+J.getJugadasPerdidasBJ()+".\nEn las 7 y 1/2 sus resultados son de "+J.getJugadasGanadas7()+"ganadas y de "+J.getJugadasPerdidas7()+"perdidas.\nEl total de partidas empatadas es de "+J.getJugadasEmpatadas());
+        /*String line;
+        while((line=br.readLine())!=null)
+        {
+            linea+=line+"\n";
+            System.out.println(line);
+        }
+        
+        System.out.println(linea);
+        
+        if (fr!=null)
+            fr.close();*/
+        String line = J.getNombre()+" ha obtenido un total de "+J.getJugadasGanadasBJ()+" al BlackJack y ha perdido "+J.getJugadasPerdidasBJ()+".\nEn las 7 y 1/2 sus resultados son de "+J.getJugadasGanadas7()+" ganadas y de "+J.getJugadasPerdidas7()+" perdidas.\nEl total de partidas empatadas es de "+J.getJugadasEmpatadas();
+        VentanaHistorico ventanahistorico = new VentanaHistorico(line);
+        //System.out.println(J.getNombre()+" ha obtenido un total de "+J.getJugadasGanadasBJ()+" al BlackJack y ha perdido "+J.getJugadasPerdidasBJ()+".\nEn las 7 y 1/2 sus resultados son de "+J.getJugadasGanadas7()+"ganadas y de "+J.getJugadasPerdidas7()+"perdidas.\nEl total de partidas empatadas es de "+J.getJugadasEmpatadas());
     }
     
     //No estoy seguro de si funciona de esta forma o habria que editar algo
@@ -58,7 +104,11 @@ public class Historico
         {
             if(nombre.equals(Jug.getNombre()))
             {
-                resultados(Jug);
+                try {
+                    resultados(Jug);
+                } catch (IOException ex) {
+                    Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 return 0;
             }
         }
