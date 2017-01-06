@@ -33,11 +33,26 @@ public class Historico
         System.out.println(Jose.getJugadasPerdidasBJ());
         Jose.setFichasTotales(12000);
         System.out.println(Jose.getFichasTotales());
-        try {
-            hist.resultados(Jose);
-        } catch (IOException ex) {
-            Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        hist.anadirJugador(Jose);
+        Jugador Pepe = new Jugador("Pepe");
+        Pepe.setJugadasEmpatadas(2);
+        System.out.println(Pepe.getJugadasEmpatadas());
+        Pepe.setJugadasGanadas7(45);
+        System.out.println(Pepe.getJugadasGanadas7());
+        Pepe.setJugadasGanadasBJ(62);
+        System.out.println(Pepe.getJugadasGanadasBJ());
+        Pepe.setJugadasPerdidas7(24);
+        System.out.println(Pepe.getJugadasPerdidas7());
+        Pepe.setJugadasPerdidasBJ(13);
+        System.out.println(Pepe.getJugadasPerdidasBJ());
+        Pepe.setFichasTotales(12000);
+        System.out.println(Pepe.getFichasTotales());
+        hist.anadirJugador(Pepe);
+        //try {
+            hist.imprimeArrayJugadores();
+        //} //catch (IOException ex) {
+            //Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
+        //}
     }
     public Historico()
     {       
@@ -68,7 +83,6 @@ public class Historico
             fr.close();*/
         String line = J.getNombre()+" ha obtenido un total de "+J.getJugadasGanadasBJ()+" al BlackJack y ha perdido "+J.getJugadasPerdidasBJ()+".\nEn las 7 y 1/2 sus resultados son de "+J.getJugadasGanadas7()+" ganadas y de "+J.getJugadasPerdidas7()+" perdidas.\nEl total de partidas empatadas es de "+J.getJugadasEmpatadas();
         VentanaHistorico ventanahistorico = new VentanaHistorico(line);
-        //System.out.println(J.getNombre()+" ha obtenido un total de "+J.getJugadasGanadasBJ()+" al BlackJack y ha perdido "+J.getJugadasPerdidasBJ()+".\nEn las 7 y 1/2 sus resultados son de "+J.getJugadasGanadas7()+"ganadas y de "+J.getJugadasPerdidas7()+"perdidas.\nEl total de partidas empatadas es de "+J.getJugadasEmpatadas());
     }
     
     //No estoy seguro de si funciona de esta forma o habria que editar algo
@@ -78,7 +92,8 @@ public class Historico
     {
         for (int i=0; i<=HistJug.size(); i++)
         {
-            System.out.println((i+1) + ". " + HistJug.get(i).getNombre() + " - FichasTotales: " + HistJug.get(i).getFichasTotales());
+            linea+="·" + HistJug.get(i).getNombre() + " - Fichas Totales: " + HistJug.get(i).getFichasTotales()+"\n";
+            VentanaHistorico ventanahistorico = new VentanaHistorico(linea);
         }
     }
     

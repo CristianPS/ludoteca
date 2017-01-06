@@ -14,11 +14,13 @@ public class VentanaHistorico extends javax.swing.JFrame {
     /**
      * Creates new form VentanaHistorico
      */
+    private Historico hist = new Historico();
     public VentanaHistorico(String texto) {
-        initComponents();
+        initComponents();        
         setVisible(true);
-        jTextField1.setVisible(true);
+        nombreJug.setVisible(true);
         jTextArea1.setText(texto);
+        resultadosJug.setEnabled(false);
     }
 
     /**
@@ -32,42 +34,57 @@ public class VentanaHistorico extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        buscarJug = new javax.swing.JButton();
+        nombreJug = new javax.swing.JTextField();
+        mostrarJugs = new javax.swing.JButton();
+        mostrarClas = new javax.swing.JButton();
+        mostrarPart = new javax.swing.JButton();
+        resultadosJug = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setText("Resultados de:");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buscarJug.setLabel("Buscar Jug.");
+        buscarJug.setPreferredSize(new java.awt.Dimension(137, 29));
+        buscarJug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buscarJugActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("Introduce el nombre de un jugador.");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nombreJug.setText("Introduce el nombre de un jugador.");
+        nombreJug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nombreJugActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Mostrar jugadores.");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        mostrarJugs.setText("Mostrar jugadores.");
+        mostrarJugs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                mostrarJugsActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Mostrar clasificación.");
+        mostrarClas.setText("Mostrar clasificación.");
+        mostrarClas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarClasActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Mostrar partidas.");
+        mostrarPart.setText("Mostrar partidas.");
+
+        resultadosJug.setLabel("Resultados");
+        resultadosJug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultadosJugActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,11 +93,14 @@ public class VentanaHistorico extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(nombreJug)
+                    .addComponent(mostrarJugs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mostrarClas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mostrarPart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buscarJug, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resultadosJug, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
                 .addContainerGap())
@@ -93,16 +113,18 @@ public class VentanaHistorico extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(jButton1)
+                        .addGap(89, 89, 89)
+                        .addComponent(nombreJug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buscarJug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resultadosJug))
+                        .addGap(53, 53, 53)
+                        .addComponent(mostrarJugs)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(mostrarClas)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(mostrarPart)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -110,17 +132,36 @@ public class VentanaHistorico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void buscarJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarJugActionPerformed
+        if(evt.getSource()==buscarJug)
+        {
+            String nombreJugador = nombreJug.getText();
+            if(hist.buscarJugador(nombreJugador)==0)
+            {
+                resultadosJug.setEnabled(true);
+            }
+            else
+            {
+                resultadosJug.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_buscarJugActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nombreJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugActionPerformed
         
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nombreJugActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void mostrarJugsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarJugsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_mostrarJugsActionPerformed
+
+    private void resultadosJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadosJugActionPerformed
+        resultadosJug.setEnabled(false);
+    }//GEN-LAST:event_resultadosJugActionPerformed
+
+    private void mostrarClasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarClasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mostrarClasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,12 +200,13 @@ public class VentanaHistorico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton buscarJug;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton mostrarClas;
+    private javax.swing.JButton mostrarJugs;
+    private javax.swing.JButton mostrarPart;
+    private javax.swing.JTextField nombreJug;
+    private javax.swing.JButton resultadosJug;
     // End of variables declaration//GEN-END:variables
 }
