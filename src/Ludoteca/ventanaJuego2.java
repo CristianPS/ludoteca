@@ -30,11 +30,13 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         botones = i;
         if(botones == 1)
         {
-            jPanel1.setBackground(Color.GREEN);
+            jPanel1.setBackground(Color.GREEN);//Esto cambia el fondo de la mesa dependiendo del juego.
+            JugadaBJ J = new JugadaBJ() {};//AÑadido esto al if y al else, las clases de jugadas son diferentes dependiendo
         }
         else
         {
             jPanel1.setBackground(Color.RED);
+            Jugada7ymedia J = new Jugada7ymedia() {};
         }
         jLabel1.setText("Bienvenido, " +Jug.getNombre());
         jButton2.setEnabled(false);
@@ -221,34 +223,34 @@ public class ventanaJuego2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String texto = jTextField1.getText();
-        int numero = Integer.parseInt(texto);
+        apuesta = Integer.parseInt(texto);
         
             if(botones==0)
             {
                 Jugada7ymedia j = new Jugada7ymedia() {};
-                    if(numero<25)
+                    if(apuesta<25)
                     {
-                        jLabel3.setText("Has apostado " + numero + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
+                        jLabel3.setText("Has apostado " + apuesta + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
                     }
                     else
                     {
-                        jLabel3.setText("¡Has apostado " + numero + " fichas!");                       
+                        jLabel3.setText("¡Has apostado " + apuesta + " fichas!");                       
                     }
-                    j.apostar(numero);
+                    j.apostar(apuesta);                    
                     recogerJugada(j); 
             }
             if(botones==1)
             {
                 JugadaBJ j = new JugadaBJ() {};
-                    if(numero<25)
+                    if(apuesta<25)
                     {
-                        jLabel3.setText("Has apostado " + numero + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
+                        jLabel3.setText("Has apostado " + apuesta + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
                     }
                     else
                     {
-                        jLabel3.setText("¡Has apostado " + numero + " fichas!");                       
+                        jLabel3.setText("¡Has apostado " + apuesta + " fichas!");                       
                     }
-                    j.apostar(numero);
+                    j.apostar(apuesta);
                     recogerJugada(j); 
             }
             if(botones==2)
@@ -259,10 +261,10 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         {
             jButton1.setEnabled(false);
             jTextField1.setEnabled(false);//A lo mejor no funciona.
-            jLabel3.setText("Has apostado " + numero + " fichas.");
+            jLabel3.setText("Has apostado " + apuesta + " fichas.");
         }
         jButton2.setEnabled(true);
-        this.apuesta=apuesta;
+        this.apuesta=apuesta; //??¿¿
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -271,7 +273,9 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        J.jugarJugador(this);  
+        J.jugarJugador(this);
+        J.jugarBanca();
+        
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -285,15 +289,17 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         int valorManoB = J.getPuntBan();
         if(valorManoJ>valorManoB)
         {
-            JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!");
+            JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
+            Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
         }
         else if (valorManoJ==valorManoB)
         {
-            JOptionPane.showMessageDialog(this, "Ha sido un empate");
+            JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
         }
         else 
         {
            JOptionPane.showMessageDialog(this, "Ha ganado la banca. Buena suerte la proxima vez"); 
+           Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 

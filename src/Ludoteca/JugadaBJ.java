@@ -98,9 +98,11 @@ public abstract class JugadaBJ extends Jugada
         {
             manobanca.pedirCarta(baraja);
             manobanca.CalcularValor(Banca);
+            
         }
                
         PuntBan = (int)manobanca.CalcularValor();
+        ArrayManoBJ.add(manobanca);//Habria que añadir las manos aquí no?
     }
     
     @Override
@@ -122,7 +124,10 @@ public abstract class JugadaBJ extends Jugada
         
         //0 si es un SI y 1 si es un NO
         Carta c;
+        mano.pedirCarta(baraja);
+        mano.pedirCarta(baraja);
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
+        //aqui no habria que meter un while?????
         switch (opcion)
         {
             case 0:
@@ -137,6 +142,8 @@ public abstract class JugadaBJ extends Jugada
                 vJ2.deshabilitarJugar();
         }
         PuntJug = (int)mano.CalcularValor();
+        ArrayManoBJ.add(mano);
+        
     }
     
     public void añadirManoBlackJack(Mano m)
