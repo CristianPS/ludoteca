@@ -12,9 +12,7 @@ package Ludoteca;
  */
 public class PrimeraVentana extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PrimeraVentana
-     */
+    Historico h = Ludoteca.getHistorico();
     public PrimeraVentana() 
     {
         setVisible(true);
@@ -29,13 +27,9 @@ public class PrimeraVentana extends javax.swing.JFrame {
     
     public int posicionBotones()
     {
-        if(jRadioButton1.isSelected() && jRadioButton2.isSelected())
-        {
-            //AMBOS BOTONES SELECCIONADOS
-            return 2;
-        }
         
-        else if(jRadioButton1.isSelected() && !(jRadioButton2.isSelected()))
+        
+        if(jRadioButton1.isSelected() && !(jRadioButton2.isSelected()))
         {
             //EL BOTON DE BJ SELECCIONADO
             return 1;
@@ -163,11 +157,21 @@ public class PrimeraVentana extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (evt.getSource()==jButton1)
         {
-            String nombreJugador = jTextField1.getText();
-            Jugador j1= new Jugador(nombreJugador);
-            System.out.println(j1.getNombre());
+            String nombreJugador = recogerNombre();
+            Jugador jugad;
+            if (!(h.buscarJugador(nombreJugador).getNombre().equals(nombreJugador)))
+            {
+                Jugador j1 = new Jugador(nombreJugador);
+                h.anadirJugador(j1);
+                jugad = new Jugador(j1);                
+            }
+            else 
+            {
+                jugad = new Jugador(h.buscarJugador(nombreJugador));
+            }
+            System.out.println(jugad.getNombre());
             int i = posicionBotones();
-            ventanaJuego2 vJ= new ventanaJuego2(j1, i);
+            ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
             dispose();
             vJ.setVisible(true);
         }

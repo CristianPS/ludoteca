@@ -12,16 +12,20 @@ package Ludoteca;
 public class Ludoteca 
 {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static Historico h;
     public static void main(String[] args) 
     {
+        h = new Historico();
         Jugador j1 = new Jugador("Pepito");
         PrimeraVentana pV = new PrimeraVentana(); 
-        pV.setVisible(true);
+        //pV.setVisible(true);
         
 
+    }
+    
+    public static Historico getHistorico()
+    {
+        return h;
     }
     
 }

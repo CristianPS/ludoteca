@@ -5,6 +5,7 @@
  */
 package Ludoteca;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,20 +19,30 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private int apuesta;
     /**
      * Creates new form ventanaJuego2
+     * @param jugador
+     * @param i
      */
-    public ventanaJuego2(Jugador J, int i) {
+    public ventanaJuego2(Jugador jugador, int i) {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         setVisible(true);
-        Jug = J;
+        Jug = jugador;
         botones = i;
-        jLabel1.setText(J.getNombre());
+        if(botones == 1)
+        {
+            jPanel1.setBackground(Color.GREEN);
+        }
+        else
+        {
+            jPanel1.setBackground(Color.RED);
+        }
+        jLabel1.setText("Bienvenido, " +Jug.getNombre());
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
     }
-    public void recogerJugada(Jugada Jug)
+    public void recogerJugada(Jugada jugada)
     {
-        J=Jug;
+        J=jugada;
     }
     
     public void deshabilitarJugar()
@@ -65,6 +76,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Nombre, habría que pasrlo desde la otra ventana.");
         jLabel1.setToolTipText("");
@@ -78,7 +90,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -103,7 +115,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
+                .addContainerGap(491, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -115,7 +127,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Jugar");
+        jButton3.setText("Pedir Carta");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -174,9 +186,9 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
