@@ -18,7 +18,7 @@ public class VentanaHistorico extends javax.swing.JFrame {
     /**
      * Creates new form VentanaHistorico
      */
-    private String text;
+    private String text, nombreJugador;
     private Historico hist = new Historico();
     public VentanaHistorico(Historico h) {
         initComponents();      
@@ -140,7 +140,7 @@ public class VentanaHistorico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buscarJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarJugActionPerformed
-        String nombreJugador = nombreJug.getText();
+        nombreJugador = nombreJug.getText();
         if(hist.buscarJugador(nombreJugador).getNombre()!=null)
         {
             jTextArea1.setText("Jugador encontrado.");
@@ -166,7 +166,7 @@ public class VentanaHistorico extends javax.swing.JFrame {
         resultadosJug.setEnabled(false);
          
         try {
-            jTextArea1.setText(hist.resultados(hist.buscarJugador(nombreJug.getText())));
+            jTextArea1.setText(hist.resultados(hist.buscarJugador(nombreJugador)));
         } catch (IOException ex) {
             Logger.getLogger(VentanaHistorico.class.getName()).log(Level.SEVERE, null, ex);
         }
