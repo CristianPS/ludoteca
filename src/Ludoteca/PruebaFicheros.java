@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author Cristian
  */
-public class Pruebaficheros {
+public class PruebaFicheros {
     private static String linea;
     public static void main(String args[]) throws FileNotFoundException
     {
@@ -46,7 +46,7 @@ public class Pruebaficheros {
             catch (Exception ex2) {}
         }
         
-        VentanaHistorico ventanaprueba = new VentanaHistorico(linea);
+        //VentanaHistorico ventanaprueba = new VentanaHistorico(linea);
         
     }
     

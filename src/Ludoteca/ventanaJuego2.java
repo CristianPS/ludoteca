@@ -17,6 +17,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private int botones;
     private Jugada J;
     private int apuesta;
+    private Baraja baraja;
     /**
      * Creates new form ventanaJuego2
      * @param jugador
@@ -31,12 +32,12 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         if(botones == 1)
         {
             jPanel1.setBackground(Color.GREEN);//Esto cambia el fondo de la mesa dependiendo del juego.
-            JugadaBJ J = new JugadaBJ() {};//AÑadido esto al if y al else, las clases de jugadas son diferentes dependiendo
+            //JugadaBJ J = new JugadaBJ() {};//AÑadido esto al if y al else, las clases de jugadas son diferentes dependiendo
         }
         else
         {
             jPanel1.setBackground(Color.RED);
-            Jugada7ymedia J = new Jugada7ymedia() {};
+            //Jugada7ymedia J = new Jugada7ymedia() {};
         }
         jLabel1.setText("Bienvenido, " +Jug.getNombre());
         jButton2.setEnabled(false);
@@ -227,7 +228,8 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         
             if(botones==0)
             {
-                Jugada7ymedia j = new Jugada7ymedia() {};
+                baraja = new BarajaEspanola();
+                J = new Jugada7ymedia(baraja, Jug) {};
                     if(apuesta<25)
                     {
                         jLabel3.setText("Has apostado " + apuesta + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
@@ -236,12 +238,13 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                     {
                         jLabel3.setText("¡Has apostado " + apuesta + " fichas!");                       
                     }
-                    j.apostar(apuesta);                    
-                    recogerJugada(j); 
+                    J.apostar(apuesta);                    
+                    recogerJugada(J); 
             }
             if(botones==1)
             {
-                JugadaBJ j = new JugadaBJ() {};
+                baraja = new BarajaFrancesa();
+                J = new JugadaBJ(baraja, Jug) {};
                     if(apuesta<25)
                     {
                         jLabel3.setText("Has apostado " + apuesta + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
@@ -250,21 +253,21 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                     {
                         jLabel3.setText("¡Has apostado " + apuesta + " fichas!");                       
                     }
-                    j.apostar(apuesta);
-                    recogerJugada(j); 
-            }
-            if(botones==2)
-            {
-                JOptionPane.showMessageDialog(this, "Has seleccionado las 2 opciones");
+                    J.apostar(apuesta);
+                    recogerJugada(J); 
+                    JOptionPane.showInternalMessageDialog(this, Jug.getFichasTotales());
             }
         if(evt.getSource()==jButton1 && (botones!=2) && (botones!=-1))
         {
             jButton1.setEnabled(false);
             jTextField1.setEnabled(false);//A lo mejor no funciona.
-            jLabel3.setText("Has apostado " + apuesta + " fichas.");
+            if(!(botones==0 || botones==1))
+            {
+                jLabel3.setText("Has apostado " + apuesta + " fichas.");
+            }
         }
         jButton2.setEnabled(true);
-        this.apuesta=apuesta; //??¿¿
+        //this.apuesta=apuesta; //??¿¿
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -274,7 +277,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         J.jugarJugador(this);
-        J.jugarBanca();
+        // J.jugarBanca(); CREO QUE ESTO MEJOR EN EL BOTON DE ABAJO UNA VEZ HAYA ACABADO EL JUGADOR
         
         
     }//GEN-LAST:event_jButton3ActionPerformed

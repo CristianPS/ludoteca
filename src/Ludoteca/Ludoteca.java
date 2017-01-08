@@ -15,10 +15,10 @@ public class Ludoteca
     private static Historico h;
     public static void main(String[] args) 
     {
-        h = new Historico();
+        //h = new Historico();
         Jugador j1 = new Jugador("Pepito");
         PrimeraVentana pV = new PrimeraVentana(); 
-        //pV.setVisible(true);
+        pV.setVisible(true);
         
 
     }

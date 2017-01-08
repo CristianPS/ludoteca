@@ -17,23 +17,29 @@ public class CartaEspanola extends Carta
     public CartaEspanola (int v, int p)
     {
         super(v, p);
-        //this.palo = palo;
     }
     
     @Override
     public void mostrar()
     {
+        System.out.println(valor+" de "+this.palo());
+    }
+    
+    public String palo()
+    {
         String Palo = null;
-        switch (this.palo)
+        switch(this.palo)
         {
-            case 0: Palo = "Oros";                   
-            case 1: Palo = "Bastos";                                        
-            case 2: Palo = "Espadas";                                       
-            case 3: Palo = "Copas";
-            default: System.err.println("Error: Carta no válida.");
+            case 1: Palo = "Oros";
+                break;
+            case 2: Palo = "Bastos";
+                break;
+            case 3: Palo = "Espadas";
+                break;
+            case 4: Palo = "Copas";
+                break;
         }
-        super.mostrar();
-        //System.out.println(palo);
+        return Palo;
     }
 }
     

@@ -18,6 +18,14 @@ public class Partida
     private String juego;
     private ArrayList <Jugada> arrayListJugada = new ArrayList();
     
+    public Partida()
+    {
+        num=0;
+        fichas=0;
+        partidasTotales=0;
+        juego= null;
+        arrayListJugada.clear();
+    }
     
     public int getNum()
     {

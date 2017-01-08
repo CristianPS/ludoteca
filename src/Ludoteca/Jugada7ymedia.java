@@ -8,11 +8,14 @@ import static javax.swing.JOptionPane.YES_NO_OPTION;
 
 public abstract class Jugada7ymedia extends Jugada
 {
-    private Baraja baraja;
-    private Jugador jugador;
     private Mano mano, manobanca;
-    private int PuntJug, PuntBan;
-    private ArrayList<Carta> cartasSacadas = new ArrayList();
+    
+    public Jugada7ymedia(Baraja b, Jugador j)
+    {
+        super(b, j);
+        mano = new Mano();
+        manobanca = new Mano();
+    }
     
     @Override
     public void jugarBanca()
@@ -25,7 +28,7 @@ public abstract class Jugada7ymedia extends Jugada
         {
             c = mBanca.pedirCarta(baraja);
             anadir.add(c);
-            mBanca.añadirAMano(anadir);
+            mBanca.anadirAMano(anadir);
             aux = aux + mBanca.CalcularValor();
         }
         PuntBan = (int)manobanca.CalcularValor();
@@ -64,9 +67,14 @@ public abstract class Jugada7ymedia extends Jugada
                     c= mano.pedirCarta(baraja);
                 }
                 cartasSacadas.add(c);
+                ArrayList<Carta> manoAux = new ArrayList();
+                manoAux.add(c);
+                mano.anadirAMano(manoAux);
+                break;
                 
             case 1:
                 vJ2.deshabilitarJugar();
+                break;
         }
         PuntJug = (int)mano.CalcularValor();
     }
@@ -98,14 +106,15 @@ public abstract class Jugada7ymedia extends Jugada
     @SuppressWarnings("empty-statement")
     public void apostar(int apuesta)
     {        
-        /*if(apuesta<25)
+        if(apuesta<25)
         {
             apuesta=25;
         }
-        int ft = jugador.getFichasTotales();
-        jugador.setFichasTotales(ft-apuesta);
-        System.out.println("Llegó al final");*/
-        System.out.println("Hecho");
+        int ft = ganador.getFichasTotales();
+        int ff = ft - apuesta;
+        ganador.setFichasTotales(ff);
+        System.out.println("Llegó al final");
+        System.out.println(ganador.getNombre()+" "+apuesta+" "+ganador.getFichasTotales()+" "+ff);
     }
     
     @Override

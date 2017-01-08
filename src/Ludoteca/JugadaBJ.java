@@ -80,12 +80,16 @@ import static javax.swing.JOptionPane.QUESTION_MESSAGE;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
 public abstract class JugadaBJ extends Jugada
 {
-    private Baraja baraja, barajabanca;
-    private Jugador jugador;
     private ManoBJ mano, manobanca;
     private ArrayList<ManoBJ> ArrayManoBJ = new ArrayList();
-    ArrayList<Carta> cartasSacadas = new ArrayList();
     
+    public JugadaBJ (Baraja b, Jugador j)
+    {
+        super(b, j);
+        mano = new ManoBJ();
+        manobanca = new ManoBJ();
+        ArrayManoBJ.clear();
+    }
     
     @Override
     public void jugarBanca()
@@ -137,9 +141,10 @@ public abstract class JugadaBJ extends Jugada
                     c= mano.pedirCarta(baraja);
                 }
                 cartasSacadas.add(c);
-                
+                break;
             case 1:
                 vJ2.deshabilitarJugar();
+                break;
         }
         PuntJug = (int)mano.CalcularValor();
         ArrayManoBJ.add(mano);
@@ -173,15 +178,15 @@ public abstract class JugadaBJ extends Jugada
     @Override
     public void apostar(int apuesta)
     {        
-        /*if(apuesta<25)
+        if(apuesta<25)
         {
             apuesta=25;
         }
-        int ft = jugador.getFichasTotales();
-        jugador.setFichasTotales(ft-apuesta);
-        System.out.println("Llegó al final");*/
-        
-        System.out.println("Hecho");        
+        int ft = ganador.getFichasTotales();
+        int ff = ft - apuesta;
+        ganador.setFichasTotales(ff);
+        System.out.println("Llegó al final");
+        System.out.println(ganador.getNombre()+" "+apuesta+" "+ganador.getFichasTotales()+" "+ff);        
     }
     
     @Override

@@ -12,16 +12,23 @@ import java.util.ArrayList;
  */
 public abstract class Jugada 
 {
-    private Baraja baraja;
+    protected Baraja baraja;
     //Si el ganador es la banca el nombre del Jugador sera BANCA (importante en funciones de otras clases)
-    private Jugador ganador;
-    private double apuesta;
+    protected Jugador ganador;
+    protected double apuesta;
     protected int PuntJug, PuntBan;
     protected ArrayList<Mano> ArrayMano = new ArrayList();
+    protected ArrayList<Carta> cartasSacadas = new ArrayList();
     
-    public Jugada()
+    public Jugada(Baraja b, Jugador j)
     {
-        
+        baraja=b;
+        ganador = new Jugador(j);
+        apuesta=0;
+        PuntJug=0;
+        PuntBan=0;
+        ArrayMano.clear();
+        cartasSacadas.clear();
     }
     public Baraja getBaraja()
     {

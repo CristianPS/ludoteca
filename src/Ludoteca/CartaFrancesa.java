@@ -16,17 +16,24 @@ public class CartaFrancesa extends Carta
     @Override
     public void mostrar()
     {
+        System.out.println(valor+" de "+this.palo());       
+    }
+    
+    public String palo()
+    {
         String Palo = null;
         switch (this.palo)
         {
-            case 0: Palo = "Picas";                   
-            case 1: Palo = "Corazones";                                        
-            case 2: Palo = "Tréboles";                                       
-            case 3: Palo = "Diamantes";
-            default: System.err.println("Error: Carta no válida.");
+            case 1: Palo = "Picas";                   
+                break;
+            case 2: Palo = "Corazones";                                        
+                break;
+            case 3: Palo = "Tréboles";                                       
+                break;
+            case 4: Palo = "Diamantes";
+                break;
         }
-        super.mostrar();
-        //System.out.println(palo);
+        return Palo;
     }
 }
     
