@@ -158,7 +158,7 @@ public class PrimeraVentana extends javax.swing.JFrame {
         if (evt.getSource()==jButton1) //No se si esto es necesario, en el resto de botones no está.
         {
             //String nombreJugador = recogerNombre();
-            String nombreJugador = jTextField1.getText();
+            /*String nombreJugador = jTextField1.getText();
             Jugador jugad;
             if (!(h.buscarJugador(nombreJugador).getNombre().equals(nombreJugador)))
             {
@@ -169,10 +169,14 @@ public class PrimeraVentana extends javax.swing.JFrame {
             else 
             {
                 jugad = new Jugador(h.buscarJugador(nombreJugador));
-            }
-            System.out.println(jugad.getNombre());
+            }*/
+            String nombreJugador = jTextField1.getText();
+            Jugador j1 = new Jugador(nombreJugador);
+            //System.out.println(jugad.getNombre());
+            System.out.println(j1.getNombre());
             int i = posicionBotones();
-            ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
+            //ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
+            ventanaJuego2 vJ= new ventanaJuego2(j1, i);
             dispose();
             vJ.setVisible(true);
         }

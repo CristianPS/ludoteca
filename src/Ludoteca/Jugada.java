@@ -19,6 +19,7 @@ public abstract class Jugada
     protected int PuntJug, PuntBan;
     protected ArrayList<Mano> ArrayMano = new ArrayList();
     protected ArrayList<Carta> cartasSacadas = new ArrayList();
+    protected ArrayList<Mano> ArrayManoBanca = new ArrayList();
     
     public Jugada(Baraja b, Jugador j)
     {

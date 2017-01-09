@@ -80,11 +80,15 @@ import static javax.swing.JOptionPane.QUESTION_MESSAGE;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
 public abstract class JugadaBJ extends Jugada
 {
-    private Baraja baraja, barajabanca;
-    private Jugador jugador;
+    
     private ManoBJ mano, manobanca;
-    private ArrayList<ManoBJ> ArrayManoBJ = new ArrayList();
-    ArrayList<Carta> cartasSacadas = new ArrayList();
+    
+    public JugadaBJ(Baraja b, Jugador j)
+    {
+        super(b,j);
+        mano = new ManoBJ();
+        manobanca = new ManoBJ();
+    }
     
     
     @Override
@@ -102,7 +106,7 @@ public abstract class JugadaBJ extends Jugada
         }
                
         PuntBan = (int)manobanca.CalcularValor();
-        ArrayManoBJ.add(manobanca);//Habria que añadir las manos aquí no?
+        ArrayManoBanca.add(manobanca);//Habria que añadir las manos aquí no?
     }
     
     @Override
@@ -126,7 +130,7 @@ public abstract class JugadaBJ extends Jugada
         Carta c;
         mano.pedirCarta(baraja);
         mano.pedirCarta(baraja);
-        String escribirCartas="";
+        //String escribirCartas="";
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         //aqui no habria que meter un while?????
         switch (opcion)
@@ -138,14 +142,16 @@ public abstract class JugadaBJ extends Jugada
                     c= mano.pedirCarta(baraja);
                 }
                 cartasSacadas.add(c);
-                String carta = c.mostrar();
-                escribirCartas += carta +"\n";         
-                vJ2.jTextArea2.setText();//SE supone que esto lo que tiene que hacer es camiar el texto del jtext area que he creado para que muestre por texto las cartas pero no se como hacer que pase el texto de est funcion a la ventana 2.
+                //String carta = c.mostrar();
+                //escribirCartas += carta +"\n";         
+                //vJ2.jTextArea2.setText();//SE supone que esto lo que tiene que hacer es camiar el texto del jtext area que he creado para que muestre por texto las cartas pero no se como hacer que pase el texto de est funcion a la ventana 2.
+                break;
             case 1:
                 vJ2.deshabilitarJugar();
-        
+                break;
+        }
         PuntJug = (int)mano.CalcularValor();
-        ArrayManoBJ.add(mano);
+        ArrayMano.add(mano);
         
     }
     
@@ -176,13 +182,13 @@ public abstract class JugadaBJ extends Jugada
     @Override
     public void apostar(int apuesta)
     {        
-        /*if(apuesta<25)
+        if(apuesta<25)
         {
             apuesta=25;
         }
-        int ft = jugador.getFichasTotales();
-        jugador.setFichasTotales(ft-apuesta);
-        System.out.println("Llegó al final");*/
+        int ft = ganador.getFichasTotales();
+        ganador.setFichasTotales(ft-apuesta);
+        System.out.println("Llegó al final");
         
         System.out.println("Hecho");        
     }

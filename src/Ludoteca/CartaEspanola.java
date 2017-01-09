@@ -21,9 +21,9 @@ public class CartaEspanola extends Carta
     }
     
     @Override
-    public String mostrar()
+    public void mostrar()
     {
-        String Palo = null;
+        /*String Palo = null;
         switch (this.palo)
         {
             case 0: Palo = "Oros";                   
@@ -34,10 +34,24 @@ public class CartaEspanola extends Carta
         }
         //super.mostrar(); //No se si hay que quitar esto;
         String mostrar = valor +"de" +palo;
-        return mostrar;
+        return mostrar;*/
+        System.out.println(valor+ " de " +this.palo());
         
     }
         
+    public String palo()
+    {
+        String Palo = null;
+        switch (this.palo)
+        {
+            case 0: Palo = "Oros";                   
+            case 1: Palo = "Bastos";                                        
+            case 2: Palo = "Espadas";                                       
+            case 3: Palo = "Copas";
+            default: System.err.println("Error: Carta no válida.");
+        }
+        return Palo;
+    }
     
 }
     

@@ -37,8 +37,7 @@ public class Jugador implements Comparable<Jugador>
     
     public int getFichasTotales()
     {
-        //return fichasTotales;
-        return 100;
+        return fichasTotales;
     }
     public void setFichasTotales(int ft)
     {

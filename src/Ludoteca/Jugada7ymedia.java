@@ -20,18 +20,19 @@ public abstract class Jugada7ymedia extends Jugada
     @Override
     public void jugarBanca()
     {
-        Mano mBanca = new Mano();
+        
         Carta c;
         float aux = 0;
         ArrayList<Carta> anadir = new ArrayList();
         while(aux<5)
         {
-            c = mBanca.pedirCarta(baraja);
+            c = manobanca.pedirCarta(baraja);
             anadir.add(c);
-            mBanca.anadirAMano(anadir);
-            aux = aux + mBanca.CalcularValor();
+            manobanca.anadirAMano(anadir);
+            aux = aux + manobanca.CalcularValor();
         }
         PuntBan = (int)manobanca.CalcularValor();
+        ArrayMano.add(manobanca);
     }
     @Override
     public void jugarJugador(ventanaJuego2 vJ2)
@@ -77,6 +78,7 @@ public abstract class Jugada7ymedia extends Jugada
                 break;
         }
         PuntJug = (int)mano.CalcularValor();
+        ArrayMano.add(mano);
     }
     public void añadirMano(Mano m)
     {
