@@ -19,6 +19,21 @@ public class ManoBJ extends Mano
         valorMano=0;
     }
     
+    @Override
+    public CartaFrancesa pedirCarta(Baraja b)
+    {
+        CartaFrancesa c = (CartaFrancesa) b.mezclar();
+        while(mano.contains(c))
+        {
+            c = (CartaFrancesa) b.mezclar();
+            if(!(mano.contains(c)))
+            {
+                mano.add(c);
+            }
+        }
+        return c;
+    }
+    
     public float CalcularValor(Jugador j)
     {
         Jugador jAux = new Jugador("Banca");

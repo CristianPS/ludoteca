@@ -28,60 +28,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     public ventanaJuego2(Jugador jugador, int i) {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        setVisible(true);
-        imagenes = new ImageIcon[52];
-        imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/1_0.png"));
-        imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/2_0.png"));
-        imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/3_0.png"));
-        imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/4_0.png"));
-        imagenes[4]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/5_0.png"));
-        imagenes[5]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/6_0.png"));
-        imagenes[6]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/7_0.png"));
-        imagenes[7]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/8_0.png"));
-        imagenes[8]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/9_0.png"));
-        imagenes[9]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/10_0.png"));
-        imagenes[10]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/11_0.png"));
-        imagenes[11]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/12_0.png"));
-        imagenes[12]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/13_0.png"));
-        imagenes[13]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/1_1.png"));
-        imagenes[14]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/2_1.png"));
-        imagenes[15]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/3_1.png"));
-        imagenes[16]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/4_1.png"));
-        imagenes[17]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/5_1.png"));
-        imagenes[18]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/6_1.png"));
-        imagenes[19]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/7_1.png"));
-        imagenes[20]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/8_1.png"));
-        imagenes[21]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/9_1.png"));
-        imagenes[22]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/10_1.png"));
-        imagenes[23]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/11_1.png"));
-        imagenes[24]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/12_1.png"));
-        imagenes[25]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/13_1.png"));
-        imagenes[26]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/1_2.png"));
-        imagenes[27]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/2_2.png"));
-        imagenes[28]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/3_2.png"));
-        imagenes[29]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/4_2.png"));
-        imagenes[30]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/5_2.png"));
-        imagenes[31]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/6_2.png"));
-        imagenes[32]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/7_2.png"));
-        imagenes[33]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/8_2.png"));
-        imagenes[34]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/9_2.png"));
-        imagenes[35]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/10_2.png"));
-        imagenes[36]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/11_2.png"));
-        imagenes[37]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/12_2.png"));
-        imagenes[38]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/13_2.png"));
-        imagenes[39]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/1_3.png"));
-        imagenes[40]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/2_3.png"));
-        imagenes[41]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/3_3.png"));
-        imagenes[42]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/4_3.png"));
-        imagenes[43]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/5_3.png"));
-        imagenes[44]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/6_3.png"));
-        imagenes[45]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/7_3.png"));
-        imagenes[46]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/8_3.png"));
-        imagenes[47]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/9_3.png"));
-        imagenes[48]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/10_3.png"));
-        imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/11_3.png"));
-        imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/12_3.png"));
-        imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/13_3.png")); 
+        setVisible(true); 
         Jug = jugador;
         botones = i;
         if(botones == 1)
@@ -97,6 +44,59 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jLabel1.setText("Bienvenido, " +Jug.getNombre());
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
+        imagenes = new ImageIcon[52];
+        imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
+        imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_0.png"));
+        imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_0.png"));
+        imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_0.png"));
+        imagenes[4]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_0.png"));
+        imagenes[5]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_0.png"));
+        imagenes[6]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_0.png"));
+        imagenes[7]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_0.png"));
+        imagenes[8]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_0.png"));
+        imagenes[9]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_0.png"));
+        imagenes[10]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_0.png"));
+        imagenes[11]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_0.png"));
+        imagenes[12]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_0.png"));
+        imagenes[13]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_1.png"));
+        imagenes[14]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_1.png"));
+        imagenes[15]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_1.png"));
+        imagenes[16]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_1.png"));
+        imagenes[17]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_1.png"));
+        imagenes[18]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_1.png"));
+        imagenes[19]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_1.png"));
+        imagenes[20]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_1.png"));
+        imagenes[21]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_1.png"));
+        imagenes[22]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_1.png"));
+        imagenes[23]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_1.png"));
+        imagenes[24]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_1.png"));
+        imagenes[25]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_1.png"));
+        imagenes[26]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_2.png"));
+        imagenes[27]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_2.png"));
+        imagenes[28]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_2.png"));
+        imagenes[29]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_2.png"));
+        imagenes[30]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_2.png"));
+        imagenes[31]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_2.png"));
+        imagenes[32]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_2.png"));
+        imagenes[33]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_2.png"));
+        imagenes[34]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_2.png"));
+        imagenes[35]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_2.png"));
+        imagenes[36]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_2.png"));
+        imagenes[37]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_2.png"));
+        imagenes[38]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_2.png"));
+        imagenes[39]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_3.png"));
+        imagenes[40]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_3.png"));
+        imagenes[41]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_3.png"));
+        imagenes[42]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_3.png"));
+        imagenes[43]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_3.png"));
+        imagenes[44]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_3.png"));
+        imagenes[45]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_3.png"));
+        imagenes[46]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_3.png"));
+        imagenes[47]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_3.png"));
+        imagenes[48]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_3.png"));
+        imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_3.png"));
+        imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_3.png"));
+        imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_3.png"));
     }
     public void recogerJugada(Jugada jugada)
     {
@@ -135,6 +135,12 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton15 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -167,11 +173,44 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("Jugador");
 
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
             }
         });
+
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+
+        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -180,45 +219,66 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(95, 95, 95)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)
-                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(54, 54, 54))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel4))
+                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(54, 54, 54))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jButton15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(73, 73, 73)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(32, Short.MAX_VALUE))))
         );
 
         jButton2.setText("Comenzar");
@@ -322,7 +382,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                         .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         pack();
@@ -388,12 +448,17 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         }
         if(botones==1)
         {
-            J.repartirJugador(this);
-            
+            int[] valores = new int[2];
+            int valJugar = 0;
+            valores=J.repartirJugador(this);
+            //jButton14.setIcon(imagenes[valores[0]]);
+            //jButton12.setIcon(imagenes[valores[1]]);
             System.out.println("-------------------------------");
-            J.repartirBanca();
+            valores=J.repartirBanca();
+            jButton14.setIcon(imagenes[valores[0]]);
             System.out.println("-------------------------------");
-            J.jugarJugador(this);   
+            valJugar=J.jugarJugador(this);
+            //jButtonXX.setIcon(imagenes[valjugar]);
             System.out.println("-------------------------------");
         }
         // J.jugarBanca(); CREO QUE ESTO MEJOR EN EL BOTON DE ABAJO UNA VEZ HAYA ACABADO EL JUGADOR
@@ -450,6 +515,14 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -490,6 +563,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
@@ -499,6 +573,11 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
