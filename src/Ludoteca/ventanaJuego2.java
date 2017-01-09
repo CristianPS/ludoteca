@@ -400,7 +400,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         
             if(botones==0)
             {
-                /*imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/asOros_opt.png"));
+                imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/asOros_opt.png"));
                 imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/dosoros_opt.png"));
                 imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/tresoros_opt.png"));
                 imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/cuatrooros_opt.png"));
@@ -439,7 +439,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                 imagenes[36]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7decopas_opt.png"));
                 imagenes[37]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10c_opt.png"));
                 imagenes[38]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/caballocopas_opt.png"));
-                imagenes[39]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/rey-de-copas_opt.png"));*/
+                imagenes[39]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/rey-de-copas_opt.png"));
                 imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));
                 
                 baraja = new BarajaEspanola();
