@@ -1,5 +1,6 @@
 package Ludoteca;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ManoBJ extends Mano
@@ -139,5 +140,15 @@ public class ManoBJ extends Mano
         valorMano =-resta;
         
         return valorMano;
+    }
+
+    public void anadirAMano(ArrayList<Carta> c)
+    {
+        int num = c.size()-1;
+        for(int i=0; i<=num; i++)
+        {
+            Carta x = c.get(i);
+            mano.add(x);
+        }
     }
 }

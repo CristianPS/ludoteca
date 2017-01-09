@@ -26,12 +26,22 @@ public abstract class Jugada7ymedia extends Jugada
         ArrayList<Carta> anadir = new ArrayList();
         while(aux<5)
         {
-            c = manobanca.pedirCarta(baraja);
-            anadir.add(c);
-            manobanca.anadirAMano(anadir);
-            aux = aux + manobanca.CalcularValor();
+            if (aux<7.5)
+            {
+                c = manobanca.pedirCarta(baraja);
+                anadir.add(c);
+                c.mostrar();
+                manobanca.anadirAMano(anadir);
+                anadir.clear();
+                aux = aux + manobanca.CalcularValor();
+                System.out.println("\n"+aux);
+            }
+            else
+            {
+                break;
+            }
         }
-        PuntBan = (int)manobanca.CalcularValor();
+        PuntBan = (float) manobanca.getValorMano();
         ArrayMano.add(manobanca);
     }
     @Override
@@ -68,6 +78,7 @@ public abstract class Jugada7ymedia extends Jugada
                     c= mano.pedirCarta(baraja);
                 }
                 cartasSacadas.add(c);
+                c.mostrar();
                 ArrayList<Carta> manoAux = new ArrayList();
                 manoAux.add(c);
                 mano.anadirAMano(manoAux);
@@ -78,6 +89,7 @@ public abstract class Jugada7ymedia extends Jugada
                 break;
         }
         PuntJug = (int)mano.CalcularValor();
+        System.out.println("\n"+PuntJug);
         ArrayMano.add(mano);
     }
     public void añadirMano(Mano m)
@@ -120,13 +132,13 @@ public abstract class Jugada7ymedia extends Jugada
     }
     
     @Override
-    public int getPuntBan()
+    public float getPuntBan()
     {
         return PuntBan;
     }
     
     @Override
-    public int getPuntJug()
+    public float getPuntJug()
     {
         return PuntJug;
     }

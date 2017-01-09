@@ -13,6 +13,11 @@ public class Mano
         valorMano=0;
     }
     
+    public float getValorMano()
+    {
+        return valorMano;
+    }
+    
     
     public Carta pedirCarta(Baraja b)
     {

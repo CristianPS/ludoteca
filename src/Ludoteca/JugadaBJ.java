@@ -96,13 +96,21 @@ public abstract class JugadaBJ extends Jugada
     {
         Jugador Banca = new Jugador("Banca");
         //Se piden dos cartas obligatoriamnte al principio. Habría que añadirlo tambien a jugada jugador.
-        manobanca.pedirCarta(baraja);
-        manobanca.pedirCarta(baraja);
+        CartaFrancesa c;
+        ArrayList<Carta> manoAux = new ArrayList();
+        for(int i=0; i<2; i++)
+        {
+            c = (CartaFrancesa) manobanca.pedirCarta(baraja);
+            c.mostrar();
+            manoAux.add(c);
+            manobanca.anadirAMano(manoAux);
+        }
         while (manobanca.valorMano<17)
         {
-            manobanca.pedirCarta(baraja);
-            manobanca.CalcularValor(Banca);
-            
+            c=(CartaFrancesa) manobanca.pedirCarta(baraja);
+            manoAux.add(c);
+            manobanca.anadirAMano(manoAux);
+            manobanca.CalcularValor(Banca);            
         }
                
         PuntBan = (int)manobanca.CalcularValor();
@@ -142,6 +150,7 @@ public abstract class JugadaBJ extends Jugada
                     c= mano.pedirCarta(baraja);
                 }
                 cartasSacadas.add(c);
+                c.mostrar();
                 //String carta = c.mostrar();
                 //escribirCartas += carta +"\n";         
                 //vJ2.jTextArea2.setText();//SE supone que esto lo que tiene que hacer es camiar el texto del jtext area que he creado para que muestre por texto las cartas pero no se como hacer que pase el texto de est funcion a la ventana 2.
@@ -194,13 +203,13 @@ public abstract class JugadaBJ extends Jugada
     }
     
     @Override
-    public int getPuntBan()
+    public float getPuntBan()
     {
         return PuntBan;
     }
     
     @Override
-    public int getPuntJug()
+    public float getPuntJug()
     {
         return PuntJug;
     }

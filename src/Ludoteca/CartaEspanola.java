@@ -44,10 +44,14 @@ public class CartaEspanola extends Carta
         String Palo = null;
         switch (this.palo)
         {
-            case 0: Palo = "Oros";                   
-            case 1: Palo = "Bastos";                                        
-            case 2: Palo = "Espadas";                                       
-            case 3: Palo = "Copas";
+            case 1: Palo = "Oros"; 
+                break;
+            case 2: Palo = "Bastos";   
+                break;
+            case 3: Palo = "Espadas";    
+                break;
+            case 4: Palo = "Copas";
+                break;
             default: System.err.println("Error: Carta no válida.");
         }
         return Palo;
