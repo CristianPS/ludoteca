@@ -90,6 +90,15 @@ public abstract class JugadaBJ extends Jugada
         manobanca = new ManoBJ();
     }
     
+    public void repartirJugador()
+    {
+        
+    }
+    
+    public void repartirBanca()
+    {
+        
+    }
     
     @Override
     public void jugarBanca()
@@ -207,9 +216,9 @@ public abstract class JugadaBJ extends Jugada
     @Override
     public void apostar(int apuesta)
     {        
-        if(apuesta<25)
+        if(apuesta<10)
         {
-            apuesta=25;
+            apuesta=10;
         }
         int ft = ganador.getFichasTotales();
         ganador.setFichasTotales(ft-apuesta);
