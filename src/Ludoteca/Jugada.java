@@ -57,6 +57,14 @@ public abstract class Jugada
     {
         apuesta=a;
     }
+    public ArrayList<Mano> getArrayManoJug()
+    {
+        return this.ArrayMano;
+    }
+    public ArrayList<Mano> getArrayManoBan()
+    {
+        return this.ArrayManoBanca;
+    }
 
     public abstract int[] repartirJugador(ventanaJuego2 vJ2);
     public abstract int[] repartirBanca();

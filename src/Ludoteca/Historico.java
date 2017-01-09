@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,7 +12,7 @@ public class Historico
 {
     private ArrayList<Jugador> HistJug = new ArrayList();
     private ArrayList<Partida> HistPart = new ArrayList();
-    private final String ruta = "C:\\Users\\Cristian\\Documents\\ludoteca\\src\\Ludoteca\\historico.txt";
+    private final String ruta = "src/Ludoteca/historico.txt";
     private File fichero = new File(ruta);
     private FileReader fr;
     private BufferedReader br;
@@ -110,7 +111,46 @@ public class Historico
         }
         catch (Exception Ex) {System.out.println("Excepcion de pollas en vinaguer");}
         
-        
+        try 
+        {
+            this.br = new BufferedReader(fr);
+            String line = "";
+            while ((line=br.readLine())!=null)
+            {
+                char[] c = line.toCharArray();
+                int comas=0, comas2=0, puntos=0, j=0;
+                Partida p1 = new Partida();
+                //for(int i = c.length; i>=0; i--)
+                for(int i = 0; i<c.length;i++)
+                {
+                    if (comas<=4)
+                    {   
+                        if (c[i]==',')
+                        {
+                            comas++;
+                            switch(comas)
+                            {
+                                case 1: p1.setNum(Integer.parseInt(line.substring(j,i))); break;
+                                case 2: //p1.setFecha(Date/*line.substring(j,i)*/); break;
+                                case 3: p1.setJuego(line.substring(j,i)); break;
+                                case 4: p1.setJugadasTotales(Integer.parseInt(line.substring(j,i))); break;
+                                
+                            }
+                            j=i+1;
+                        }
+                        if (c[i]==':')
+                        {
+                            
+                        }
+                    }
+                   
+                }
+                
+                
+            }
+            br.close();
+        }
+        catch (Exception Ex) {System.out.println("Excepcion de pollas en vinaguer");}
     }
             
                 
@@ -129,6 +169,45 @@ public class Historico
         this.bw=new BufferedWriter(fw);
         bw.write(line);
         bw.close();
+    }
+    
+    public void actualizarPartidas() throws IOException 
+    {
+        String line="";
+        String partidas="";
+        String cartas="";
+        
+        //for (Jugadas J: P.
+        for(Partida P: HistPart)
+        {
+            line+=P.getNum()+","+P.getFecha()+","+P.getJuego()+","+P.getNumJugadas()+":";
+            for (Jugada J: P.getArrayListJugada())
+            {
+                partidas+=J.getGanador()+","+J.getApuesta()+","+"Mano>";
+                for (Mano M: J.getArrayManoJug())
+                {
+                    for (Carta C: M.getArrayCarta())
+                    {
+                        cartas+=C.getPalo()+"-"+C.getValor();
+                    }
+                    cartas+=";";
+                }
+                for (Mano M: J.getArrayManoBan())
+                {
+                    for (Carta C: M.getArrayCarta())
+                    {
+                        cartas+=C.getPalo()+"-"+C.getValor();
+                    }
+                    cartas+=".";
+                }
+                partidas+=cartas;
+            }
+            line+=partidas;
+            this.fw=new FileWriter(fichero);
+            this.bw=new BufferedWriter(fw);
+            bw.write(line);
+            bw.close();
+        }
     }
     
     public String resultados(Jugador J) throws IOException //terminada
