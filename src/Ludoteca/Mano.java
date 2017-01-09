@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Mano
 {
-    private ArrayList<Carta> mano = new ArrayList();
+    protected ArrayList<Carta> mano = new ArrayList();
     protected float valorMano;
     
     public Mano()
