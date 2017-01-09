@@ -17,6 +17,10 @@ public class Mano
     {
         return valorMano;
     }
+    public void resetValorMano()
+    {
+        valorMano=0;
+    }
     
     
     public Carta pedirCarta(Baraja b)
@@ -36,9 +40,9 @@ public class Mano
     public float CalcularValor()
     {       
         int i = mano.size();
-        while (i>0)
+        i--;
+        while (i>=0)
         {
-            i--;
             switch (mano.get(i).getValor())
             {
                 case 10: case 11: case 12:

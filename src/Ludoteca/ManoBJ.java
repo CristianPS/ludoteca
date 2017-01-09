@@ -10,10 +10,12 @@ public class ManoBJ extends Mano
         super();
     }
     
+    @Override
     public float getValorMano()
     {
         return valorMano;
     }
+    @Override
     public void resetValorMano()
     {
         valorMano=0;

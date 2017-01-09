@@ -47,7 +47,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
         imagenes = new ImageIcon[53];
-        imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
+        /*imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
         imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_0.png"));
         imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_0.png"));
         imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_0.png"));
@@ -99,7 +99,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_3.png"));
         imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_3.png"));
         imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_3.png"));
-        imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));
+        imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));*/
     }
     public void recogerJugada(Jugada jugada)
     {
@@ -566,10 +566,11 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int valJugar[] = new int[2];
         
-        if(valJugar[1]==0)
+        if(botones==0)
         {
-            if(botones==0)
+            if(valJugar[1]==0)
             {
+                
                 valJugar=J.jugarJugador(this);
                 if(iAux==0)
                 {
@@ -646,12 +647,12 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         System.out.println("Valor mano jugador: "+valorManoJ+"\n Valor mano banca: "+valorManoB);
         if(botones==0)
         {
-            if((valorManoJ>valorManoB && valorManoJ<=7.5)|| valorManoB>7.5)
+            if((valorManoJ>valorManoB && valorManoJ<=7.5)|| (valorManoB>7.5 && valorManoJ<7.5))
             {
                 JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
                 Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
             }
-            else if (valorManoJ==valorManoB)
+            else if ((valorManoJ==valorManoB) && valorManoJ<7.5)
             {
                 JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
             }
@@ -663,6 +664,10 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         }
         if(botones==1)
         {
+            for(int j=0; j<valores.length; j++)
+            {
+                valores[j]=-1;
+            }
             if((valorManoJ>valorManoB && valorManoJ<=21)|| (valorManoB>21 && valorManoJ<21))
             {
                 JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
@@ -678,8 +683,10 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);            
             }
         }
-        jButton14.setIcon(imagenes[valores[1]]);
-        
+        if(valores[1]!=-1)
+        {
+            jButton14.setIcon(imagenes[valores[1]]);
+        }        
 
         if(valoresJugada[aux]!=-1)
         {

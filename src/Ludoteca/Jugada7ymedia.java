@@ -113,6 +113,7 @@ public abstract class Jugada7ymedia extends Jugada
                     break;
             }
         }
+        mano.resetValorMano();
         PuntJug = (int)mano.CalcularValor();
         System.out.println("\n"+PuntJug);
         ArrayMano.add(mano);

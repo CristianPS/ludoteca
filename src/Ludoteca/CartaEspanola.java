@@ -59,7 +59,7 @@ public class CartaEspanola extends Carta
     
     public int posArray()
     {
-        if (valor>1 && valor<8)
+        if (valor>0 && valor<8)
         {            
             return (valor-1) + (palo-1)*10;
         } 
