@@ -156,7 +156,7 @@ public abstract class JugadaBJ extends Jugada
     }
     
     @Override
-    public int jugarJugador(ventanaJuego2 vJ2)
+    public int[] jugarJugador(ventanaJuego2 vJ2)
     {    
         //Luego el jugador va pidiendo cartas hasta que no quiera mas
         /*for(int i=0; i<40; i++)
@@ -173,7 +173,7 @@ public abstract class JugadaBJ extends Jugada
         
         
         //0 si es un SI y 1 si es un NO
-        int salida=0;
+        int[] salida= new int[2];
         CartaFrancesa c;
         ArrayList<Carta> mazoAux = new ArrayList();
         //String escribirCartas="";
@@ -198,7 +198,7 @@ public abstract class JugadaBJ extends Jugada
                     mazoAux.add(c);
                     mano.anadirAMano(mazoAux);
                     c.mostrar();
-                    salida=c.posArray();
+                    salida[0]=c.posArray();
                     //String carta = c.mostrar();
                     //escribirCartas += carta +"\n";         
                     //vJ2.jTextArea2.setText();//SE supone que esto lo que tiene que hacer es camiar el texto del jtext area que he creado para que muestre por texto las cartas pero no se como hacer que pase el texto de est funcion a la ventana 2.
@@ -211,6 +211,8 @@ public abstract class JugadaBJ extends Jugada
         mano.resetValorMano();
         PuntJug = (float) mano.CalcularValor(vJ2.getJugador());
         ArrayMano.add(mano);
+        
+        salida[1]=opcion;
         
         return salida;
     }

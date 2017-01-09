@@ -61,7 +61,7 @@ public abstract class Jugada
     public abstract int[] repartirJugador(ventanaJuego2 vJ2);
     public abstract int[] repartirBanca();
     public abstract void jugarBanca();
-    public abstract int jugarJugador(ventanaJuego2 vJ2);
+    public abstract int[] jugarJugador(ventanaJuego2 vJ2);
     public abstract float getPuntBan();
     public abstract float getPuntJug();
     

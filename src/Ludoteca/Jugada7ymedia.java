@@ -54,7 +54,7 @@ public abstract class Jugada7ymedia extends Jugada
         ArrayMano.add(manobanca);
     }
     @Override
-    public int jugarJugador(ventanaJuego2 vJ2)
+    public int[] jugarJugador(ventanaJuego2 vJ2)
     {
         //Al inicio se apuesta una cantidad mayor o igual que 25
         /*Mano mJugador = new Mano();   
@@ -76,7 +76,7 @@ public abstract class Jugada7ymedia extends Jugada
             if(resp.equals("N")) break;
         }
         PuntJug = (int)mano.CalcularValor();*/
-        int salida=0;
+        int[] salida= new int[2];
         Carta c;
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         if(PuntJug>7.5)

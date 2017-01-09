@@ -146,7 +146,6 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jTextArea2 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -303,9 +302,6 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
         });
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-
         jMenu1.setText("File");
 
         jMenuItem1.setText("Historico");
@@ -343,9 +339,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                                                 .addComponent(jButton1))
                                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextArea2, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(67, 67, 67)
+                                        .addGap(815, 815, 815)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -366,14 +360,11 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextArea2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4))))
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(jLabel2)
@@ -381,7 +372,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(61, 61, 61)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(134, Short.MAX_VALUE))
         );
@@ -450,7 +441,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         if(botones==1)
         {
             int[] valores = new int[2];
-            int valJugar = 0;
+            int valJugar[] = new int[2];
             if(iAux==0)
             {
                 valores=J.repartirJugador(this);
@@ -465,24 +456,27 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
             System.out.println("-------------------------------");
             valJugar=J.jugarJugador(this);
-            if(iAux==0)
+            if (valJugar[1]==0)
             {
-                jButton7.setIcon(imagenes[valJugar]);
+                if(iAux==0)
+                {
+                    jButton7.setIcon(imagenes[valJugar[0]]);
+                }
+                else if (iAux==1)
+                {
+                    jButton8.setIcon(imagenes[valJugar[0]]);
+                }
+                else if (iAux==2)
+                {
+                    jButton9.setIcon(imagenes[valJugar[0]]);
+                }
+                else if (iAux==3)
+                {
+                    jButton10.setIcon(imagenes[valJugar[0]]);
+                }
+                iAux++;
+                System.out.println("-------------------------------");
             }
-            else if (iAux==1)
-            {
-                jButton8.setIcon(imagenes[valJugar]);
-            }
-            else if (iAux==2)
-            {
-                jButton9.setIcon(imagenes[valJugar]);
-            }
-            else if (iAux==3)
-            {
-                jButton10.setIcon(imagenes[valJugar]);
-            }
-            iAux++;
-            System.out.println("-------------------------------");
         }
         // J.jugarBanca(); CREO QUE ESTO MEJOR EN EL BOTON DE ABAJO UNA VEZ HAYA ACABADO EL JUGADOR
         
@@ -611,7 +605,6 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
