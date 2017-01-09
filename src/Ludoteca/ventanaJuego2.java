@@ -6,6 +6,7 @@
 package Ludoteca;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private Jugada J;
     private int apuesta;
     private Baraja baraja;
+    ImageIcon[] imagenes;
     /**
      * Creates new form ventanaJuego2
      * @param jugador
@@ -27,6 +29,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         setVisible(true);
+        imagenes = new ImageIcon[52];
         Jug = jugador;
         botones = i;
         if(botones == 1)
@@ -334,6 +337,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         if(botones==1)
         {
             J.repartirJugador(this);
+            
             System.out.println("-------------------------------");
             J.repartirBanca();
             System.out.println("-------------------------------");

@@ -170,7 +170,8 @@ public abstract class JugadaBJ extends Jugada
         //aqui no habria que meter un while?????
         if(PuntJug>21)
         {
-            JOptionPane.showConfirmDialog(vJ2, "Tu puntuacion es mayor de 21 ("+PuntJug+") por tanto no puedes seguir pidiendo carta");
+            JOptionPane.showMessageDialog(vJ2, "Tu puntuacion es mayor de 21 ("+PuntJug+") por tanto no puedes seguir pidiendo carta");
+            vJ2.deshabilitarJugar();
         }
         else
         {

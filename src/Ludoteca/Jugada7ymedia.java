@@ -80,7 +80,8 @@ public abstract class Jugada7ymedia extends Jugada
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         if(PuntJug>7.5)
         {
-            JOptionPane.showConfirmDialog(vJ2, "Tu puntuacion es mayor de 7.5 ("+PuntJug+") por tanto no puedes seguir pidiendo carta");
+            JOptionPane.showMessageDialog(vJ2, "Tu puntuacion es mayor de 7.5 ("+PuntJug+") por tanto no puedes seguir pidiendo carta");
+            
         }
         else
         {
