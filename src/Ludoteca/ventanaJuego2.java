@@ -52,6 +52,10 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     {
         jButton3.setEnabled(false);
     }
+    public Jugador getJugador()
+    {
+        return Jug;
+    }
 
 
     /**
@@ -189,8 +193,8 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                                         .addGap(67, 67, 67)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton4))))
+                                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addGap(0, 437, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
@@ -299,19 +303,39 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         float valorManoJ = J.getPuntJug();
         float valorManoB = J.getPuntBan();
         System.out.println("Valor mano jugador: "+valorManoJ+"\n Valor mano banca: "+valorManoB);
-        if((valorManoJ>valorManoB && valorManoJ<=7.5)|| valorManoB>7.5)
+        if(botones==0)
         {
-            JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
-            Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+            if((valorManoJ>valorManoB && valorManoJ<=7.5)|| valorManoB>7.5)
+            {
+                JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
+                Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+            }
+            else if (valorManoJ==valorManoB)
+            {
+                JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
+            }
+            else 
+            {
+               JOptionPane.showMessageDialog(this, "Ha ganado la banca. Buena suerte la proxima vez"); 
+               Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);
+            }
         }
-        else if (valorManoJ==valorManoB)
+        if(botones==1)
         {
-            JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
-        }
-        else 
-        {
-           JOptionPane.showMessageDialog(this, "Ha ganado la banca. Buena suerte la proxima vez"); 
-           Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);
+            if((valorManoJ>valorManoB && valorManoJ<=21)|| valorManoB>21)
+            {
+                JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
+                Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+            }
+            else if (valorManoJ==valorManoB)
+            {
+                JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
+            }
+            else 
+            {
+               JOptionPane.showMessageDialog(this, "Ha ganado la banca. Buena suerte la proxima vez"); 
+               Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);            
+            }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 

@@ -104,16 +104,19 @@ public abstract class JugadaBJ extends Jugada
             c.mostrar();
             manoAux.add(c);
             manobanca.anadirAMano(manoAux);
+            manoAux.clear();
         }
-        while (manobanca.valorMano<17)
+        float valor=manobanca.CalcularValor(Banca);
+        while (valor<17)
         {
             c=(CartaFrancesa) manobanca.pedirCarta(baraja);
             manoAux.add(c);
             manobanca.anadirAMano(manoAux);
-            manobanca.CalcularValor(Banca);            
+            manobanca.resetValorMano();
+            valor=manobanca.CalcularValor(Banca);            
         }
                
-        PuntBan = (int)manobanca.CalcularValor();
+        PuntBan = (float)manobanca.getValorMano();
         ArrayManoBanca.add(manobanca);//Habria que añadir las manos aquí no?
     }
     
@@ -136,8 +139,19 @@ public abstract class JugadaBJ extends Jugada
         
         //0 si es un SI y 1 si es un NO
         Carta c;
-        mano.pedirCarta(baraja);
-        mano.pedirCarta(baraja);
+        ArrayList<Carta> mazoAux = new ArrayList();
+        if(mano.vacia())
+        {
+            for(int i=0; i<2; i++)
+            {
+                c=mano.pedirCarta(baraja);
+                mazoAux.add(c);
+                c.mostrar();
+                cartasSacadas.add(c);
+                mano.anadirAMano(mazoAux);
+                mazoAux.clear();
+            }
+        }
         //String escribirCartas="";
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         //aqui no habria que meter un while?????
@@ -150,6 +164,8 @@ public abstract class JugadaBJ extends Jugada
                     c= mano.pedirCarta(baraja);
                 }
                 cartasSacadas.add(c);
+                mazoAux.add(c);
+                mano.anadirAMano(mazoAux);
                 c.mostrar();
                 //String carta = c.mostrar();
                 //escribirCartas += carta +"\n";         
@@ -159,7 +175,7 @@ public abstract class JugadaBJ extends Jugada
                 vJ2.deshabilitarJugar();
                 break;
         }
-        PuntJug = (int)mano.CalcularValor();
+        PuntJug = (float) mano.CalcularValor(vJ2.getJugador());
         ArrayMano.add(mano);
         
     }

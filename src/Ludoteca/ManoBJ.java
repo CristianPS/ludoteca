@@ -10,6 +10,15 @@ public class ManoBJ extends Mano
         super();
     }
     
+    public float getValorMano()
+    {
+        return valorMano;
+    }
+    public void resetValorMano()
+    {
+        valorMano=0;
+    }
+    
     public float CalcularValor(Jugador j)
     {
         Jugador jAux = new Jugador("Banca");
@@ -42,12 +51,12 @@ public class ManoBJ extends Mano
                 case 13: aux=10;
                     break;
             }
-            valorMano=+aux;
+            valorMano+=aux;
         }
         
         if(!j.equals(jAux))
         {
-        for (int i=0; i<=numAs; i++)
+        for (int i=0; i<numAs; i++)
             {
                 System.out.println("En la mano tienes un total de "+numAs+" ases.");//Modificar para interfaz gráfica.
                 aux=hayUnAs();
@@ -150,5 +159,10 @@ public class ManoBJ extends Mano
             Carta x = c.get(i);
             mano.add(x);
         }
+    }
+    
+    public boolean vacia()
+    {
+        return mano.isEmpty();
     }
 }
