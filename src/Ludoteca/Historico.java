@@ -22,7 +22,7 @@ public class Historico
     public static void main(String args[]) throws IOException
     {
         Historico hist = new Historico();
-        Jugador Jose = new Jugador("Jose");
+        /*Jugador Jose = new Jugador("Jose");
         Jose.setJugadasEmpatadas(2);
         System.out.println(Jose.getJugadasEmpatadas());
         Jose.setJugadasGanadas7(45);
@@ -49,10 +49,12 @@ public class Historico
         System.out.println(Pepe.getJugadasPerdidasBJ());
         Pepe.setFichasTotales(12000);
         System.out.println(Pepe.getFichasTotales());
-        hist.anadirJugador(Pepe);
+        hist.anadirJugador(Pepe);*/
         //try {
        //VentanaHistorico ven = new VentanaHistorico();
         hist.imprimeArrayJugadores();
+        hist.actualizarHistorico();
+        Historico h2 = new Historico();
         //} //catch (IOException ex) {
             //Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
         //}
@@ -62,44 +64,51 @@ public class Historico
         try {
             this.fr = new FileReader(fichero);
         } catch (FileNotFoundException ex) {
+            System.out.println("Fallo linea 67");
             Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.br = new BufferedReader(fr);
+        
         
         try 
         {
+            this.br = new BufferedReader(fr);
             String line = "";
             while ((line=br.readLine())!=null)
             {
                 char[] c = line.toCharArray();
                 int comas=0, j=0;
                 String nula = null;
-                for(int i = c.length; i>0; i--)
+                Jugador j1 = new Jugador(nula);
+                //for(int i = c.length; i>=0; i--)
+                for(int i = 0; i<c.length;i++)
                 {
-                    Jugador j1 = new Jugador(nula);
-                    while (comas!=7)
-                    {
+                    if (comas<=7)
+                    {   
                         if (c[i]==',')
                         {
                             comas++;
                             switch(comas)
                             {
-                                case 1: j1.setNombre(line.substring(j, i-1)); break;
-                                case 2: j1.setFichasTotales(Integer.parseInt(line.substring(j,i-1))); break;
-                                case 3: j1.setJugadasGanadasBJ(Integer.parseInt(line.substring(j,i-1))); break;
-                                case 4: j1.setJugadasPerdidasBJ(Integer.parseInt(line.substring(j,i-1))); break;
-                                case 5: j1.setJugadasGanadas7(Integer.parseInt(line.substring(j,i-1))); break;
-                                case 6: j1.setJugadasPerdidas7(Integer.parseInt(line.substring(j,i-1))); break;
-                                case 7: j1.setJugadasEmpatadas(Integer.parseInt(line.substring(j,i-1))); break;
+                                case 1: j1.setNombre(line.substring(j, i)); break;
+                                case 2: j1.setFichasTotales(Integer.parseInt(line.substring(j,i))); break;
+                                case 3: j1.setJugadasGanadasBJ(Integer.parseInt(line.substring(j,i))); break;
+                                case 4: j1.setJugadasPerdidasBJ(Integer.parseInt(line.substring(j,i))); break;
+                                case 5: j1.setJugadasGanadas7(Integer.parseInt(line.substring(j,i))); break;
+                                case 6: j1.setJugadasPerdidas7(Integer.parseInt(line.substring(j,i))); break;
+                                case 7: j1.setJugadasEmpatadas(Integer.parseInt(line.substring(j,i))); this.HistJug.add(j1); break;
+                                
                             }
                             j=i+1;
                         }
                     }
-                    this.anadirJugador(j1);
+                   
                 }
+                
+                
             }
+            br.close();
         }
-        catch (Exception Ex) {}
+        catch (Exception Ex) {System.out.println("Excepcion de pollas en vinaguer");}
         
         
     }
@@ -108,15 +117,17 @@ public class Historico
             
     public void actualizarHistorico() throws IOException
     {
-        String linea="";
+        String line="";
         for(Jugador J: HistJug)
         {
-            linea+=J.getNombre()+","+J.getFichasTotales()+","+J.getJugadasGanadasBJ()+","+J.getJugadasPerdidasBJ()+","+J.getJugadasGanadas7()+","+J.getJugadasPerdidas7()+","+J.getJugadasEmpatadas()+"\n";
+            line+=J.getNombre()+","+J.getFichasTotales()+","+J.getJugadasGanadasBJ()+","+J.getJugadasPerdidasBJ()+","+J.getJugadasGanadas7()+","+J.getJugadasPerdidas7()+","+J.getJugadasEmpatadas()+","+"\r\n";
         }
         
-        fichero.delete();
-        fichero.createNewFile();
-        bw.write(linea);
+        //fichero.delete();
+        //fichero.createNewFile();
+        this.fw=new FileWriter(fichero);
+        this.bw=new BufferedWriter(fw);
+        bw.write(line);
         bw.close();
     }
     
