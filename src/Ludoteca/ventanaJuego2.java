@@ -20,6 +20,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private int apuesta;
     private Baraja baraja;
     ImageIcon[] imagenes;
+    private int iAux=0;
     /**
      * Creates new form ventanaJuego2
      * @param jugador
@@ -450,15 +451,37 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         {
             int[] valores = new int[2];
             int valJugar = 0;
-            valores=J.repartirJugador(this);
-            //jButton14.setIcon(imagenes[valores[0]]);
-            //jButton12.setIcon(imagenes[valores[1]]);
-            System.out.println("-------------------------------");
-            valores=J.repartirBanca();
-            jButton14.setIcon(imagenes[valores[0]]);
+            if(iAux==0)
+            {
+                valores=J.repartirJugador(this);
+                jButton5.setIcon(imagenes[valores[0]]);
+                jButton6.setIcon(imagenes[valores[1]]);
+            }
+            System.out.println("-------------------------------"); 
+            if (iAux==0)
+            {
+                valores=J.repartirBanca();
+                jButton14.setIcon(imagenes[valores[0]]);
+            }
             System.out.println("-------------------------------");
             valJugar=J.jugarJugador(this);
-            //jButtonXX.setIcon(imagenes[valjugar]);
+            if(iAux==0)
+            {
+                jButton7.setIcon(imagenes[valJugar]);
+            }
+            else if (iAux==1)
+            {
+                jButton8.setIcon(imagenes[valJugar]);
+            }
+            else if (iAux==2)
+            {
+                jButton9.setIcon(imagenes[valJugar]);
+            }
+            else if (iAux==3)
+            {
+                jButton10.setIcon(imagenes[valJugar]);
+            }
+            iAux++;
             System.out.println("-------------------------------");
         }
         // J.jugarBanca(); CREO QUE ESTO MEJOR EN EL BOTON DE ABAJO UNA VEZ HAYA ACABADO EL JUGADOR
