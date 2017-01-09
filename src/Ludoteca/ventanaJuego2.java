@@ -270,7 +270,19 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        J.jugarJugador(this);
+        if(botones==0)
+        {
+            J.jugarJugador(this);
+        }
+        if(botones==1)
+        {
+            J.repartirJugador(this);
+            System.out.println("-------------------------------");
+            J.repartirBanca();
+            System.out.println("-------------------------------");
+            J.jugarJugador(this);   
+            System.out.println("-------------------------------");
+        }
         // J.jugarBanca(); CREO QUE ESTO MEJOR EN EL BOTON DE ABAJO UNA VEZ HAYA ACABADO EL JUGADOR
         
         

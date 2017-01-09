@@ -17,6 +17,15 @@ public abstract class Jugada7ymedia extends Jugada
         manobanca = new Mano();
     }
     
+    public void repartirJugador(ventanaJuego2 vJ2)
+    {
+        
+    }
+    public void repartirBanca()
+    {
+        
+    }
+    
     @Override
     public void jugarBanca()
     {
@@ -69,24 +78,31 @@ public abstract class Jugada7ymedia extends Jugada
         PuntJug = (int)mano.CalcularValor();*/
         Carta c;
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
-        switch (opcion)
+        if(PuntJug>7.5)
         {
-            case 0:
-                c=mano.pedirCarta(baraja);
-                while(cartasSacadas.contains(c))
-                {
-                    c= mano.pedirCarta(baraja);
-                }
-                cartasSacadas.add(c);
-                c.mostrar();
-                ArrayList<Carta> manoAux = new ArrayList();
-                manoAux.add(c);
-                mano.anadirAMano(manoAux);
-                break;
-                
-            case 1:
-                vJ2.deshabilitarJugar();
-                break;
+            JOptionPane.showConfirmDialog(vJ2, "Tu puntuacion es mayor de 7.5 ("+PuntJug+") por tanto no puedes seguir pidiendo carta");
+        }
+        else
+        {
+            switch (opcion)
+            {
+                case 0:
+                    c=mano.pedirCarta(baraja);
+                    while(cartasSacadas.contains(c))
+                    {
+                        c= mano.pedirCarta(baraja);
+                    }
+                    cartasSacadas.add(c);
+                    c.mostrar();
+                    ArrayList<Carta> manoAux = new ArrayList();
+                    manoAux.add(c);
+                    mano.anadirAMano(manoAux);
+                    break;
+
+                case 1:
+                    vJ2.deshabilitarJugar();
+                    break;
+            }
         }
         PuntJug = (int)mano.CalcularValor();
         System.out.println("\n"+PuntJug);

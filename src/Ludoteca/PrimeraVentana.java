@@ -5,6 +5,8 @@
  */
 package Ludoteca;
 
+import java.awt.event.KeyEvent;
+
 
 /**
  *
@@ -39,8 +41,20 @@ public class PrimeraVentana extends javax.swing.JFrame {
             //EL BOTON DE 7Y1/2 SELECCIONADO
             return 0;
         }
-        return -1;
-        
+        return -1;   
+    }
+    
+    public void actionClick()
+    {
+        String nombreJugador = jTextField1.getText();
+        Jugador j1 = new Jugador(nombreJugador);
+        //System.out.println(jugad.getNombre());
+        System.out.println(j1.getNombre());
+        int i = posicionBotones();
+        //ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
+        ventanaJuego2 vJ= new ventanaJuego2(j1, i);
+        dispose();
+        vJ.setVisible(true);
     }
     
     
@@ -118,6 +132,14 @@ public class PrimeraVentana extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jButton1KeyReleased(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
 
         jLabel5.setText("Introduzca su nombre...");
@@ -185,6 +207,20 @@ public class PrimeraVentana extends javax.swing.JFrame {
     private void jRadioButton2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton2ItemStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ItemStateChanged
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) 
+        {
+            actionClick();      
+        }
+    }//GEN-LAST:event_jButton1KeyPressed
+
+    private void jButton1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) 
+        {
+            actionClick();      
+        }
+    }//GEN-LAST:event_jButton1KeyReleased
 
     /**
      * @param args the command line arguments

@@ -90,6 +90,7 @@ public abstract class JugadaBJ extends Jugada
         manobanca = new ManoBJ();
     }
     
+    @Override
     public void repartirJugador(ventanaJuego2 vJ2)
     {
         Carta c;
@@ -106,6 +107,7 @@ public abstract class JugadaBJ extends Jugada
         mano.CalcularValor(vJ2.getJugador());
     }
     
+    @Override
     public void repartirBanca()
     {
         Jugador Banca = new Jugador("Banca");
@@ -166,26 +168,34 @@ public abstract class JugadaBJ extends Jugada
         //String escribirCartas="";
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         //aqui no habria que meter un while?????
-        switch (opcion)
+        if(PuntJug>21)
         {
-            case 0:
-                c=mano.pedirCarta(baraja);
-                while(cartasSacadas.contains(c))
-                {
-                    c= mano.pedirCarta(baraja);
-                }
-                cartasSacadas.add(c);
-                mazoAux.add(c);
-                mano.anadirAMano(mazoAux);
-                c.mostrar();
-                //String carta = c.mostrar();
-                //escribirCartas += carta +"\n";         
-                //vJ2.jTextArea2.setText();//SE supone que esto lo que tiene que hacer es camiar el texto del jtext area que he creado para que muestre por texto las cartas pero no se como hacer que pase el texto de est funcion a la ventana 2.
-                break;
-            case 1:
-                vJ2.deshabilitarJugar();
-                break;
+            JOptionPane.showConfirmDialog(vJ2, "Tu puntuacion es mayor de 21 ("+PuntJug+") por tanto no puedes seguir pidiendo carta");
         }
+        else
+        {
+            switch (opcion)
+            {
+                case 0:
+                    c=mano.pedirCarta(baraja);
+                    while(cartasSacadas.contains(c))
+                    {
+                        c= mano.pedirCarta(baraja);
+                    }
+                    cartasSacadas.add(c);
+                    mazoAux.add(c);
+                    mano.anadirAMano(mazoAux);
+                    c.mostrar();
+                    //String carta = c.mostrar();
+                    //escribirCartas += carta +"\n";         
+                    //vJ2.jTextArea2.setText();//SE supone que esto lo que tiene que hacer es camiar el texto del jtext area que he creado para que muestre por texto las cartas pero no se como hacer que pase el texto de est funcion a la ventana 2.
+                    break;
+                case 1:
+                    vJ2.deshabilitarJugar();
+                    break;
+            }
+        }
+        mano.resetValorMano();
         PuntJug = (float) mano.CalcularValor(vJ2.getJugador());
         ArrayMano.add(mano);
         
