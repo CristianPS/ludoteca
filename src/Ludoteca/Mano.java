@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Mano
 {
-    protected ArrayList<Carta> mano = new ArrayList();
+    private ArrayList<Carta> mano = new ArrayList();
     protected float valorMano;
     
     public Mano()
@@ -90,5 +90,10 @@ public class Mano
             Carta x = c.get(i);
             mano.add(x);
         }
+    }
+    
+    public ArrayList<Carta> getArrayCarta()
+    {
+        return this.mano;
     }
 }

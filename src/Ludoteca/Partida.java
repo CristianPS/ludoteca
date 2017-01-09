@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Partida 
 {
     private int num, fichas;
-    private static int partidasTotales;
+    private static int jugadasTotales;
     private Date fecha = new Date();
     private String juego;
     private ArrayList <Jugada> arrayListJugada = new ArrayList();
@@ -22,7 +22,7 @@ public class Partida
     {
         num=0;
         fichas=0;
-        partidasTotales=0;
+        jugadasTotales=0;
         juego= null;
         arrayListJugada.clear();
     }
@@ -45,13 +45,13 @@ public class Partida
         fichas=f;
     }
     
-    public static int getPartidasTotales()
+    public static int getJugadasTotales()
     {
-        return partidasTotales;
+        return jugadasTotales;
     }
-    public void setPartidaTotales(int pT)
+    public void setJugadasTotales(int pT)
     {
-        partidasTotales=pT;
+        jugadasTotales=pT;
     }
     
     public Date getFecha()
@@ -63,6 +63,10 @@ public class Partida
         fecha=f;
     }
     
+    public ArrayList<Jugada> getArrayListJugada()
+    {
+        return this.arrayListJugada;
+    }
     public String getJuego()
     {
         return juego;
@@ -123,7 +127,7 @@ public class Partida
     
     public void sumar1aTotalPartidas()
     {
-        partidasTotales++;
+        jugadasTotales++;
     }
     
     public Jugada devolverJugada (int i)
