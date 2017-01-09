@@ -37,18 +37,39 @@ public class CartaFrancesa extends Carta
         String Palo = null;
         switch (this.palo)
         {
-            case 1: Palo = "Picas";  
+            case 1: Palo = "Corazones";  
                 break;
-            case 2: Palo = "Corazones"; 
+            case 2: Palo = "Diamantes"; 
                 break;
             case 3: Palo = "Tréboles"; 
                 break;
-            case 4: Palo = "Diamantes";
+            case 4: Palo = "Picas";
                 break;
             default: System.err.println("Error: Carta no válida.");
         }
         
         return Palo;
+    }
+    
+    public int posArray()
+    {
+        if(palo==1)
+        {
+            return valor;            
+        }
+        else if (palo==2)
+        {
+            return 12+valor;
+        }
+        else if (palo==3)
+        {
+            return 25+valor;
+        }
+        else if(palo==4)
+        {
+            return 38+valor;
+        }
+        return -1;
     }
 }
     
