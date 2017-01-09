@@ -47,7 +47,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
         imagenes = new ImageIcon[53];
-        /*imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
+        imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
         imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_0.png"));
         imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_0.png"));
         imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_0.png"));
@@ -99,7 +99,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_3.png"));
         imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_3.png"));
         imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_3.png"));
-        imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));*/
+        imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));
     }
     public void recogerJugada(Jugada jugada)
     {
