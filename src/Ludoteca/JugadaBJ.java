@@ -90,21 +90,25 @@ public abstract class JugadaBJ extends Jugada
         manobanca = new ManoBJ();
     }
     
-    public void repartirJugador()
+    public void repartirJugador(ventanaJuego2 vJ2)
     {
-        
+        Carta c;
+        ArrayList<Carta> mazoAux = new ArrayList();
+        for(int i=0; i<2; i++)
+        {
+            c=mano.pedirCarta(baraja);
+            mazoAux.add(c);
+            c.mostrar();
+            cartasSacadas.add(c);
+            mano.anadirAMano(mazoAux);
+            mazoAux.clear();
+        }
+        mano.CalcularValor(vJ2.getJugador());
     }
     
     public void repartirBanca()
     {
-        
-    }
-    
-    @Override
-    public void jugarBanca()
-    {
         Jugador Banca = new Jugador("Banca");
-        //Se piden dos cartas obligatoriamnte al principio. Habría que añadirlo tambien a jugada jugador.
         CartaFrancesa c;
         ArrayList<Carta> manoAux = new ArrayList();
         for(int i=0; i<2; i++)
@@ -115,7 +119,17 @@ public abstract class JugadaBJ extends Jugada
             manobanca.anadirAMano(manoAux);
             manoAux.clear();
         }
+        manobanca.CalcularValor(Banca);
+    }
+    
+    @Override
+    public void jugarBanca()
+    {
+        Jugador Banca = new Jugador("Banca");
+        CartaFrancesa c;
+        ArrayList<Carta> manoAux = new ArrayList();
         float valor=manobanca.CalcularValor(Banca);
+        
         while (valor<17)
         {
             c=(CartaFrancesa) manobanca.pedirCarta(baraja);
@@ -149,18 +163,6 @@ public abstract class JugadaBJ extends Jugada
         //0 si es un SI y 1 si es un NO
         Carta c;
         ArrayList<Carta> mazoAux = new ArrayList();
-        if(mano.vacia())
-        {
-            for(int i=0; i<2; i++)
-            {
-                c=mano.pedirCarta(baraja);
-                mazoAux.add(c);
-                c.mostrar();
-                cartasSacadas.add(c);
-                mano.anadirAMano(mazoAux);
-                mazoAux.clear();
-            }
-        }
         //String escribirCartas="";
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         //aqui no habria que meter un while?????
