@@ -52,8 +52,8 @@ public class PrimeraVentana extends javax.swing.JFrame {
         System.out.println(j1.getNombre());
         int i = posicionBotones();
         //ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
-        ventanaJuego2 vJ= new ventanaJuego2(j1, i);
         dispose();
+        ventanaJuego2 vJ= new ventanaJuego2(j1, i);
         vJ.setVisible(true);
     }
     
@@ -198,8 +198,8 @@ public class PrimeraVentana extends javax.swing.JFrame {
             System.out.println(j1.getNombre());
             int i = posicionBotones();
             //ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
+            dispose();            
             ventanaJuego2 vJ= new ventanaJuego2(j1, i);
-            dispose();
             vJ.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

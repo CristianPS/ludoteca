@@ -58,10 +58,10 @@ public abstract class Jugada
         apuesta=a;
     }
 
-    public abstract void repartirJugador(ventanaJuego2 vJ2);
-    public abstract void repartirBanca();
+    public abstract int[] repartirJugador(ventanaJuego2 vJ2);
+    public abstract int[] repartirBanca();
     public abstract void jugarBanca();
-    public abstract void jugarJugador(ventanaJuego2 vJ2);
+    public abstract int jugarJugador(ventanaJuego2 vJ2);
     public abstract float getPuntBan();
     public abstract float getPuntJug();
     

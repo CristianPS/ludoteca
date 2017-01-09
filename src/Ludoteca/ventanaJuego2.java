@@ -28,60 +28,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     public ventanaJuego2(Jugador jugador, int i) {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        setVisible(true);
-        imagenes = new ImageIcon[52];
-        imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/1_0.png"));
-        imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/2_0.png"));
-        imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/3_0.png"));
-        imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/4_0.png"));
-        imagenes[4]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/5_0.png"));
-        imagenes[5]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/6_0.png"));
-        imagenes[6]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/7_0.png"));
-        imagenes[7]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/8_0.png"));
-        imagenes[8]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/9_0.png"));
-        imagenes[9]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/10_0.png"));
-        imagenes[10]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/11_0.png"));
-        imagenes[11]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/12_0.png"));
-        imagenes[12]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/13_0.png"));
-        imagenes[13]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/1_1.png"));
-        imagenes[14]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/2_1.png"));
-        imagenes[15]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/3_1.png"));
-        imagenes[16]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/4_1.png"));
-        imagenes[17]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/5_1.png"));
-        imagenes[18]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/6_1.png"));
-        imagenes[19]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/7_1.png"));
-        imagenes[20]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/8_1.png"));
-        imagenes[21]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/9_1.png"));
-        imagenes[22]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/10_1.png"));
-        imagenes[23]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/11_1.png"));
-        imagenes[24]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/12_1.png"));
-        imagenes[25]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/13_1.png"));
-        imagenes[26]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/1_2.png"));
-        imagenes[27]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/2_2.png"));
-        imagenes[28]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/3_2.png"));
-        imagenes[29]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/4_2.png"));
-        imagenes[30]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/5_2.png"));
-        imagenes[31]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/6_2.png"));
-        imagenes[32]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/7_2.png"));
-        imagenes[33]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/8_2.png"));
-        imagenes[34]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/9_2.png"));
-        imagenes[35]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/10_2.png"));
-        imagenes[36]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/11_2.png"));
-        imagenes[37]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/12_2.png"));
-        imagenes[38]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/13_2.png"));
-        imagenes[39]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/1_3.png"));
-        imagenes[40]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/2_3.png"));
-        imagenes[41]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/3_3.png"));
-        imagenes[42]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/4_3.png"));
-        imagenes[43]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/5_3.png"));
-        imagenes[44]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/6_3.png"));
-        imagenes[45]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/7_3.png"));
-        imagenes[46]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/8_3.png"));
-        imagenes[47]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/9_3.png"));
-        imagenes[48]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/10_3.png"));
-        imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/11_3.png"));
-        imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/12_3.png"));
-        imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/blackjack/13_3.png")); 
+        setVisible(true); 
         Jug = jugador;
         botones = i;
         if(botones == 1)
@@ -97,6 +44,59 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jLabel1.setText("Bienvenido, " +Jug.getNombre());
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
+        imagenes = new ImageIcon[52];
+        imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
+        imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_0.png"));
+        imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_0.png"));
+        imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_0.png"));
+        imagenes[4]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_0.png"));
+        imagenes[5]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_0.png"));
+        imagenes[6]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_0.png"));
+        imagenes[7]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_0.png"));
+        imagenes[8]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_0.png"));
+        imagenes[9]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_0.png"));
+        imagenes[10]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_0.png"));
+        imagenes[11]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_0.png"));
+        imagenes[12]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_0.png"));
+        imagenes[13]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_1.png"));
+        imagenes[14]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_1.png"));
+        imagenes[15]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_1.png"));
+        imagenes[16]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_1.png"));
+        imagenes[17]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_1.png"));
+        imagenes[18]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_1.png"));
+        imagenes[19]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_1.png"));
+        imagenes[20]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_1.png"));
+        imagenes[21]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_1.png"));
+        imagenes[22]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_1.png"));
+        imagenes[23]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_1.png"));
+        imagenes[24]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_1.png"));
+        imagenes[25]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_1.png"));
+        imagenes[26]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_2.png"));
+        imagenes[27]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_2.png"));
+        imagenes[28]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_2.png"));
+        imagenes[29]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_2.png"));
+        imagenes[30]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_2.png"));
+        imagenes[31]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_2.png"));
+        imagenes[32]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_2.png"));
+        imagenes[33]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_2.png"));
+        imagenes[34]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_2.png"));
+        imagenes[35]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_2.png"));
+        imagenes[36]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_2.png"));
+        imagenes[37]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_2.png"));
+        imagenes[38]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_2.png"));
+        imagenes[39]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_3.png"));
+        imagenes[40]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_3.png"));
+        imagenes[41]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_3.png"));
+        imagenes[42]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_3.png"));
+        imagenes[43]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_3.png"));
+        imagenes[44]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_3.png"));
+        imagenes[45]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_3.png"));
+        imagenes[46]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_3.png"));
+        imagenes[47]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_3.png"));
+        imagenes[48]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_3.png"));
+        imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_3.png"));
+        imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_3.png"));
+        imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_3.png"));
     }
     public void recogerJugada(Jugada jugada)
     {
@@ -167,6 +167,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("Jugador");
 
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorso_opt.jpg"))); // NOI18N
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
@@ -214,7 +215,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                         .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                                .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -388,12 +389,17 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         }
         if(botones==1)
         {
-            J.repartirJugador(this);
-            
+            int[] valores = new int[2];
+            int valJugar = 0;
+            valores=J.repartirJugador(this);
+            //jButton14.setIcon(imagenes[valores[0]]);
+            //jButton12.setIcon(imagenes[valores[1]]);
             System.out.println("-------------------------------");
-            J.repartirBanca();
+            valores=J.repartirBanca();
+            jButton14.setIcon(imagenes[valores[0]]);
             System.out.println("-------------------------------");
-            J.jugarJugador(this);   
+            valJugar=J.jugarJugador(this);
+            //jButtonXX.setIcon(imagenes[valjugar]);
             System.out.println("-------------------------------");
         }
         // J.jugarBanca(); CREO QUE ESTO MEJOR EN EL BOTON DE ABAJO UNA VEZ HAYA ACABADO EL JUGADOR

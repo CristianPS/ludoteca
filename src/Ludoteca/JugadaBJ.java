@@ -91,9 +91,10 @@ public abstract class JugadaBJ extends Jugada
     }
     
     @Override
-    public void repartirJugador(ventanaJuego2 vJ2)
+    public int[] repartirJugador(ventanaJuego2 vJ2)
     {
-        Carta c;
+        int[] salida = new int[2];
+        CartaFrancesa c;
         ArrayList<Carta> mazoAux = new ArrayList();
         for(int i=0; i<2; i++)
         {
@@ -103,13 +104,18 @@ public abstract class JugadaBJ extends Jugada
             cartasSacadas.add(c);
             mano.anadirAMano(mazoAux);
             mazoAux.clear();
+            
+            salida[i] = c.posArray();
         }
         mano.CalcularValor(vJ2.getJugador());
+        
+        return salida;
     }
     
     @Override
-    public void repartirBanca()
+    public int[] repartirBanca()
     {
+        int[] salida = new int[2];
         Jugador Banca = new Jugador("Banca");
         CartaFrancesa c;
         ArrayList<Carta> manoAux = new ArrayList();
@@ -120,8 +126,12 @@ public abstract class JugadaBJ extends Jugada
             manoAux.add(c);
             manobanca.anadirAMano(manoAux);
             manoAux.clear();
+            
+            salida[i] = c.posArray();
         }
         manobanca.CalcularValor(Banca);
+        
+        return salida;
     }
     
     @Override
@@ -146,7 +156,7 @@ public abstract class JugadaBJ extends Jugada
     }
     
     @Override
-    public void jugarJugador(ventanaJuego2 vJ2)
+    public int jugarJugador(ventanaJuego2 vJ2)
     {    
         //Luego el jugador va pidiendo cartas hasta que no quiera mas
         /*for(int i=0; i<40; i++)
@@ -163,7 +173,8 @@ public abstract class JugadaBJ extends Jugada
         
         
         //0 si es un SI y 1 si es un NO
-        Carta c;
+        int salida=0;
+        CartaFrancesa c;
         ArrayList<Carta> mazoAux = new ArrayList();
         //String escribirCartas="";
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
@@ -187,6 +198,7 @@ public abstract class JugadaBJ extends Jugada
                     mazoAux.add(c);
                     mano.anadirAMano(mazoAux);
                     c.mostrar();
+                    salida=c.posArray();
                     //String carta = c.mostrar();
                     //escribirCartas += carta +"\n";         
                     //vJ2.jTextArea2.setText();//SE supone que esto lo que tiene que hacer es camiar el texto del jtext area que he creado para que muestre por texto las cartas pero no se como hacer que pase el texto de est funcion a la ventana 2.
@@ -200,6 +212,7 @@ public abstract class JugadaBJ extends Jugada
         PuntJug = (float) mano.CalcularValor(vJ2.getJugador());
         ArrayMano.add(mano);
         
+        return salida;
     }
     
     public void añadirManoBlackJack(Mano m)
