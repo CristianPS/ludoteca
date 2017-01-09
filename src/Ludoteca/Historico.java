@@ -12,12 +12,14 @@ public class Historico
     private ArrayList<Jugador> HistJug = new ArrayList();
     private ArrayList<Partida> HistPart = new ArrayList();
     private final String ruta = "C:\\Users\\Cristian\\Documents\\ludoteca\\src\\Ludoteca\\historico.txt";
-    private final File fichero = new File(ruta);
+    private File fichero = new File(ruta);
     private FileReader fr;
     private BufferedReader br;
+    private FileWriter fw;
+    private BufferedWriter bw;
     private String linea="";
     
-    public static void main(String args[])
+    public static void main(String args[]) throws IOException
     {
         Historico hist = new Historico();
         Jugador Jose = new Jugador("Jose");
@@ -55,19 +57,68 @@ public class Historico
             //Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
         //}
     }
-    public Historico()
+    public Historico() throws IOException
     {       
         try {
             this.fr = new FileReader(fichero);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.br = new BufferedReader(fr);        
+        this.br = new BufferedReader(fr);
+        
+        try 
+        {
+            String line = "";
+            while ((line=br.readLine())!=null)
+            {
+                char[] c = line.toCharArray();
+                int comas=0, j=0;
+                String nula = null;
+                for(int i = c.length; i>0; i--)
+                {
+                    Jugador j1 = new Jugador(nula);
+                    while (comas!=7)
+                    {
+                        if (c[i]==',')
+                        {
+                            comas++;
+                            switch(comas)
+                            {
+                                case 1: j1.setNombre(line.substring(j, i-1)); break;
+                                case 2: j1.setFichasTotales(Integer.parseInt(line.substring(j,i-1))); break;
+                                case 3: j1.setJugadasGanadasBJ(Integer.parseInt(line.substring(j,i-1))); break;
+                                case 4: j1.setJugadasPerdidasBJ(Integer.parseInt(line.substring(j,i-1))); break;
+                                case 5: j1.setJugadasGanadas7(Integer.parseInt(line.substring(j,i-1))); break;
+                                case 6: j1.setJugadasPerdidas7(Integer.parseInt(line.substring(j,i-1))); break;
+                                case 7: j1.setJugadasEmpatadas(Integer.parseInt(line.substring(j,i-1))); break;
+                            }
+                            j=i+1;
+                        }
+                    }
+                    this.anadirJugador(j1);
+                }
+            }
+        }
+        catch (Exception Ex) {}
+        
+        
     }
             
                 
             
-    
+    public void actualizarHistorico() throws IOException
+    {
+        String linea="";
+        for(Jugador J: HistJug)
+        {
+            linea+=J.getNombre()+","+J.getFichasTotales()+","+J.getJugadasGanadasBJ()+","+J.getJugadasPerdidasBJ()+","+J.getJugadasGanadas7()+","+J.getJugadasPerdidas7()+","+J.getJugadasEmpatadas()+"\n";
+        }
+        
+        fichero.delete();
+        fichero.createNewFile();
+        bw.write(linea);
+        bw.close();
+    }
     
     public String resultados(Jugador J) throws IOException //terminada
     {

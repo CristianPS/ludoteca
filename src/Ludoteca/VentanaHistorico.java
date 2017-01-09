@@ -19,8 +19,8 @@ public class VentanaHistorico extends javax.swing.JFrame {
      * Creates new form VentanaHistorico
      */
     private String text, nombreJugador;
-    private Historico hist = new Historico();
-    public VentanaHistorico(Historico h) {
+    private Historico hist;
+    public VentanaHistorico(Historico h) {        
         initComponents();      
         hist = h;
         setVisible(true);
@@ -206,8 +206,17 @@ public class VentanaHistorico extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Historico h = new Historico();
-                Historico hist = new Historico();
+                Historico h = null;
+                try {
+                    h = new Historico();
+                } catch (IOException ex) {
+                    Logger.getLogger(VentanaHistorico.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    Historico hist = new Historico();
+                } catch (IOException ex) {
+                    Logger.getLogger(VentanaHistorico.class.getName()).log(Level.SEVERE, null, ex);
+                }
         Jugador Jose = new Jugador("Jose");
         Jose.setJugadasEmpatadas(2);
         System.out.println(Jose.getJugadasEmpatadas());
