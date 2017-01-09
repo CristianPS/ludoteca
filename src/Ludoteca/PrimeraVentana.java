@@ -155,9 +155,10 @@ public class PrimeraVentana extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (evt.getSource()==jButton1)
+        if (evt.getSource()==jButton1) //No se si esto es necesario, en el resto de botones no está.
         {
-            String nombreJugador = recogerNombre();
+            //String nombreJugador = recogerNombre();
+            String nombreJugador = jTextField1.getText();
             Jugador jugad;
             if (!(h.buscarJugador(nombreJugador).getNombre().equals(nombreJugador)))
             {

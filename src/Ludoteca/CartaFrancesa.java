@@ -14,7 +14,7 @@ public class CartaFrancesa extends Carta
     }
     
     @Override
-    public void mostrar()
+    public String mostrar()
     {
         String Palo = null;
         switch (this.palo)
@@ -25,7 +25,9 @@ public class CartaFrancesa extends Carta
             case 3: Palo = "Diamantes";
             default: System.err.println("Error: Carta no válida.");
         }
-        super.mostrar();
+        //super.mostrar(); //Igual, no se si hay que quitarlo.
+        String mostrar = valor +"de" +palo;
+        return mostrar;
         //System.out.println(palo);
     }
 }

@@ -126,6 +126,7 @@ public abstract class JugadaBJ extends Jugada
         Carta c;
         mano.pedirCarta(baraja);
         mano.pedirCarta(baraja);
+        String escribirCartas="";
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         //aqui no habria que meter un while?????
         switch (opcion)
@@ -137,10 +138,12 @@ public abstract class JugadaBJ extends Jugada
                     c= mano.pedirCarta(baraja);
                 }
                 cartasSacadas.add(c);
-                
+                String carta = c.mostrar();
+                escribirCartas += carta +"\n";         
+                vJ2.jTextArea2.setText();//SE supone que esto lo que tiene que hacer es camiar el texto del jtext area que he creado para que muestre por texto las cartas pero no se como hacer que pase el texto de est funcion a la ventana 2.
             case 1:
                 vJ2.deshabilitarJugar();
-        }
+        
         PuntJug = (int)mano.CalcularValor();
         ArrayManoBJ.add(mano);
         

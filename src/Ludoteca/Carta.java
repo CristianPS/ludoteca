@@ -12,10 +12,11 @@ public class Carta {
     }
     
     // ESTA CLAS ESTA MAL, AL HACER LA INTERFAZ GRAFICA TENEMOS QUE MODIFICARLA
-    public void mostrar()
+    public String mostrar()
     {
         String Palo = null;
-        System.out.println(valor +"de" +Palo );
+        String mostrar = valor +"de" +palo;
+        return mostrar;
     }
     
     public void setValor(int v)

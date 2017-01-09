@@ -21,7 +21,7 @@ public class CartaEspanola extends Carta
     }
     
     @Override
-    public void mostrar()
+    public String mostrar()
     {
         String Palo = null;
         switch (this.palo)
@@ -32,9 +32,13 @@ public class CartaEspanola extends Carta
             case 3: Palo = "Copas";
             default: System.err.println("Error: Carta no válida.");
         }
-        super.mostrar();
-        //System.out.println(palo);
+        //super.mostrar(); //No se si hay que quitar esto;
+        String mostrar = valor +"de" +palo;
+        return mostrar;
+        
     }
+        
+    
 }
     
     /*public Palo getPalo()
