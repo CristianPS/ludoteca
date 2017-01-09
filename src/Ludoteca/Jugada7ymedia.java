@@ -29,24 +29,25 @@ public abstract class Jugada7ymedia extends Jugada
     @Override
     public int[] jugarBanca()
     {
-        int[] salida= new int[7];
+        int[] salida= {-1, -1, -1, -1, -1, -1, -1};
         int i=0;
         
-        Carta c;
+        CartaEspanola c;
         float aux = 0;
         ArrayList<Carta> anadir = new ArrayList();
         while(aux<5)
         {
             if (aux<7.5)
             {
-                c = manobanca.pedirCarta(baraja);
+                c = (CartaEspanola) manobanca.pedirCarta(baraja);
                 anadir.add(c);
                 c.mostrar();
                 manobanca.anadirAMano(anadir);
                 anadir.clear();
-                aux = aux + manobanca.CalcularValor();
+                aux = manobanca.CalcularValor();
                 System.out.println("\n"+aux);
-                
+                salida[i]=c.posArray();
+                i++;                
             }
             else
             {
@@ -82,7 +83,7 @@ public abstract class Jugada7ymedia extends Jugada
         }
         PuntJug = (int)mano.CalcularValor();*/
         int[] salida= new int[2];
-        Carta c;
+        CartaEspanola c;
         int opcion = JOptionPane.showConfirmDialog(vJ2, "¿Deseea recibir mas cartas?","¿Deseea recibir mas cartas?", YES_NO_OPTION, QUESTION_MESSAGE);
         if(PuntJug>7.5)
         {
@@ -94,16 +95,17 @@ public abstract class Jugada7ymedia extends Jugada
             switch (opcion)
             {
                 case 0:
-                    c=mano.pedirCarta(baraja);
+                    c=(CartaEspanola) mano.pedirCarta(baraja);
                     while(cartasSacadas.contains(c))
                     {
-                        c= mano.pedirCarta(baraja);
+                        c= (CartaEspanola) mano.pedirCarta(baraja);
                     }
                     cartasSacadas.add(c);
                     c.mostrar();
                     ArrayList<Carta> manoAux = new ArrayList();
                     manoAux.add(c);
                     mano.anadirAMano(manoAux);
+                    salida[0]=c.posArray();
                     break;
 
                 case 1:
@@ -114,6 +116,8 @@ public abstract class Jugada7ymedia extends Jugada
         PuntJug = (int)mano.CalcularValor();
         System.out.println("\n"+PuntJug);
         ArrayMano.add(mano);
+        
+        salida[1]=opcion;
         
         return salida;
     }

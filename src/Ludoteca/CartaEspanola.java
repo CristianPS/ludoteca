@@ -57,6 +57,18 @@ public class CartaEspanola extends Carta
         return Palo;
     }
     
+    public int posArray()
+    {
+        if (valor>1 && valor<8)
+        {            
+            return (valor-1) + (palo-1)*10;
+        } 
+        else 
+        {
+            return (valor-3) + (palo-1)*10;
+        }
+    }
+    
 }
     
     /*public Palo getPalo()
