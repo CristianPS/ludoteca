@@ -21,6 +21,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private Baraja baraja;
     ImageIcon[] imagenes;
     private int iAux=0;
+    private int[] valores = new int[2];
     /**
      * Creates new form ventanaJuego2
      * @param jugador
@@ -45,7 +46,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jLabel1.setText("Bienvenido, " +Jug.getNombre());
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
-        imagenes = new ImageIcon[52];
+        imagenes = new ImageIcon[53];
         imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
         imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_0.png"));
         imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_0.png"));
@@ -98,6 +99,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_3.png"));
         imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_3.png"));
         imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_3.png"));
+        imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));
     }
     public void recogerJugada(Jugada jugada)
     {
@@ -146,6 +148,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -302,6 +305,13 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
         });
 
+        jButton11.setText("Cambiar de juego");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         jMenu1.setText("File");
 
         jMenuItem1.setText("Historico");
@@ -333,18 +343,21 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addGap(52, 52, 52)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(72, 72, 72)
                                                 .addComponent(jButton1))
                                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(815, 815, 815)
+                                        .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addGap(0, 437, Short.MAX_VALUE)))
+                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(43, 43, 43)
+                                        .addComponent(jButton11)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1643, Short.MAX_VALUE)
@@ -357,24 +370,25 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jButton2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)))
-                .addGap(61, 61, 61)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
 
         pack();
@@ -391,6 +405,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                     if(apuesta<25)
                     {
                         jLabel3.setText("Has apostado " + apuesta + " fichas. Al ser menor de 25 y ser esta la apuesta minima, tu apuesta ha sido modificada a 25 fichas");
+                        apuesta=25;
                     }
                     else
                     {
@@ -402,10 +417,11 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             if(botones==1)
             {
                 baraja = new BarajaFrancesa();
-                J = new JugadaBJ(baraja, Jug) {};
+                J = new JugadaBJ(baraja, Jug){};
                     if(apuesta<10)
                     {
                         jLabel3.setText("Has apostado " + apuesta + " fichas. Al ser menor de 10 y ser esta la apuesta minima, tu apuesta ha sido modificada a 10 fichas");
+                        apuesta=10;
                     }
                     else
                     {
@@ -425,12 +441,30 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
         }
         jButton2.setEnabled(true);
+        jButton11.setEnabled(false);
+        jButton14.setIcon(imagenes[52]);
+        jButton15.setIcon(imagenes[52]);
+        jButton19.setIcon(imagenes[52]);
+        jButton21.setIcon(imagenes[52]);
+        jButton13.setIcon(imagenes[52]);
+        jButton12.setIcon(imagenes[52]);
+        
+        jButton5.setIcon(imagenes[52]);
+        jButton6.setIcon(imagenes[52]);
+        jButton7.setIcon(imagenes[52]);
+        jButton8.setIcon(imagenes[52]);
+        jButton9.setIcon(imagenes[52]);
+        jButton10.setIcon(imagenes[52]);
+        iAux=0;
+
+        
         //this.apuesta=apuesta; //??¿¿
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jButton3.setEnabled(true);
         jButton2.setEnabled(false);
+        jButton4.setEnabled(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -440,7 +474,6 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         }
         if(botones==1)
         {
-            int[] valores = new int[2];
             int valJugar[] = new int[2];
             if(iAux==0)
             {
@@ -488,7 +521,9 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        J.jugarBanca();
+        int[] valoresJugada = {-1, -1, -1, -1, -1, -1, -1};
+        int aux=0;
+        valoresJugada=J.jugarBanca();
         float valorManoJ = J.getPuntJug();
         float valorManoB = J.getPuntBan();
         System.out.println("Valor mano jugador: "+valorManoJ+"\n Valor mano banca: "+valorManoB);
@@ -511,12 +546,12 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         }
         if(botones==1)
         {
-            if((valorManoJ>valorManoB && valorManoJ<=21)|| valorManoB>21)
+            if((valorManoJ>valorManoB && valorManoJ<=21)|| (valorManoB>21 && valorManoJ<21))
             {
                 JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
                 Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
             }
-            else if (valorManoJ==valorManoB)
+            else if (valorManoJ==valorManoB && valorManoJ<=21)
             {
                 JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
             }
@@ -526,6 +561,35 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);            
             }
         }
+        jButton12.setIcon(imagenes[valores[1]]);
+        
+
+        if(valoresJugada[aux]!=-1)
+        {
+            jButton13.setIcon(imagenes[valoresJugada[aux]]);
+        }
+        aux++;
+        if(valoresJugada[aux]!=-1)
+        {
+            jButton15.setIcon(imagenes[valoresJugada[aux]]);
+        }
+        aux++;
+        if(valoresJugada[aux]!=-1)
+        {
+            jButton19.setIcon(imagenes[valoresJugada[aux]]);
+        }
+        aux++;
+        if(valoresJugada[aux]!=-1)
+        {
+            jButton21.setIcon(imagenes[valoresJugada[aux]]);
+        }
+        
+        jButton1.setEnabled(true);
+        jTextField1.setEnabled(true);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        jButton11.setEnabled(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -539,6 +603,32 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        if(botones==0)
+        {
+            botones=1;
+        } else if(botones==1)
+        {
+            botones=0;
+        }
+        
+        jButton11.setEnabled(false);
+        jButton14.setIcon(imagenes[52]);
+        jButton15.setIcon(imagenes[52]);
+        jButton19.setIcon(imagenes[52]);
+        jButton21.setIcon(imagenes[52]);
+        jButton13.setIcon(imagenes[52]);
+        jButton12.setIcon(imagenes[52]);
+        
+        jButton5.setIcon(imagenes[52]);
+        jButton6.setIcon(imagenes[52]);
+        jButton7.setIcon(imagenes[52]);
+        jButton8.setIcon(imagenes[52]);
+        jButton9.setIcon(imagenes[52]);
+        jButton10.setIcon(imagenes[52]);
+        iAux=0;
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -581,6 +671,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;

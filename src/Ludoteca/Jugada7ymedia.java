@@ -27,8 +27,10 @@ public abstract class Jugada7ymedia extends Jugada
     }
     
     @Override
-    public void jugarBanca()
+    public int[] jugarBanca()
     {
+        int[] salida= new int[7];
+        int i=0;
         
         Carta c;
         float aux = 0;
@@ -44,6 +46,7 @@ public abstract class Jugada7ymedia extends Jugada
                 anadir.clear();
                 aux = aux + manobanca.CalcularValor();
                 System.out.println("\n"+aux);
+                
             }
             else
             {
@@ -52,6 +55,8 @@ public abstract class Jugada7ymedia extends Jugada
         }
         PuntBan = (float) manobanca.getValorMano();
         ArrayMano.add(manobanca);
+        
+        return salida;
     }
     @Override
     public int[] jugarJugador(ventanaJuego2 vJ2)

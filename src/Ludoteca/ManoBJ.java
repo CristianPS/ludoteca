@@ -43,6 +43,7 @@ public class ManoBJ extends Mano
             switch(c.getValor())
             {
                 case 1: numAs++;
+                    break;
                 case 2: aux=2;
                     break;
                 case 3: aux=3;

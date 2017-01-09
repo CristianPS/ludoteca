@@ -135,8 +135,11 @@ public abstract class JugadaBJ extends Jugada
     }
     
     @Override
-    public void jugarBanca()
+    public int[] jugarBanca()
     {
+        int[] salida={-1, -1, -1, -1, -1, -1, -1};
+        int i=0;
+        
         Jugador Banca = new Jugador("Banca");
         CartaFrancesa c;
         ArrayList<Carta> manoAux = new ArrayList();
@@ -148,11 +151,15 @@ public abstract class JugadaBJ extends Jugada
             manoAux.add(c);
             manobanca.anadirAMano(manoAux);
             manobanca.resetValorMano();
-            valor=manobanca.CalcularValor(Banca);            
+            valor=manobanca.CalcularValor(Banca);
+            salida[i]=c.posArray();
+            i++;
         }
                
         PuntBan = (float)manobanca.getValorMano();
         ArrayManoBanca.add(manobanca);//Habria que añadir las manos aquí no?
+        
+        return salida;
     }
     
     @Override
