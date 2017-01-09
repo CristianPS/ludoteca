@@ -158,6 +158,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Nombre, habría que pasrlo desde la otra ventana.");
         jLabel1.setToolTipText("");
@@ -732,6 +733,12 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton3.setEnabled(false);
         jButton4.setEnabled(false);
         jButton11.setEnabled(true);
+        
+        try {
+            h.actualizarHistorico();
+        } catch (IOException ex) {
+            Logger.getLogger(ventanaJuego2.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
