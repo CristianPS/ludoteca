@@ -6,6 +6,9 @@
 package Ludoteca;
 
 import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -14,6 +17,7 @@ import javax.swing.JOptionPane;
  * @author Cristian
  */
 public class ventanaJuego2 extends javax.swing.JFrame {
+    Historico h = Ludoteca.getHistorico();
     private Jugador Jug;
     private int botones;
     private Jugada J;
@@ -152,7 +156,6 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -312,7 +315,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
+        jMenu1.setText("Acceso");
 
         jMenuItem1.setText("Historico");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -323,9 +326,6 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -639,7 +639,17 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        //Cuando se pulse el meno se hace esto.
+        if(evt.getSource()==jMenuItem1)
+        {
+            VentanaHistorico vh = null;
+            try {
+                vh = new VentanaHistorico(h);
+            } catch (IOException ex) {
+                Logger.getLogger(ventanaJuego2.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            vh.setVisible(true);
+        }
+        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -824,7 +834,6 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;

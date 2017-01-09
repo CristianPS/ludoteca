@@ -6,6 +6,9 @@
 package Ludoteca;
 
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -78,7 +81,7 @@ public class PrimeraVentana extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         jLabel2.setText("En primer lugar introduzca su nombre por favor");
@@ -147,9 +150,14 @@ public class PrimeraVentana extends javax.swing.JFrame {
 
         jMenu1.setText("Accesos");
 
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("Ir a Historico");
-        jMenu1.add(jRadioButtonMenuItem1);
+        jRadioButtonMenuItem2.setSelected(true);
+        jRadioButtonMenuItem2.setText("Historico");
+        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jRadioButtonMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
@@ -222,6 +230,19 @@ public class PrimeraVentana extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1KeyReleased
 
+    private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
+        if(evt.getSource()==jRadioButtonMenuItem2)
+        {
+            VentanaHistorico vh = null;
+            try {
+                vh = new VentanaHistorico(h);
+            } catch (IOException ex) {
+                Logger.getLogger(PrimeraVentana.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            vh.setVisible(true);
+        }
+    }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -269,7 +290,7 @@ public class PrimeraVentana extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
