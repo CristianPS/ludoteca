@@ -47,7 +47,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
         imagenes = new ImageIcon[53];
-        imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
+        /*imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
         imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_0.png"));
         imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_0.png"));
         imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_0.png"));
@@ -99,7 +99,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_3.png"));
         imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_3.png"));
         imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_3.png"));
-        imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));
+        imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));*/
     }
     public void recogerJugada(Jugada jugada)
     {
@@ -225,9 +225,9 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -250,7 +250,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                         .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(865, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,6 +400,48 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         
             if(botones==0)
             {
+                /*imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/asOros_opt.png"));
+                imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/dosoros_opt.png"));
+                imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/tresoros_opt.png"));
+                imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/cuatrooros_opt.png"));
+                imagenes[4]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/cincooros_opt.png"));
+                imagenes[5]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/seisoros_png.png"));
+                imagenes[6]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/sieteoros_opt.png"));
+                imagenes[7]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10oros_opt.png"));
+                imagenes[8]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11oros_opt.png"));
+                imagenes[9]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12oros_opt.png"));
+                imagenes[10]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/asbastos_opt.png"));
+                imagenes[11]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/dosbastos_opt.png"));
+                imagenes[12]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/tresbastos_opt.png"));
+                imagenes[13]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/cuatrobastos_opt.png"));
+                imagenes[14]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/cincobastos_opt.png"));
+                imagenes[15]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/seisbastos_opt.png"));
+                imagenes[16]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/sietebastos_opt.png"));
+                imagenes[17]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/sotabastos.png"));
+                imagenes[18]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11bastos_opt.png"));
+                imagenes[19]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/reybastos_opt.png"));
+                imagenes[20]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/asespadas_opt.png"));
+                imagenes[21]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/dosespadas_opt.png"));
+                imagenes[22]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/tresespadas_opt.png"));
+                imagenes[23]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4-de-espadas_opt.png"));
+                imagenes[24]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/cinco-de-espadas_opt.png"));
+                imagenes[25]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/seisespadas_opt.png"));
+                imagenes[26]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7-de-espadas_opt.png"));
+                imagenes[27]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10espadas.png"));
+                imagenes[28]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/caballo de espadas_opt.png"));
+                imagenes[29]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/reyespadas_opt.png"));
+                imagenes[30]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/ascopas_opt.png"));
+                imagenes[31]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/doscopas_opt.png"));
+                imagenes[32]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3copas_opt.png"));
+                imagenes[33]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/copas4_opt.png"));
+                imagenes[34]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/cinco-de-copas_opt.png"));
+                imagenes[35]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/copas_6_opt.png"));
+                imagenes[36]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7decopas_opt.png"));
+                imagenes[37]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10c_opt.png"));
+                imagenes[38]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/caballocopas_opt.png"));
+                imagenes[39]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/rey-de-copas_opt.png"));*/
+                imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));
+                
                 baraja = new BarajaEspanola();
                 J = new Jugada7ymedia(baraja, Jug) {};
                     if(apuesta<25)
@@ -416,6 +458,60 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
             if(botones==1)
             {
+                imagenes[0]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_0.png"));
+                imagenes[1]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_0.png"));
+                imagenes[2]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_0.png"));
+                imagenes[3]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_0.png"));
+                imagenes[4]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_0.png"));
+                imagenes[5]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_0.png"));
+                imagenes[6]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_0.png"));
+                imagenes[7]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_0.png"));
+                imagenes[8]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_0.png"));
+                imagenes[9]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_0.png"));
+                imagenes[10]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_0.png"));
+                imagenes[11]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_0.png"));
+                imagenes[12]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_0.png"));
+                imagenes[13]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_1.png"));
+                imagenes[14]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_1.png"));
+                imagenes[15]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_1.png"));
+                imagenes[16]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_1.png"));
+                imagenes[17]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_1.png"));
+                imagenes[18]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_1.png"));
+                imagenes[19]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_1.png"));
+                imagenes[20]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_1.png"));
+                imagenes[21]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_1.png"));
+                imagenes[22]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_1.png"));
+                imagenes[23]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_1.png"));
+                imagenes[24]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_1.png"));
+                imagenes[25]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_1.png"));
+                imagenes[26]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_2.png"));
+                imagenes[27]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_2.png"));
+                imagenes[28]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_2.png"));
+                imagenes[29]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_2.png"));
+                imagenes[30]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_2.png"));
+                imagenes[31]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_2.png"));
+                imagenes[32]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_2.png"));
+                imagenes[33]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_2.png"));
+                imagenes[34]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_2.png"));
+                imagenes[35]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_2.png"));
+                imagenes[36]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_2.png"));
+                imagenes[37]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_2.png"));
+                imagenes[38]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_2.png"));
+                imagenes[39]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/1_3.png"));
+                imagenes[40]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/2_3.png"));
+                imagenes[41]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/3_3.png"));
+                imagenes[42]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/4_3.png"));
+                imagenes[43]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/5_3.png"));
+                imagenes[44]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/6_3.png"));
+                imagenes[45]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/7_3.png"));
+                imagenes[46]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/8_3.png"));
+                imagenes[47]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/9_3.png"));
+                imagenes[48]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/10_3.png"));
+                imagenes[49]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/11_3.png"));
+                imagenes[50]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/12_3.png"));
+                imagenes[51]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/13_3.png"));
+                imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));
+                
                 baraja = new BarajaFrancesa();
                 J = new JugadaBJ(baraja, Jug){};
                     if(apuesta<10)
@@ -468,13 +564,30 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int valJugar[] = new int[2];
+        
         if(botones==0)
         {
-            J.jugarJugador(this);
+            valJugar=J.jugarJugador(this);
+            if(iAux==0)
+            {
+                jButton5.setIcon(imagenes[valJugar[0]]);
+            }
+            else if (iAux==1)
+            {
+                jButton6.setIcon(imagenes[valJugar[0]]);
+            }
+            else if (iAux==2)
+            {
+                jButton7.setIcon(imagenes[valJugar[0]]);
+            }
+            else if (iAux==3)
+            {
+                jButton8.setIcon(imagenes[valJugar[0]]);
+            }
         }
         if(botones==1)
         {
-            int valJugar[] = new int[2];
             if(iAux==0)
             {
                 valores=J.repartirJugador(this);
