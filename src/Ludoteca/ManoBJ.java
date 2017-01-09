@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class ManoBJ extends Mano
 {
+    public ManoBJ()
+    {
+        super();
+    }
+    
     public float CalcularValor(Jugador j)
     {
         Jugador jAux = new Jugador("Banca");

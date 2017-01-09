@@ -5,7 +5,13 @@ import java.util.ArrayList;
 public class Mano
 {
     protected ArrayList<Carta> mano = new ArrayList();
-    protected float valorMano=0;
+    protected float valorMano;
+    
+    public Mano()
+    {
+        mano.clear();
+        valorMano=0;
+    }
     
     
     public Carta pedirCarta(Baraja b)
@@ -25,8 +31,9 @@ public class Mano
     public float CalcularValor()
     {       
         int i = mano.size();
-        while (i>=0)
+        while (i>0)
         {
+            i--;
             switch (mano.get(i).getValor())
             {
                 case 10: case 11: case 12:
@@ -66,9 +73,10 @@ public class Mano
         return aux;
     }
     
-    public void añadirAMano (ArrayList<Carta> c)
+    public void anadirAMano (ArrayList<Carta> c)
     {
-        for(int i=0; i<=3; i++)
+        int num = c.size()-1;
+        for(int i=0; i<=num; i++)
         {
             Carta x = c.get(i);
             mano.add(x);
