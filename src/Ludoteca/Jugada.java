@@ -65,6 +65,6 @@ public abstract class Jugada
     public abstract float getPuntBan();
     public abstract float getPuntJug();
     
-    public abstract void apostar(int apuesta); //Cristian: La usan las dos clases que heredan de esta, estaria bien ponerla aqui como metodo abstracto no?
+    public abstract int apostar(int apuesta, ventanaJuego2 vJ2); //Cristian: La usan las dos clases que heredan de esta, estaria bien ponerla aqui como metodo abstracto no?
     
 }

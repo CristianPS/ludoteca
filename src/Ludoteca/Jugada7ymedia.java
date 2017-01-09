@@ -148,17 +148,29 @@ public abstract class Jugada7ymedia extends Jugada
     
     @Override
     @SuppressWarnings("empty-statement")
-    public void apostar(int apuesta)
+    public int apostar(int apuesta, ventanaJuego2 vJ2)
     {        
+        int aux=0;
         if(apuesta<25)
         {
             apuesta=25;
         }
-        int ft = ganador.getFichasTotales();
-        int ff = ft - apuesta;
-        ganador.setFichasTotales(ff);
-        System.out.println("Llegó al final");
-        System.out.println(ganador.getNombre()+" "+apuesta+" "+ganador.getFichasTotales()+" "+ff);
+        if(apuesta > ganador.getFichasTotales())
+        {
+            JOptionPane.showMessageDialog(vJ2, "Has apostado mas fichas de las posibles. El maximo es "+ ganador.getFichasTotales() +", por tanto esa ha sido tu apuesta");
+            apuesta=ganador.getFichasTotales();
+            aux=1;
+        }
+        else
+        {
+            int ft = ganador.getFichasTotales();
+            int ff = ft - apuesta;
+            ganador.setFichasTotales(ff);
+            System.out.println("Llegó al final");
+        }
+        System.out.println(ganador.getNombre()+" "+apuesta+" "+ganador.getFichasTotales());
+        
+        return aux;
     }
     
     @Override

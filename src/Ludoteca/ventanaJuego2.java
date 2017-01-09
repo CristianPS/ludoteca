@@ -453,7 +453,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                     {
                         jLabel3.setText("¡Has apostado " + apuesta + " fichas!");                       
                     }
-                    J.apostar(apuesta);                    
+                    J.apostar(apuesta, this);                    
                     recogerJugada(J); 
             }
             if(botones==1)
@@ -523,7 +523,11 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                     {
                         jLabel3.setText("¡Has apostado " + apuesta + " fichas!");                       
                     }
-                    J.apostar(apuesta);
+                    int aux =J.apostar(apuesta, this);
+                    if(aux==1)
+                    {
+                        apuesta= Jug.getFichasTotales();
+                    }
                     recogerJugada(J); 
                     //JOptionPane.showInternalMessageDialog(this, Jug.getFichasTotales());
             }

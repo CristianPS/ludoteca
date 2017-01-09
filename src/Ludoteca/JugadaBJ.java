@@ -249,17 +249,29 @@ public abstract class JugadaBJ extends Jugada
     }*/
     
     @Override
-    public void apostar(int apuesta)
+    public int apostar(int apuesta, ventanaJuego2 vJ2)
     {        
+        int aux=0;
         if(apuesta<10)
         {
             apuesta=10;
         }
-        int ft = ganador.getFichasTotales();
-        ganador.setFichasTotales(ft-apuesta);
-        System.out.println("Llegó al final");
-        
-        System.out.println("Hecho");        
+        if(apuesta > ganador.getFichasTotales())
+        {
+            JOptionPane.showMessageDialog(vJ2, "Has apostado mas fichas de las posibles. El maximo es "+ ganador.getFichasTotales() +", por tanto esa ha sido tu apuesta");
+            apuesta=ganador.getFichasTotales();
+            aux=1;
+        }
+        else
+        {
+            int ft = ganador.getFichasTotales();
+            ganador.setFichasTotales(ft-apuesta);
+            System.out.println("Llegó al final");
+
+            System.out.println("Hecho"); 
+        }
+        System.out.println(ganador.getNombre()+" "+apuesta+" "+ganador.getFichasTotales());
+        return aux;
     }
     
     @Override
