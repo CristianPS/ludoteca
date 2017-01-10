@@ -91,7 +91,14 @@ public class Jugador implements Comparable<Jugador>
     
     public boolean equals(Jugador Jug)
     {
-        return(this.nombre.equals(Jug.nombre));            
+        if(this.nombre==null && Jug.nombre==null)
+        {
+            return true;
+        }
+        else
+        {
+            return(this.nombre.equals(Jug.nombre)); 
+        }
     }
     
     @Override
