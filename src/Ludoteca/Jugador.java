@@ -96,11 +96,11 @@ public class Jugador implements Comparable<Jugador>
     
     @Override
     public int compareTo(Jugador o) {
-        if(this.getFichasTotales() < o.getFichasTotales())
+        if(this.getFichasTotales() > o.getFichasTotales())
         {
             return -1;
         }
-        if (this.getFichasTotales() > o.getFichasTotales()) {
+        if (this.getFichasTotales() < o.getFichasTotales()) {
             return 1;
         }
         return 0;

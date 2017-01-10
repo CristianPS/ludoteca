@@ -665,17 +665,20 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         {
             if((valorManoJ>valorManoB && valorManoJ<=7.5)|| (valorManoB>7.5 && valorManoJ<7.5))
             {
-                JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
+                JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +" fichas.");
                 Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+                Jug.setJugadasGanadas7(Jug.getJugadasGanadas7()+1);
             }
             else if ((valorManoJ==valorManoB) && valorManoJ<7.5)
             {
                 JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
+                Jug.setJugadasEmpatadas(Jug.getJugadasEmpatadas()+1);
             }
             else 
             {
                JOptionPane.showMessageDialog(this, "Ha ganado la banca. Buena suerte la proxima vez"); 
                Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);
+               Jug.setJugadasPerdidas7(Jug.getJugadasPerdidas7()+1);
             }
         }
         if(botones==1)
@@ -688,15 +691,18 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
                 Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+                Jug.setJugadasGanadasBJ(Jug.getJugadasGanadasBJ()+1);
             }
             else if (valorManoJ==valorManoB && valorManoJ<=21)
             {
                 JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
+                Jug.setJugadasEmpatadas(Jug.getJugadasEmpatadas()+1);
             }
             else 
             {
                JOptionPane.showMessageDialog(this, "Ha ganado la banca. Buena suerte la proxima vez"); 
-               Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);            
+               Jug.setFichasTotales(Jug.getFichasTotales()-apuesta); 
+               Jug.setJugadasPerdidasBJ(Jug.getJugadasPerdidasBJ()+1);
             }
         }
         if(valores[1]!=-1)
@@ -736,6 +742,13 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton11.setEnabled(true);
         
         try {
+            h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
+            h.buscarJugador(Jug.getNombre()).setJugadasEmpatadas(Jug.getJugadasEmpatadas());
+            h.buscarJugador(Jug.getNombre()).setJugadasGanadas7(Jug.getJugadasGanadas7());
+            h.buscarJugador(Jug.getNombre()).setJugadasGanadasBJ(Jug.getJugadasGanadasBJ());
+            h.buscarJugador(Jug.getNombre()).setJugadasPerdidas7(Jug.getJugadasPerdidas7());
+            h.buscarJugador(Jug.getNombre()).setJugadasPerdidasBJ(Jug.getJugadasPerdidasBJ());
+            
             h.actualizarHistorico();
         } catch (IOException ex) {
             Logger.getLogger(ventanaJuego2.class.getName()).log(Level.SEVERE, null, ex);

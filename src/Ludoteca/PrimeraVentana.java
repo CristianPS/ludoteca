@@ -203,11 +203,21 @@ public class PrimeraVentana extends javax.swing.JFrame {
                 jugad = new Jugador(h.buscarJugador(nombreJugador));
             }*/
             String nombreJugador = jTextField1.getText();
-            Jugador j1 = new Jugador(nombreJugador);
+            Jugador j1;
             //System.out.println(jugad.getNombre());
-            System.out.println(j1.getNombre());
+            //System.out.println(j1.getNombre());
             int i = posicionBotones();
-            h.anadirJugador(j1);
+            String n = null;
+            Jugador nulo = new Jugador(n);
+            if(h.buscarJugador(nombreJugador).equals(nulo))
+            {
+                j1=new Jugador(nombreJugador);
+                h.anadirJugador(j1);                
+            }
+            else
+            {
+                j1=new Jugador(h.buscarJugador(nombreJugador));
+            }
             //ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
             dispose();            
             ventanaJuego2 vJ= new ventanaJuego2(j1, i, h);
