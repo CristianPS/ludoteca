@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Cristian
  */
 public class ventanaJuego2 extends javax.swing.JFrame {
-    Historico h = Ludoteca.getHistorico();
+    Historico h = null;
     private Jugador Jug;
     private int botones;
     private Jugada J;
@@ -31,12 +31,13 @@ public class ventanaJuego2 extends javax.swing.JFrame {
      * @param jugador
      * @param i
      */
-    public ventanaJuego2(Jugador jugador, int i) {
+    public ventanaJuego2(Jugador jugador, int i, Historico hs) {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         setVisible(true); 
         Jug = jugador;
         botones = i;
+        h=hs;
         if(botones == 1)
         {
             jPanel1.setBackground(Color.GREEN);//Esto cambia el fondo de la mesa dependiendo del juego.
@@ -812,7 +813,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             public void run() {
                 Jugador j=new Jugador("Federico");
                 int i=1;
-                new ventanaJuego2(j, i).setVisible(true);
+                //new ventanaJuego2(j, i, h).setVisible(true);
             }
         });
     }

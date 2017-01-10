@@ -22,7 +22,7 @@ public class VentanaHistorico extends javax.swing.JFrame {
     private Historico hist;
     public VentanaHistorico(Historico h) throws IOException {        
         initComponents();      
-        hist = new Historico();
+        hist = h;
         setVisible(true);
         //nombreJug.setVisible(true);
         //text = texto;

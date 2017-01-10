@@ -17,11 +17,12 @@ import java.util.logging.Logger;
  */
 public class PrimeraVentana extends javax.swing.JFrame {
 
-    Historico h = Ludoteca.getHistorico();
-    public PrimeraVentana() 
+    Historico h;
+    public PrimeraVentana() throws IOException 
     {
         setVisible(true);
         initComponents();
+        h = new Historico();
     }
     
     public String recogerNombre()
@@ -54,9 +55,10 @@ public class PrimeraVentana extends javax.swing.JFrame {
         //System.out.println(jugad.getNombre());
         System.out.println(j1.getNombre());
         int i = posicionBotones();
+        h.anadirJugador(j1);
         //ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
         dispose();
-        ventanaJuego2 vJ= new ventanaJuego2(j1, i);
+        ventanaJuego2 vJ= new ventanaJuego2(j1, i, h);
         vJ.setVisible(true);
     }
     
@@ -205,9 +207,10 @@ public class PrimeraVentana extends javax.swing.JFrame {
             //System.out.println(jugad.getNombre());
             System.out.println(j1.getNombre());
             int i = posicionBotones();
+            h.anadirJugador(j1);
             //ventanaJuego2 vJ= new ventanaJuego2(jugad, i);
             dispose();            
-            ventanaJuego2 vJ= new ventanaJuego2(j1, i);
+            ventanaJuego2 vJ= new ventanaJuego2(j1, i, h);
             vJ.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -273,7 +276,11 @@ public class PrimeraVentana extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PrimeraVentana().setVisible(true);
+                try {
+                    new PrimeraVentana().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(PrimeraVentana.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
