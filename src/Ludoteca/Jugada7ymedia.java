@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.QUESTION_MESSAGE;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
 
-public abstract class Jugada7ymedia extends Jugada
+public class Jugada7ymedia extends Jugada
 {
     private Mano mano, manobanca;
     

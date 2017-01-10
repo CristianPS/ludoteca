@@ -583,10 +583,9 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         
         if(botones==0)
         {
+            valJugar=J.jugarJugador(this);
             if(valJugar[1]==0)
             {
-                
-                valJugar=J.jugarJugador(this);
                 if(iAux==0)
                 {
                     jButton5.setIcon(imagenes[valJugar[0]]);
@@ -602,6 +601,14 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                 else if (iAux==3)
                 {
                     jButton8.setIcon(imagenes[valJugar[0]]);
+                }
+                else if(iAux==4)
+                {
+                    jButton9.setIcon(imagenes[valJugar[0]]);
+                }
+                else if(iAux==5)
+                {
+                    jButton10.setIcon(imagenes[valJugar[0]]);
                 }
                 iAux++;
             }
@@ -697,11 +704,16 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             
             //PINTAR LAS CARTAS
             
-            if(valores[1]!=-1)
+            /*if(valores[1]!=-1)
             {
                 jButton14.setIcon(imagenes[valores[1]]);
-            }       
+            }*/       
 
+            if(valoresJugada[aux]!=-1)
+            {
+                jButton14.setIcon(imagenes[valoresJugada[aux]]);
+            }
+            aux++;
             if(valoresJugada[aux]!=-1)
             {
                 jButton12.setIcon(imagenes[valoresJugada[aux]]);

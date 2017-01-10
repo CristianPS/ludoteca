@@ -78,7 +78,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.QUESTION_MESSAGE;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
-public abstract class JugadaBJ extends Jugada
+public class JugadaBJ extends Jugada
 {
     
     private ManoBJ mano, manobanca;
