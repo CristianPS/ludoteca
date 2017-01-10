@@ -2,21 +2,23 @@ package Ludoteca;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Historico 
+public class Historico implements Serializable
 {
     private ArrayList<Jugador> HistJug = new ArrayList();
     private ArrayList<Partida> HistPart = new ArrayList();
-    private final String ruta = "src/Ludoteca/historico.txt";
-    private File fichero = new File(ruta);
-    private FileReader fr;
+    private final String ruta = "src/Ludoteca/historico.txt", ruta2 = "src/Ludoteca/historicopartidas.txt";
+    
+    private File fichero = new File(ruta), fichero2 = new File(ruta2);
+    private FileReader fr, fr2;
     private BufferedReader br;
-    private FileWriter fw;
+    private FileWriter fw, fw2;
     private BufferedWriter bw;
     private String linea="";
     
@@ -64,6 +66,7 @@ public class Historico
     {       
         try {
             this.fr = new FileReader(fichero);
+            this.fr2 = new FileReader(fichero2);
         } catch (FileNotFoundException ex) {
             System.out.println("Fallo linea 67");
             Logger.getLogger(Historico.class.getName()).log(Level.SEVERE, null, ex);
@@ -109,19 +112,20 @@ public class Historico
             }
             br.close();
         }
-        catch (Exception Ex) {System.out.println("Excepcion de pollas en vinaguer");}
+        catch (Exception Ex) {System.out.println("Excepcion final bucle leer fichero historico jugadores.");}
         
         try 
         {
-            this.br = new BufferedReader(fr);
+            this.br = new BufferedReader(fr2);
             String line = "";
+            Partida p1 = new Partida();
             while ((line=br.readLine())!=null)
             {
                 char[] c = line.toCharArray();
-                int comas=0, comas2=0, puntos=0, j=0;
-                Partida p1 = new Partida();
+                int comas=0, comas2=0, puntos=0, j=0, partidas=0, sumas=0;
+                
                 //for(int i = c.length; i>=0; i--)
-                for(int i = 0; i<c.length;i++)
+                for(int i=0; i<c.length;i++)
                 {
                     if (comas<=4)
                     {   
@@ -131,7 +135,7 @@ public class Historico
                             switch(comas)
                             {
                                 case 1: p1.setNum(Integer.parseInt(line.substring(j,i))); break;
-                                case 2: //p1.setFecha(Date/*line.substring(j,i)*/); break;
+                                //case 2: //p1.setFecha(Date/*line.substring(j,i)*/ ); break;
                                 case 3: p1.setJuego(line.substring(j,i)); break;
                                 case 4: p1.setJugadasTotales(Integer.parseInt(line.substring(j,i))); break;
                                 
@@ -140,14 +144,95 @@ public class Historico
                         }
                         if (c[i]==':')
                         {
+                            partidas = Integer.parseInt(line.substring(j,i));
+                            p1.setJugadasTotales(partidas);
+                            j=i+1;
                             
+                            break;
                         }
+                        
                     }
                    
                 }
-                
-                
+                int i = j;
+                Baraja b;
+                Jugada jugada=null;                
+                Mano mano, manobanca;
+                while (partidas>0)//A lo mejor cambiarlo por un if como arriba.
+                {
+                    while (c[i]!='<')
+                    {
+                        if (c[i]=='+')
+                        {                        
+                            sumas++;
+                            String blck = "Blackjack";
+                            switch (sumas)
+                            {
+                                
+                                case 1: 
+                                        Jugador ganador = new Jugador(line.substring(j,i));
+                                        if(p1.getJuego().equals(blck))
+                                        {
+                                            b=new BarajaFrancesa();
+                                            jugada = new JugadaBJ(b, ganador);
+                                            mano = new ManoBJ();
+                                            manobanca = new ManoBJ();
+
+                                        }
+                                        else
+                                        {
+                                            b=new BarajaEspanola();
+                                            jugada = new Jugada7ymedia(b, ganador);
+                                            mano = new Mano();
+                                            manobanca = new Mano();
+                                        }
+                                        jugada.setGanador(ganador);
+                                        break;
+                                case 2: jugada.setApuesta(Integer.parseInt(line.substring(j,i)));                                                                                                       
+                                        break;
+                            }
+                            j=i+1;
+                        }
+                        i++;
+                    }
+                    Mano mano1 = new Mano();
+                    Mano mano2 = new Mano();
+                    //for (int h=j; i<c.length;i++)
+                    int h = j;
+                    while(c[h]!=';')
+                    {
+                        
+                        if (c[h]=='-')
+                                {
+                                    int valor = Integer.parseInt(line.substring(j+1,h));
+                                    int palo = Integer.parseInt(line.substring(h+1,h+2));
+                                    Carta carta = new Carta(valor, palo);
+                                    mano1.mano.add(carta);
+                                    j=h+2;
+                                }                                                
+                        h++;
+                    }
+                    while(c[h]!='.')
+                    {
+                        if (c[h]=='-')
+                        {
+                            int valor = Integer.parseInt(line.substring(j+1,h));
+                            int palo = Integer.parseInt(line.substring(h+1,h+2));
+                            Carta carta = new Carta(valor, palo);
+                            mano2.mano.add(carta);
+                            j=h+2;
+                        }  
+                        h++;
+                    }
+                    i=h;
+                    jugada.ArrayMano.add(mano1);
+                    jugada.ArrayManoBanca.add(mano2);
+                    p1.anadeJugada(jugada);
+                    HistPart.add(p1);
+                    partidas--;
+                }                
             }
+            
             br.close();
         }
         catch (Exception Ex) {System.out.println("Excepcion de pollas en vinaguer");}
@@ -183,12 +268,12 @@ public class Historico
             line+=P.getNum()+","+P.getFecha()+","+P.getJuego()+","+P.getNumJugadas()+":";
             for (Jugada J: P.getArrayListJugada())
             {
-                partidas+=J.getGanador()+","+J.getApuesta()+","+"Mano>";
+                partidas+=J.getGanador()+"+"+J.getApuesta()+"+<";
                 for (Mano M: J.getArrayManoJug())
                 {
                     for (Carta C: M.getArrayCarta())
                     {
-                        cartas+=C.getPalo()+"-"+C.getValor();
+                        cartas+=C.getPalo()+"-"+C.getValor()+">";
                     }
                     cartas+=";";
                 }
@@ -381,5 +466,7 @@ public class Historico
     {
         
     }
+
+    
 
 }
