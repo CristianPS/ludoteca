@@ -515,7 +515,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                 imagenes[52]=new javax.swing.ImageIcon(getClass().getResource("/Ludoteca/Imagenes/naipeDorsoOpt.png"));
                 
                 baraja = new BarajaFrancesa();
-                J = new JugadaBJ(baraja, Jug){};
+                J = new JugadaBJ(baraja, Jug, this){};
                     if(apuesta<10)
                     {
                         jLabel3.setText("Has apostado " + apuesta + " fichas. Al ser menor de 10 y ser esta la apuesta minima, tu apuesta ha sido modificada a 10 fichas");
@@ -667,18 +667,23 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +" fichas.");
                 Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+                h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
                 Jug.setJugadasGanadas7(Jug.getJugadasGanadas7()+1);
+                h.buscarJugador(Jug.getNombre()).setJugadasGanadas7(Jug.getJugadasGanadas7());
             }
             else if ((valorManoJ==valorManoB) && valorManoJ<7.5)
             {
                 JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
                 Jug.setJugadasEmpatadas(Jug.getJugadasEmpatadas()+1);
+                h.buscarJugador(Jug.getNombre()).setJugadasEmpatadas(Jug.getJugadasEmpatadas());
             }
             else 
             {
                JOptionPane.showMessageDialog(this, "Ha ganado la banca. Buena suerte la proxima vez"); 
                Jug.setFichasTotales(Jug.getFichasTotales()-apuesta);
+               h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
                Jug.setJugadasPerdidas7(Jug.getJugadasPerdidas7()+1);
+               h.buscarJugador(Jug.getNombre()).setJugadasPerdidas7(Jug.getJugadasPerdidas7());
             }
         }
         if(botones==1)
@@ -691,18 +696,23 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
                 Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+                h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
                 Jug.setJugadasGanadasBJ(Jug.getJugadasGanadasBJ()+1);
+                h.buscarJugador(Jug.getNombre()).setJugadasGanadasBJ(Jug.getJugadasGanadasBJ());
             }
             else if (valorManoJ==valorManoB && valorManoJ<=21)
             {
                 JOptionPane.showMessageDialog(this, "Ha sido un empate.\nLas " +apuesta + "fichas apostadas son devueltas a tu saldo.");
                 Jug.setJugadasEmpatadas(Jug.getJugadasEmpatadas()+1);
+                h.buscarJugador(Jug.getNombre()).setJugadasEmpatadas(Jug.getJugadasEmpatadas());
             }
             else 
             {
                JOptionPane.showMessageDialog(this, "Ha ganado la banca. Buena suerte la proxima vez"); 
                Jug.setFichasTotales(Jug.getFichasTotales()-apuesta); 
+               h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
                Jug.setJugadasPerdidasBJ(Jug.getJugadasPerdidasBJ()+1);
+               h.buscarJugador(Jug.getNombre()).setJugadasPerdidasBJ(Jug.getJugadasPerdidasBJ());
             }
         }
         if(valores[1]!=-1)
@@ -741,14 +751,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton4.setEnabled(false);
         jButton11.setEnabled(true);
         
-        try {
-            h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
-            h.buscarJugador(Jug.getNombre()).setJugadasEmpatadas(Jug.getJugadasEmpatadas());
-            h.buscarJugador(Jug.getNombre()).setJugadasGanadas7(Jug.getJugadasGanadas7());
-            h.buscarJugador(Jug.getNombre()).setJugadasGanadasBJ(Jug.getJugadasGanadasBJ());
-            h.buscarJugador(Jug.getNombre()).setJugadasPerdidas7(Jug.getJugadasPerdidas7());
-            h.buscarJugador(Jug.getNombre()).setJugadasPerdidasBJ(Jug.getJugadasPerdidasBJ());
-            
+        try { 
             h.actualizarHistorico();
         } catch (IOException ex) {
             Logger.getLogger(ventanaJuego2.class.getName()).log(Level.SEVERE, null, ex);

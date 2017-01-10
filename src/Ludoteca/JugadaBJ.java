@@ -83,10 +83,10 @@ public abstract class JugadaBJ extends Jugada
     
     private ManoBJ mano, manobanca;
     
-    public JugadaBJ(Baraja b, Jugador j)
+    public JugadaBJ(Baraja b, Jugador j, ventanaJuego2 v)
     {
         super(b,j);
-        mano = new ManoBJ();
+        mano = new ManoBJ(v);
         manobanca = new ManoBJ();
     }
     

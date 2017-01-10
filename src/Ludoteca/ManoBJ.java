@@ -2,12 +2,22 @@ package Ludoteca;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.QUESTION_MESSAGE;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
 
 public class ManoBJ extends Mano
 {
+    private ventanaJuego2 vJ2 = null;
+    
     public ManoBJ()
     {
         super();
+    }
+    public ManoBJ(ventanaJuego2 v)
+    {
+        super();
+        vJ2=v;
     }
     
     @Override
@@ -77,7 +87,7 @@ public class ManoBJ extends Mano
         for (int i=0; i<numAs; i++)
             {
                 System.out.println("En la mano tienes un total de "+numAs+" ases.");//Modificar para interfaz gráfica.
-                aux=hayUnAs();
+                aux=hayUnAs(numAs);
                 valorMano=+aux;
             }
         }
@@ -133,13 +143,21 @@ public class ManoBJ extends Mano
         return valorMano;
     }
     
-    public int hayUnAs()
+    public int hayUnAs(int numAs)
     {
         int valorAs;
         Scanner kbd= new Scanner(System.in);
         System.out.println("\n¿Que valor quieres que tome el As?");
-        valorAs = kbd.nextInt();
-        return valorAs;
+        valorAs=JOptionPane.showConfirmDialog(vJ2, "Ases", "En la mano tienes un total de "+numAs+" ases. ACEPTAR(11) CANCELAR(1)", YES_NO_OPTION, QUESTION_MESSAGE);
+        if (valorAs == JOptionPane.YES_OPTION)
+        {
+            return 11;
+        }
+        else if(valorAs== JOptionPane.NO_OPTION)
+        {
+            return 1;
+        }
+        return -1;
     }
     
     
