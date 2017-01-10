@@ -201,4 +201,19 @@ public class ManoBJ extends Mano
     {
         return mano.isEmpty();
     }
+    
+    public boolean comprobarBJ()
+    {
+        if(mano.size()<=2)
+        {
+            CartaFrancesa c0 = (CartaFrancesa) mano.get(0);
+            CartaFrancesa c1 = (CartaFrancesa) mano.get(1);
+            
+            return (c0.getValor()>10 && c1.getValor()==1) || (c0.getValor()==1 && c1.getValor()>=10);
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

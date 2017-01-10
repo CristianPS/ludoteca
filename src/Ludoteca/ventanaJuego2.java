@@ -7,6 +7,7 @@ package Ludoteca;
 
 import java.awt.Color;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -745,10 +746,21 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             {
                 valores[j]=-1;
             }*/
-            if((valorManoJ>valorManoB && valorManoJ<=21)|| (valorManoB>21 && valorManoJ<21))
+            ArrayList<Mano> manoJ = J.getArrayManoJug();
+            ManoBJ m = (ManoBJ) manoJ.get(0);
+            boolean b = m.comprobarBJ();
+            if (b)
             {
-                JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
-                Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+                JOptionPane.showMessageDialog(this, "Has hecho BlackJack. Enhorabuena!\n Recibes " +1.5*apuesta +" fichas.");
+                Jug.setFichasTotales(Jug.getFichasTotales()+3*apuesta);
+                h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
+                Jug.setJugadasGanadasBJ(Jug.getJugadasGanadasBJ()+1);
+                h.buscarJugador(Jug.getNombre()).setJugadasGanadasBJ(Jug.getJugadasGanadasBJ());
+            }
+            else if((valorManoJ>valorManoB && valorManoJ<=21)|| (valorManoB>21 && valorManoJ<21))
+            {
+                JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +" fichas.");
+                Jug.setFichasTotales(Jug.getFichasTotales()+2*apuesta);
                 h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
                 Jug.setJugadasGanadasBJ(Jug.getJugadasGanadasBJ()+1);
                 h.buscarJugador(Jug.getNombre()).setJugadasGanadasBJ(Jug.getJugadasGanadasBJ());
