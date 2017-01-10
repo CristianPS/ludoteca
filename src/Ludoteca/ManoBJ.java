@@ -148,7 +148,7 @@ public class ManoBJ extends Mano
         int valorAs;
         Scanner kbd= new Scanner(System.in);
         System.out.println("\n¿Que valor quieres que tome el As?");
-        valorAs=JOptionPane.showConfirmDialog(vJ2, "Ases", "En la mano tienes un total de "+numAs+" ases. ACEPTAR(11) CANCELAR(1)", YES_NO_OPTION, QUESTION_MESSAGE);
+        valorAs=JOptionPane.showConfirmDialog(vJ2, "En la mano tienes un total de "+numAs+" ases. ACEPTAR(11) CANCELAR(1)", "Ases", YES_NO_OPTION, QUESTION_MESSAGE);
         if (valorAs == JOptionPane.YES_OPTION)
         {
             return 11;

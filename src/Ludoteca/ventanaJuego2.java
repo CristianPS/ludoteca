@@ -49,6 +49,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             //Jugada7ymedia J = new Jugada7ymedia() {};
         }
         jLabel1.setText("Bienvenido, " +Jug.getNombre());
+        jLabel6.setText("Total de fichas: "+ Jug.getFichasTotales());
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
         imagenes = new ImageIcon[53];
@@ -154,6 +155,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -317,6 +319,8 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setText("Total de fichas");
+
         jMenu1.setText("Acceso");
 
         jMenuItem1.setText("Historico");
@@ -343,7 +347,10 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(181, 181, 181)
+                                        .addComponent(jLabel6))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(52, 52, 52)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,7 +376,9 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
@@ -666,7 +675,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
             if((valorManoJ>valorManoB && valorManoJ<=7.5)|| (valorManoB>7.5 && valorManoJ<7.5))
             {
                 JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +" fichas.");
-                Jug.setFichasTotales(Jug.getFichasTotales()+apuesta);
+                Jug.setFichasTotales(Jug.getFichasTotales()+2*apuesta);
                 h.buscarJugador(Jug.getNombre()).setFichasTotales(Jug.getFichasTotales());
                 Jug.setJugadasGanadas7(Jug.getJugadasGanadas7()+1);
                 h.buscarJugador(Jug.getNombre()).setJugadasGanadas7(Jug.getJugadasGanadas7());
@@ -685,13 +694,45 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                Jug.setJugadasPerdidas7(Jug.getJugadasPerdidas7()+1);
                h.buscarJugador(Jug.getNombre()).setJugadasPerdidas7(Jug.getJugadasPerdidas7());
             }
+            
+            //PINTAR LAS CARTAS
+            
+            if(valores[1]!=-1)
+            {
+                jButton14.setIcon(imagenes[valores[1]]);
+            }       
+
+            if(valoresJugada[aux]!=-1)
+            {
+                jButton12.setIcon(imagenes[valoresJugada[aux]]);
+            }
+            aux++;
+            if(valoresJugada[aux]!=-1)
+            {
+                jButton13.setIcon(imagenes[valoresJugada[aux]]);
+            }
+            aux++;
+            if(valoresJugada[aux]!=-1)
+            {
+                jButton15.setIcon(imagenes[valoresJugada[aux]]);
+            }
+            aux++;
+            if(valoresJugada[aux]!=-1)
+            {
+                jButton19.setIcon(imagenes[valoresJugada[aux]]);
+            }
+            aux++;
+            if(valoresJugada[aux]!=-1)
+            {
+                jButton21.setIcon(imagenes[valoresJugada[aux]]);
+            }
         }
         if(botones==1)
         {
-            for(int j=0; j<valores.length; j++)
+            /*for(int j=0; j<valores.length; j++)
             {
                 valores[j]=-1;
-            }
+            }*/
             if((valorManoJ>valorManoB && valorManoJ<=21)|| (valorManoB>21 && valorManoJ<21))
             {
                 JOptionPane.showMessageDialog(this, "Has ganado. Enhorabuena!\n Recibes " +2*apuesta +"fichas.");
@@ -714,17 +755,12 @@ public class ventanaJuego2 extends javax.swing.JFrame {
                Jug.setJugadasPerdidasBJ(Jug.getJugadasPerdidasBJ()+1);
                h.buscarJugador(Jug.getNombre()).setJugadasPerdidasBJ(Jug.getJugadasPerdidasBJ());
             }
-        }
+        
         if(valores[1]!=-1)
         {
-            jButton14.setIcon(imagenes[valores[1]]);
-        }        
+            jButton12.setIcon(imagenes[valores[1]]);
+        }       
 
-        if(valoresJugada[aux]!=-1)
-        {
-            jButton12.setIcon(imagenes[valoresJugada[aux]]);
-        }
-        aux++;
         if(valoresJugada[aux]!=-1)
         {
             jButton13.setIcon(imagenes[valoresJugada[aux]]);
@@ -739,11 +775,18 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         {
             jButton19.setIcon(imagenes[valoresJugada[aux]]);
         }
+        aux++;
         if(valoresJugada[aux]!=-1)
         {
             jButton21.setIcon(imagenes[valoresJugada[aux]]);
         }
+        /*aux++;
+        if(valoresJugada[aux]!=-1)
+        {
+            jButton21.setIcon(imagenes[valoresJugada[aux]]);
+        }*/
         
+        }
         jButton1.setEnabled(true);
         jTextField1.setEnabled(true);
         jButton2.setEnabled(false);
@@ -762,6 +805,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(ventanaJuego2.class.getName()).log(Level.SEVERE, null, ex);
         }
+        jLabel6.setText("Total de fichas: "+ Jug.getFichasTotales());
         
         
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -865,6 +909,7 @@ public class ventanaJuego2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
