@@ -44,6 +44,7 @@ public abstract class Jugada7ymedia extends Jugada
                 c.mostrar();
                 manobanca.anadirAMano(anadir);
                 anadir.clear();
+                manobanca.resetValorMano();
                 aux = manobanca.CalcularValor();
                 System.out.println("\n"+aux);
                 salida[i]=c.posArray();

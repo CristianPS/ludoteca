@@ -5,6 +5,8 @@
  */
 package Ludoteca;
 
+import java.io.IOException;
+
 /**
  *
  * @author jorge
@@ -13,7 +15,7 @@ public class Ludoteca
 {
 
     private static Historico h;
-    public static void main(String[] args) 
+    public static void main(String[] args) throws IOException 
     {
         //h = new Historico();
         Jugador j1 = new Jugador("Pepito");

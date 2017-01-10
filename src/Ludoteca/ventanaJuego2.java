@@ -751,11 +751,19 @@ public class ventanaJuego2 extends javax.swing.JFrame {
         jButton4.setEnabled(false);
         jButton11.setEnabled(true);
         
+        if(Jug.getFichasTotales()==0)
+        {
+            JOptionPane.showMessageDialog(this,"Te has quedado sin fichas. Se te acumularán 100 fichas a tu saldo");
+            Jug.setFichasTotales(100);
+        }
+        
         try { 
             h.actualizarHistorico();
         } catch (IOException ex) {
             Logger.getLogger(ventanaJuego2.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
